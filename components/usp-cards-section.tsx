@@ -1,46 +1,8 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Truck, Shield, Lightbulb, Palette, Award } from "lucide-react"
 import Image from "next/image"
-
-const uspCards = [
-  {
-    icon: Truck,
-    title: "Seamless Logistics",
-    description: "Full door-to-door delivery across EU, UK, and USA. We handle the complexity so you can focus on growth.",
-    gradient: "from-blue-500 to-cyan-500",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
-  },
-  {
-    icon: Shield,
-    title: "Audit Ready",
-    description: "Compliance isn't a goal, it's our foundation. Ethical sourcing and safety standards ready from day one.",
-    gradient: "from-emerald-500 to-teal-500",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
-  },
-  {
-    icon: Lightbulb,
-    title: "Brand Owners Mindset",
-    description: "We think like brand owners because we are brand owners. Proven expertise through our flagship labels.",
-    gradient: "from-amber-500 to-orange-500",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
-  },
-  {
-    icon: Palette,
-    title: "Design to Reality",
-    description: "From initial mood boards to the final product. Our in-house design team bridges the gap between vision and reality.",
-    gradient: "from-rose-500 to-pink-500",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-  },
-  {
-    icon: Award,
-    title: "Certified Excellence",
-    description: "15+ international certifications ensuring quality, sustainability, and ethical manufacturing standards.",
-    gradient: "from-violet-500 to-purple-500",
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80",
-  },
-]
+import { upsc } from "@/lib/data"
 
 export function USPCardsSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -70,7 +32,7 @@ export function USPCardsSection() {
     const interval = setInterval(() => {
       setScrollPosition((prev) => {
         const cardWidth = 380 // card width + gap
-        const totalWidth = cardWidth * uspCards.length
+        const totalWidth = cardWidth * upsc.length
         const newPos = prev + 1
         return newPos >= totalWidth ? 0 : newPos
       })
@@ -87,29 +49,26 @@ export function USPCardsSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div
-            className={`inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
+            className={`inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
           >
-            <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-sky-400 rounded-full animate-pulse" />
             <span className="text-white/90 text-sm font-medium">Why Choose Us</span>
           </div>
-          
+
           <h2
-            className={`text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 transition-all duration-700 delay-100 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             Built for
-            <span className="text-emerald-400"> Excellence</span>
+            <span className="text-sky-400"> Excellence</span>
           </h2>
-          
+
           <p
-            className={`text-lg text-slate-300 max-w-2xl mx-auto transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`text-lg text-slate-300 max-w-2xl mx-auto transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
-            Every aspect of our operation is designed to deliver exceptional value, 
+            Every aspect of our operation is designed to deliver exceptional value,
             from seamless logistics to certified manufacturing excellence.
           </p>
         </div>
@@ -130,13 +89,12 @@ export function USPCardsSection() {
           }}
         >
           {/* Double the cards for infinite scroll effect */}
-          {[...uspCards, ...uspCards, ...uspCards].map((card, index) => (
+          {[...upsc, ...upsc, ...upsc].map((card, index) => (
             <div
               key={`${card.title}-${index}`}
-              className={`flex-shrink-0 w-[350px] rounded-2xl overflow-hidden border border-white/10 shadow-lg hover:shadow-2xl hover:shadow-black/30 transition-all duration-500 group ${
-                isVisible ? "opacity-100" : "opacity-0"
-              }`}
-              style={{ transitionDelay: `${(index % uspCards.length) * 100}ms` }}
+              className={`flex-shrink-0 w-[350px] rounded-2xl overflow-hidden border border-white/10 shadow-lg hover:shadow-2xl hover:shadow-black/30 transition-all duration-500 group ${isVisible ? "opacity-100" : "opacity-0"
+                }`}
+              style={{ transitionDelay: `${(index % upsc.length) * 100}ms` }}
             >
               {/* Image Header */}
               <div className="relative h-48 overflow-hidden">
@@ -147,7 +105,7 @@ export function USPCardsSection() {
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent`} />
-                
+
                 {/* Icon overlay */}
                 <div className="absolute bottom-4 left-6">
                   <div
@@ -160,7 +118,7 @@ export function USPCardsSection() {
 
               {/* Content */}
               <div className="p-6 bg-slate-800/90 backdrop-blur-sm">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-sky-400 transition-colors">
                   {card.title}
                 </h3>
                 <p className="text-slate-300 leading-relaxed text-sm">
@@ -178,14 +136,13 @@ export function USPCardsSection() {
       {/* Progress indicators */}
       <div className="container mx-auto px-6 lg:px-12 mt-12 relative z-10">
         <div className="flex justify-center gap-2">
-          {uspCards.map((_, index) => (
+          {upsc.map((_, index) => (
             <div
               key={index}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                Math.floor(scrollPosition / 380) % uspCards.length === index
-                  ? "w-8 bg-emerald-400"
+              className={`h-1.5 rounded-full transition-all duration-300 ${Math.floor(scrollPosition / 380) % upsc.length === index
+                  ? "w-8 bg-sky-400"
                   : "w-2 bg-slate-600"
-              }`}
+                }`}
             />
           ))}
         </div>

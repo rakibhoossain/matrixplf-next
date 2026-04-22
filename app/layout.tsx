@@ -7,25 +7,25 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Monalisa Group | From Fabric to Finished Product',
+  title: 'Matrixplatform | From Fabric to Finished Product',
   description: 'Vertically integrated textile manufacturing partner across China, Bangladesh, and Sri Lanka. 3M+ garments per month, 37 partner factories, 15+ international certifications.',
   generator: 'v0.app',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/icon.jpg',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/icon.jpg',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/icon.jpg',
+        type: 'image/jpg',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/icon.jpg',
   },
 }
 

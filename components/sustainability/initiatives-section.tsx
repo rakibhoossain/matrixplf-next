@@ -96,8 +96,9 @@ export function SustainabilityInitiativesSection() {
 
   return (
     <section ref={sectionRef} className="w-full bg-white flex flex-col font-sans">
-      
-      <style dangerouslySetInnerHTML={{__html: `
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @media (min-width: 1024px) {
           .slant-right { clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%); }
           .slant-left { clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); }
@@ -108,48 +109,45 @@ export function SustainabilityInitiativesSection() {
         const isLeftAlign = item.align === 'left'
 
         return (
-          <div key={item.id} className="relative w-full min-h-[450px] bg-[#2B3136] border-b-[6px] border-white flex items-center overflow-hidden">
-            
+          <div key={item.id} className="relative w-full min-h-[450px] my-5 bg-[#2B3136] border-b-[6px] border-white flex items-center overflow-hidden">
+
             {/* Image Container for Mobile (Top) and Desktop (Side) */}
-            <div 
-              className={`absolute top-0 w-full h-[250px] lg:h-full lg:bottom-0 lg:w-[55%] z-10 ${
-                isLeftAlign ? 'lg:right-0 slant-right' : 'lg:left-0 slant-left'
-              }`}
+            <div
+              className={`absolute top-0 w-full h-[250px] lg:h-full lg:bottom-0 lg:w-[55%] z-10 ${isLeftAlign ? 'lg:right-0 slant-right' : 'lg:left-0 slant-left'
+                }`}
             >
-               {/* Add a dimming overlay so text handles well if it ever overlaps, though the split avoids it */}
-               <div className="absolute inset-0 bg-black/10 mix-blend-overlay z-10" />
-               <img 
-                 src={item.image} 
-                 alt={item.title} 
-                 className="w-full h-full object-cover"
-               />
+              {/* Add a dimming overlay so text handles well if it ever overlaps, though the split avoids it */}
+              <div className="absolute inset-0 bg-black/10 mix-blend-overlay z-10" />
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Content Container */}
-            <div className={`container mx-auto px-6 lg:px-12 relative z-20 flex mt-[250px] lg:mt-0 py-12 lg:py-20 ${
-              isLeftAlign ? 'justify-start' : 'justify-end'
-            }`}>
-              
-              <div className={`lg:w-[45%] text-white flex flex-col ${
-                isLeftAlign ? 'lg:pr-16 text-left items-start' : 'lg:pl-16 text-right items-end'
+            <div className={`container mx-auto px-6 lg:px-12 relative z-20 flex mt-[250px] lg:mt-0 py-12 lg:py-20 ${isLeftAlign ? 'justify-start' : 'justify-end'
               }`}>
-                
+
+              <div className={`lg:w-[45%] text-white flex flex-col ${isLeftAlign ? 'lg:pr-16 text-left items-start' : 'lg:pl-16 text-right items-end'
+                }`}>
+
                 <h2 className={`text-4xl lg:text-5xl font-bold text-[#1ea1d7] mb-8 ${isLeftAlign ? '' : 'uppercase text-right'}`}>
-                   {isLeftAlign ? item.title : item.title.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
+                  {isLeftAlign ? item.title : item.title.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
                 </h2>
 
                 <div className="flex flex-col gap-8 w-full">
                   {item.paragraphs.map((p, pIdx) => (
                     <div key={pIdx} className={`flex items-start gap-5 w-full ${isLeftAlign ? 'flex-row' : 'flex-row-reverse'}`}>
-                      
+
                       {p.icon && (
                         <div className={`w-11 h-11 rounded-full flex items-center justify-center shrink-0 shadow-lg ${p.iconBg}`}>
                           {p.icon}
                         </div>
                       )}
-                      
+
                       {!p.icon && !isLeftAlign && <div className="w-11 h-11 shrink-0" />} {/* Spacer for alignment if no icon on right */}
-                      {!p.icon && isLeftAlign && <div className="w-11 h-11 shrink-0" />} 
+                      {!p.icon && isLeftAlign && <div className="w-11 h-11 shrink-0" />}
 
                       <p className={`text-[13px] lg:text-[14px] leading-relaxed font-semibold text-slate-300 ${isLeftAlign ? 'text-left' : 'text-right'}`}>
                         {p.text}

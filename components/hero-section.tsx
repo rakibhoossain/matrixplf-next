@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 const slides = [
   {
     id: 1,
-    image: "/images/hero-bg.png",
+    image: "/hero/Cover-1.jpg",
     title: "FROM FABRIC TO",
     titleHighlight: "FINISHED PRODUCT.",
     subtitle: "Three Countries. One Integrated Supply Chain.",
@@ -16,7 +16,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "/images/hero-bg.png",
+    image: "/hero/Cover-2.jpg",
     title: "QUALITY",
     titleHighlight: "REDEFINED.",
     subtitle: "Premium Manufacturing Excellence.",
@@ -24,15 +24,15 @@ const slides = [
   },
   {
     id: 3,
-    image: "/images/hero-bg.png",
-    title: "SUSTAINABLE",
-    titleHighlight: "FASHION.",
-    subtitle: "Eco-Friendly Production.",
-    description: "Committed to environmental responsibility in every stitch.",
+    image: "/hero/Cover-3.png",
+    title: "PRODUCT DEVELOPMENT,",
+    titleHighlight: "BACKED BY TECHNICAL EXPERTISE.",
+    subtitle: "Design-led R&D and technical teams turning concepts into precise,production-ready garments.",
+    description: "Fit engineering, cost efficiency, and quality control — built with a responsible and scalable approach.",
   },
   {
     id: 4,
-    image: "/images/hero-bg.png",
+    image: "/hero/Cover-4.jpg",
     title: "GLOBAL",
     titleHighlight: "PARTNERSHIPS.",
     subtitle: "Trusted by Leading Brands.",
@@ -80,9 +80,8 @@ export function HeroSection() {
       {slides.map((s, index) => (
         <div
           key={s.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
         >
           <Image
             src={s.image}
@@ -90,9 +89,8 @@ export function HeroSection() {
             fill
             priority={index === 0}
             loading="eager"
-            className={`object-cover transition-transform duration-[8000ms] ease-out ${
-              index === currentSlide ? "scale-110" : "scale-100"
-            }`}
+            className={`object-cover transition-transform duration-[8000ms] ease-out ${index === currentSlide ? "scale-110" : "scale-100"
+              }`}
           />
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black/20" />
@@ -105,19 +103,18 @@ export function HeroSection() {
           <div className="max-w-3xl">
             {/* Main Heading */}
             <h1
-              className={`transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+              className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
             >
-              <span 
+              <span
                 key={`title-${currentSlide}`}
-                className="block text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-none tracking-tight animate-fade-in-up"
+                className="block text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold text-white leading-none tracking-tight animate-fade-in-up"
               >
                 {slide.title}
               </span>
-              <span 
+              <span
                 key={`highlight-${currentSlide}`}
-                className="block text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-none tracking-tight mt-2 animate-fade-in-up animation-delay-100"
+                className="block text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold text-white leading-none tracking-tight mt-2 animate-fade-in-up animation-delay-100"
               >
                 {slide.titleHighlight}
               </span>
@@ -126,9 +123,8 @@ export function HeroSection() {
             {/* Subtitle */}
             <div
               key={`subtitle-${currentSlide}`}
-              className={`mt-8 space-y-2 transition-all duration-1000 delay-300 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+              className={`mt-8 space-y-2 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
             >
               <p className="text-xl md:text-2xl text-white/90 font-medium animate-fade-in-up animation-delay-200">
                 {slide.subtitle}
@@ -140,13 +136,12 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div
-              className={`flex flex-wrap gap-4 mt-10 transition-all duration-1000 delay-500 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+              className={`flex flex-wrap gap-4 mt-10 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
             >
               <Button
                 size="lg"
-                className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-6 text-base font-medium rounded-full gap-2 group transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/25"
+                className="bg-sky-500 hover:bg-sky-600 text-white px-6 py-6 text-base font-medium rounded-full gap-2 group transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/25"
               >
                 <Download className="w-5 h-5" />
                 Download Profile
@@ -164,7 +159,7 @@ export function HeroSection() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="absolute bottom-8 left-6 lg:left-12 z-20 flex items-center gap-4">
+      <div className="absolute bottom-8 w-full z-20 flex items-center justify-center gap-4">
         {/* Arrow Navigation */}
         <button
           onClick={prevSlide}
@@ -182,11 +177,10 @@ export function HeroSection() {
               key={index}
               onClick={() => goToSlide(index)}
               disabled={isAnimating}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? "bg-white scale-100"
-                  : "bg-white/40 hover:bg-white/60 scale-75"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                ? "bg-white scale-100"
+                : "bg-white/40 hover:bg-white/60 scale-75"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

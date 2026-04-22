@@ -197,8 +197,8 @@ export function StatsSection() {
               
               {/* Label */}
               <div className="max-w-[140px] mx-auto">
-                <p className="text-sm font-semibold text-emerald-200">{stat.label}</p>
-                <p className="text-sm text-emerald-300/80">{stat.sublabel}</p>
+                <p className="text-sm font-semibold text-sky-200">{stat.label}</p>
+                <p className="text-sm text-sky-300/80">{stat.sublabel}</p>
               </div>
             </div>
           ))}

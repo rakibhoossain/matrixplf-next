@@ -5,9 +5,7 @@ import { FabricMillSection } from "@/components/fabric-mill-section"
 import { ManufacturingSection } from "@/components/manufacturing-section"
 import { USPCardsSection } from "@/components/usp-cards-section"
 import { ProductsSection } from "@/components/products-section"
-import { BrandsSection } from "@/components/brands-section"
 import { TeamSection } from "@/components/team-section"
-import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { GlobalNetworkSection } from "@/components/global-network-section"
 
@@ -20,11 +18,7 @@ export default function Home() {
       <FabricMillSection />
       <ManufacturingSection />
       <USPCardsSection />
-      <GlobalNetworkSection />
       <ProductsSection />
-      <BrandsSection />
-      <TeamSection />
-      <ContactSection />
       <Footer />
     </main>
   )

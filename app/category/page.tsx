@@ -80,7 +80,7 @@ export default function CategoryPage() {
 
               <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-20">
                   <div className="max-w-2xl">
-                     <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
                         <span className="text-[#38bdf8]">Fashion-led</span> <span className="text-white">product</span><br/>
                         <span className="text-white">Categories.</span>
                      </h1>

@@ -137,8 +137,8 @@ export function TeamSection() {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItSDJ2LTJoMzR6bTAtNHYySDJ2LTJoMzR6bTAtNHYySDJ2LTJoMzR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-50" />
       
       {/* Decorative elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Compact Horizontal Layout */}
@@ -150,11 +150,11 @@ export function TeamSection() {
             }`}
           >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
-              Meet The <span className="text-emerald-400">Team</span>
+              Meet The <span className="text-sky-400">Team</span>
             </h2>
             <button
               onClick={() => setShowTeamModal(true)}
-              className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 text-sm font-medium underline underline-offset-4 transition-colors group"
+              className="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-sm font-medium underline underline-offset-4 transition-colors group"
             >
               More information on the core team
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -178,7 +178,7 @@ export function TeamSection() {
                   style={{ transitionDelay: `${300 + index * 50}ms` }}
                   title={`${member.name} - ${member.role}`}
                 >
-                  <div className="relative w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden ring-2 ring-emerald-500/70 ring-offset-2 ring-offset-slate-800 group-hover:ring-emerald-400 group-hover:ring-4 group-hover:scale-110 transition-all duration-300 shadow-lg shadow-black/30">
+                  <div className="relative w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden ring-2 ring-sky-500/70 ring-offset-2 ring-offset-slate-800 group-hover:ring-sky-400 group-hover:ring-4 group-hover:scale-110 transition-all duration-300 shadow-lg shadow-black/30">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -214,7 +214,7 @@ export function TeamSection() {
 
             {/* Avatar */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="relative w-20 h-20 rounded-full overflow-hidden ring-2 ring-emerald-500 ring-offset-2 ring-offset-slate-800">
+              <div className="relative w-20 h-20 rounded-full overflow-hidden ring-2 ring-sky-500 ring-offset-2 ring-offset-slate-800">
                 <Image
                   src={selectedMember.image}
                   alt={selectedMember.name}
@@ -224,7 +224,7 @@ export function TeamSection() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">{selectedMember.name}</h3>
-                <p className="text-emerald-400 font-medium text-sm">{selectedMember.role}</p>
+                <p className="text-sky-400 font-medium text-sm">{selectedMember.role}</p>
                 <p className="text-slate-400 text-xs">{selectedMember.location}</p>
               </div>
             </div>
@@ -234,7 +234,7 @@ export function TeamSection() {
 
             {/* Actions */}
             <div className="flex gap-3">
-              <Button className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white gap-2 text-sm">
+              <Button className="flex-1 bg-sky-600 hover:bg-sky-500 text-white gap-2 text-sm">
                 <Mail className="w-4 h-4" />
                 Contact
               </Button>
@@ -265,20 +265,20 @@ export function TeamSection() {
               <X className="w-4 h-4" />
             </button>
 
-            <h3 className="text-2xl font-bold text-white mb-6">Our <span className="text-emerald-400">Core Team</span></h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Our <span className="text-sky-400">Core Team</span></h3>
 
             {/* Team Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {teamMembers.map((member) => (
                 <div
                   key={member.id}
-                  className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-emerald-500/10 border border-white/10 hover:border-emerald-500/30 transition-colors cursor-pointer group"
+                  className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-sky-500/10 border border-white/10 hover:border-sky-500/30 transition-colors cursor-pointer group"
                   onClick={() => {
                     setShowTeamModal(false)
                     setSelectedMember(member)
                   }}
                 >
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-emerald-500/50 flex-shrink-0">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-sky-500/50 flex-shrink-0">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -287,7 +287,7 @@ export function TeamSection() {
                     />
                   </div>
                   <div className="min-w-0">
-                    <h4 className="font-semibold text-white text-sm truncate group-hover:text-emerald-400 transition-colors">
+                    <h4 className="font-semibold text-white text-sm truncate group-hover:text-sky-400 transition-colors">
                       {member.name}
                     </h4>
                     <p className="text-xs text-slate-400 truncate">{member.role}</p>

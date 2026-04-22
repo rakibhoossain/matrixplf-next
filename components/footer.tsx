@@ -38,17 +38,14 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-zinc-950 text-white border-t border-white/5">
       {/* Main Footer */}
       <div className="container mx-auto px-6 lg:px-12 py-10 lg:py-14">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-lg flex items-center justify-center shadow-lg shadow-emerald-500/30">
-                <span className="text-white font-bold text-lg">M</span>
-              </div>
-              <span className="font-bold text-xl text-white tracking-wide">MATRIX <span className="text-emerald-400">PLATFORM</span></span>
+            <Link href="/" className="group">
+              <img src="/Matrix-Platform-Logo.png" alt="Logo" loading="lazy" className="h-20 w-auto object-contain" />
             </Link>
 
             <p className="text-slate-400 leading-relaxed mb-8 max-w-sm">
@@ -73,7 +70,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-emerald-400 transition-colors"
+                    className="text-slate-400 hover:text-sky-400 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -89,7 +86,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-emerald-400 transition-colors"
+                    className="text-slate-400 hover:text-sky-400 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -105,7 +102,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-emerald-400 transition-colors"
+                    className="text-slate-400 hover:text-sky-400 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -132,7 +129,7 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:bg-emerald-600 hover:text-white transition-all duration-300"
+                  className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:bg-sky-600 hover:text-white transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -142,10 +139,10 @@ export function Footer() {
             {/* Back to top */}
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors group"
+              className="flex items-center gap-2 text-slate-400 hover:text-sky-400 transition-colors group"
             >
               <span className="text-sm">Back to top</span>
-              <div className="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center group-hover:bg-emerald-600 transition-colors">
+              <div className="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center group-hover:bg-sky-600 transition-colors">
                 <ArrowUp className="w-4 h-4" />
               </div>
             </button>

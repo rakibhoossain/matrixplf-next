@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Lounge & Knitwear",
+    "image": "/assets/denim.png",
+    "link": "/product/denim"
+  },
+  {
+    "name": "Innerwear & Essentials",
+    "image": "/assets/swimwear.png",
+    "link": "/product/swimwear"
+  },
+  {
+    "name": "Lingerie & Intimates",
+    "image": "/assets/knitwear.png",
+    "link": "/product/knitwear"
+  },
+  {
+    "name": "Activewear",
+    "image": "/assets/knitwear.png",
+    "link": "/product/knitwear"
+  },
+  {
+    "name": "Casualwear",
+    "image": "/assets/knitwear.png",
+    "link": "/product/knitwear"
+  },
+  {
+    "name": "Denim",
+    "image": "/assets/knitwear.png",
+    "link": "/product/knitwear"
+  },
+  {
+    "name": "Swimwear",
+    "image": "/assets/knitwear.png",
+    "link": "/product/knitwear"
+  },
+  {
+    "name": "True Knitwear",
+    "image": "/assets/knitwear.png",
+    "link": "/product/knitwear"
+  },
+  {
+    "name": "Kids",
+    "image": "/assets/knitwear.png",
+    "link": "/product/knitwear"
+  }
+]

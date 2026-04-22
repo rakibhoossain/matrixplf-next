@@ -5,6 +5,8 @@ import { WhoWeAreExcellenceSection } from "@/components/who-we-are/excellence-se
 import { WhoWeAreLegacySection } from "@/components/who-we-are/legacy-section"
 import { WhoWeAreNetworkSection } from "@/components/who-we-are/network-section"
 import { WhoWeAreTimelineSection } from "@/components/who-we-are/timeline-section"
+import { GlobalNetworkSection } from "@/components/global-network-section"
+import { ConnectUs } from "@/components/connect-us"
 
 export default function Page() {
     return (
@@ -13,8 +15,9 @@ export default function Page() {
             <WhoWeAreHeroSection />
             <WhoWeAreExcellenceSection />
             <WhoWeAreLegacySection />
-            <WhoWeAreNetworkSection />
+            <GlobalNetworkSection />
             <WhoWeAreTimelineSection />
+            <ConnectUs />
             <Footer />
         </main>
     )

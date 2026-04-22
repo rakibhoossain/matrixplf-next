@@ -1,0 +1,352 @@
+{
+  "matrix-apparels": {
+    "namePart1": "Matrix",
+    "namePart2": "Apparels Ltd.",
+    "location": "Gazipur, Bangladesh",
+    "bannerImages": [
+      {
+        "image": "/banners/factory.webp",
+        "status": "active"
+      }
+    ],
+    "bannerVideos": [
+      {
+        "video": "/banners/matrix-apparels/1.mp4",
+        "status": "inactive"
+      }
+    ],
+    "stats": {
+      "workers": "6,200+",
+      "capacity": "3.2M",
+      "lines": "52",
+      "area": "450K"
+    },
+    "description": [
+      "Matrix Apparels Ltd is a cornerstone of our manufacturing strength, specializing in high-volume knit and woven production. Established with a commitment to excellence, it has become a benchmark for industrial efficiency.",
+      "Our facility is equipped with the latest technology from global leaders, ensuring that every garment meets the rigorous standards of our international clients in the EU and North America.",
+      "Sustainability and worker welfare are at the heart of Matrix Apparels. We operate with full transparent compliance and hold multiple gold-standard certifications."
+    ],
+    "strengths": [
+      "Full vertical integration from knitting to garment",
+      "Knitting: 60+ high-speed machines with ~22 tons/day capacity",
+      "Dyeing: 1,800 tons/month bulk capacity",
+      "Finishing: 75 tons/day processing capacity with European machinery",
+      "Production scale: 52 lines with ~3.2M pcs/month capacity",
+      "Workforce: 6,200+ skilled personnel",
+      "Real-time ERP-based production monitoring",
+      "Proven export track record across EU and USA",
+      "Experience in licensed and branded product manufacturing"
+    ],
+    "categories": [
+      "Knitwear & Essentials",
+      "Outerwear & Sport",
+      "Activewear",
+      "Denim & Bottoms"
+    ],
+    "contact": {
+      "hq": "Plot 24-26, BSCIC Industrial Estate, Gazipur, Bangladesh.",
+      "phone": "+880 2 9876543",
+      "email": "info@matrixapparels.com"
+    },
+    "certifications": [
+      "/certifications/1.png",
+      "/certifications/2.png",
+      "/certifications/3.png",
+      "/certifications/4.png",
+      "/certifications/5.png",
+      "/certifications/6.png",
+      "/certifications/7.png",
+      "/certifications/8.png",
+      "/certifications/9.png",
+      "/certifications/10.png"
+    ]
+  },
+  "ifs-texwear": {
+    "namePart1": "IFS Texwear",
+    "namePart2": "Ltd.",
+    "location": "Dhaka, Bangladesh",
+    "bannerImages": [
+      {
+        "image": "/banners/factory.webp",
+        "status": "active"
+      }
+    ],
+    "bannerVideos": [],
+    "stats": {
+      "workers": "5,400+",
+      "capacity": "2.5M",
+      "lines": "45",
+      "area": "320K"
+    },
+    "description": [
+      "IFS TEXWEAR (PVT.) LTD. is a premier, 100% export-oriented composite knit garments manufacturer and exporter based in Bangladesh. Established in 1999, we have grown into a global industry leader.",
+      "Our vision is to create the greatest knit clothing on the planet by consistently investing in quality and innovation. We are dedicated to providing unrivaled variety and superior products.",
+      "Quality is the cornerstone of our operations. Our facility utilizes advanced machinery from Japan, Germany, and the U.S. to ensure precision in every stitch."
+    ],
+    "strengths": [
+      "100% export-oriented composite knit garments unit",
+      "Full vertical integration setup",
+      "Knitting: Advanced machinery with ~15 tons/day capacity",
+      "Dyeing: 1,500 tons/month bulk capacity",
+      "Production scale: 45 lines with ~2.5M pcs/month capacity",
+      "Workforce: 5,400+ skilled manpower",
+      "Licensed and branded product manufacturing global expertise",
+      "Real-time production and efficiency monitoring",
+      "High compliance and international quality standards"
+    ],
+    "categories": [
+      "Men's & Ladies Wear",
+      "Active & Outerwear",
+      "Innerwear & Sleepwear",
+      "Infant & Kids"
+    ],
+    "contact": {
+      "hq": "631, Kutubpur, Fatullah, Narayanganj, Bangladesh.",
+      "phone": "+386 30 796 092",
+      "email": "shohel@matrixapparels.com"
+    },
+    "certifications": [
+      "/certifications/11.png",
+      "/certifications/12.png",
+      "/certifications/13.png",
+      "/certifications/14.png",
+      "/certifications/15.png",
+      "/certifications/16.png",
+      "/certifications/17.png",
+      "/certifications/18.png",
+      "/certifications/19.png",
+      "/certifications/20.png"
+    ]
+  },
+  "mb-knit": {
+    "namePart1": "MB Knit",
+    "namePart2": "Fashion",
+    "location": "Narayanganj, Bangladesh",
+    "bannerImages": [
+      {
+        "image": "/banners/factory.webp",
+        "status": "active"
+      }
+    ],
+    "bannerVideos": [],
+    "stats": {
+      "workers": "4,800+",
+      "capacity": "2.1M",
+      "lines": "38",
+      "area": "280K"
+    },
+    "description": [
+      "MB Knit Fashion is our specialized center for intricate knit designs and technical apparel. We pride ourselves on our ability to handle complex fashion-led programs with shorter lead times.",
+      "The facility features specialized dyeing and finishing units that allow us to experiment with unique textures and washes requested by modern fashion brands.",
+      "We maintain a strong focus on circular fashion, integrating recycled yarns and water-saving technologies throughout our production process."
+    ],
+    "strengths": [
+      "Specialized center for intricate knit designs",
+      "Technical apparel expertise with short lead times",
+      "Circular fashion focus with recycled yarn integration",
+      "Production scale: 38 lines with ~2.1M pcs/month capacity",
+      "Workforce: 4,800+ skilled personnel",
+      "Real-time Water-saving technology monitoring",
+      "In-house specialized dyeing and finishing units",
+      "Advanced fashion-led program management",
+      "Strict quality control for high-end retail brands"
+    ],
+    "categories": [
+      "Fashion Knitwear",
+      "Technical Apparel",
+      "Loungewear",
+      "Kids Fashion"
+    ],
+    "contact": {
+      "hq": "South Shasogaon, Enayetnagar, Fatullah, Narayanganj, Bangladesh.",
+      "phone": "+880 2 1234567",
+      "email": "production@mbknit.com"
+    },
+    "certifications": [
+      "/certifications/16.png",
+      "/certifications/17.png",
+      "/certifications/18.png",
+      "/certifications/19.png",
+      "/certifications/20.png",
+      "/certifications/21.png",
+      "/certifications/7.png",
+      "/certifications/8.png",
+      "/certifications/9.png",
+      "/certifications/10.png"
+    ]
+  },
+  "lithe-group": {
+    "namePart1": "Lithe",
+    "namePart2": "Group",
+    "location": "Dhaka, Bangladesh",
+    "bannerImages": [
+      {
+        "image": "/banners/factory.webp",
+        "status": "active"
+      }
+    ],
+    "bannerVideos": [],
+    "stats": {
+      "workers": "5,700+",
+      "capacity": "4.0M",
+      "lines": "117",
+      "area": "380K"
+    },
+    "description": [
+      "Lithe Group is a vertically integrated powerhouse delivering high-volume retail programs for the world's most demanding markets.",
+      "With 117 production lines, we have the scale to support massive global rollouts while maintaining the boutique quality that defines the Matrix Platform.",
+      "Our ERP-driven real-time monitoring ensures full traceability from yarn sourcing to final dispatch, providing peace of mind for our global partners."
+    ],
+    "strengths": [
+      "Full vertical integration from knitting to garment",
+      "Knitting: 50 high-speed machines with ~18 tons/day capacity",
+      "Dyeing: 1,650 tons/month bulk capacity with 44 machines",
+      "Finishing: 65 tons/day processing capacity with advanced European machinery",
+      "AOP (All Over Print): 20 tons/day bulk + 250 kg sample capacity",
+      "Screen Print: ~300K pcs/day capacity with in-house setup",
+      "Cutting: 7 auto spreaders, 2 auto cutters, 18 cutting tables",
+      "Production scale: 117 lines with ~4M pcs/month capacity",
+      "Workforce: 5,700+ skilled manpower ensuring stable output",
+      "Real-time ERP-based production and efficiency monitoring",
+      "Proven export track record across EU, UK and USA",
+      "Experience in licensed and branded product manufacturing"
+    ],
+    "categories": [
+      "High Volume Basics",
+      "Retail Essentials",
+      "Sleepwear",
+      "Activewear"
+    ],
+    "contact": {
+      "hq": "Lithe Apparels Building, Dhaka-Mymensingh Road, Bangladesh.",
+      "phone": "+880 2 5550123",
+      "email": "admin@lithead-group.com"
+    },
+    "certifications": [
+      "/certifications/11.png",
+      "/certifications/12.png",
+      "/certifications/13.png",
+      "/certifications/14.png",
+      "/certifications/15.png",
+      "/certifications/16.png",
+      "/certifications/7.png",
+      "/certifications/8.png",
+      "/certifications/9.png",
+      "/certifications/10.png"
+    ]
+  },
+  "westknit": {
+    "namePart1": "Westknit",
+    "namePart2": "Fabric Ltd.",
+    "location": "Mymensingh, Bangladesh",
+    "bannerImages": [
+      {
+        "image": "/banners/factory.webp",
+        "status": "active"
+      }
+    ],
+    "bannerVideos": [],
+    "stats": {
+      "workers": "3,500+",
+      "capacity": "1.8M",
+      "lines": "30",
+      "area": "220K"
+    },
+    "description": [
+      "Westknit Fabric Ltd focuses on the heavy-duty segment of our catalog, including heavy fleeces and premium French terry products.",
+      "This facility is strategically located to leverage local resources while maintaining high export standards for our European clients.",
+      "Our state-of-the-art knitting unit at Westknit is optimized for energy efficiency and minimal waste, reflecting our group-wide sustainability goals."
+    ],
+    "strengths": [
+      "Heavy fleeces and premium French terry specialization",
+      "Energy-efficient knitting unit with minimal waste",
+      "Strategic location for resource optimization",
+      "Production scale: 30 lines with ~1.8M pcs/month capacity",
+      "Workforce: 3,500+ skilled manpower",
+      "High-speed knitting machines for heavy-duty fabric",
+      "Reliable export standards for European markets",
+      "In-house fabric testing and quality assurance",
+      "Stable production output for bottomwear programs"
+    ],
+    "categories": [
+      "Heavy Fleece",
+      "French Terry",
+      "Sweatwear",
+      "Bottomwear"
+    ],
+    "contact": {
+      "hq": "Industrial Zone, Mymensingh Road, Bangladesh.",
+      "phone": "+880 2 4440321",
+      "email": "contact@westknit.com"
+    },
+    "certifications": [
+      "/certifications/1.png",
+      "/certifications/2.png",
+      "/certifications/3.png",
+      "/certifications/4.png",
+      "/certifications/5.png",
+      "/certifications/6.png",
+      "/certifications/7.png",
+      "/certifications/8.png",
+      "/certifications/9.png",
+      "/certifications/10.png"
+    ]
+  },
+  "amante-brand": {
+    "namePart1": "Amanté",
+    "namePart2": "Brand (SL)",
+    "location": "Colombo, Sri Lanka",
+    "bannerImages": [
+      {
+        "image": "/banners/factory.webp",
+        "status": "active"
+      }
+    ],
+    "bannerVideos": [],
+    "stats": {
+      "workers": "2,200+",
+      "capacity": "1.2M",
+      "lines": "25",
+      "area": "180K"
+    },
+    "description": [
+      "Our Sri Lankan facility, Amanté Brand, is our center of excellence for technical lingerie and high-performance polyamide products.",
+      "Located in a BOI-approved zone, this unit combines Sri Lankan manufacturing craftsmanship with advanced technical capabilities for intimate apparel.",
+      "Amanté serves as our research and development hub for new material integrations and ergonomic design in the innerwear segment."
+    ],
+    "strengths": [
+      "Technical lingerie center of excellence",
+      "High-performance polyamide product capability",
+      "BOI-approved manufacturing strength (Sri Lanka)",
+      "Production scale: 25 lines with ~1.2M pcs/month capacity",
+      "Workforce: 2,200+ specialized craftsmanship",
+      "Advanced R&D hub for innerwear ergonomics",
+      "New material integrations and innovative fabric use",
+      "Strict quality control for technical intimates",
+      "Global export track record in performance wear"
+    ],
+    "categories": [
+      "Technical Lingerie",
+      "Polyamide Products",
+      "Intimate Apparel",
+      "Performance Wear"
+    ],
+    "contact": {
+      "hq": "BOI Industrial Zone, Katunayake, Sri Lanka.",
+      "phone": "+94 11 1234567",
+      "email": "support@amantebrand.lk"
+    },
+    "certifications": [
+      "/certifications/1.png",
+      "/certifications/2.png",
+      "/certifications/3.png",
+      "/certifications/4.png",
+      "/certifications/5.png",
+      "/certifications/6.png",
+      "/certifications/7.png",
+      "/certifications/8.png",
+      "/certifications/9.png",
+      "/certifications/10.png"
+    ]
+  }
+}

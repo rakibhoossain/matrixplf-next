@@ -15,7 +15,7 @@ export function WhoWeAreHeroSection() {
       {/* Background Image with Ken Burns Effect */}
       <div className="absolute inset-0 transition-opacity duration-1000 opacity-100">
         <Image
-          src="https://images.unsplash.com/photo-1504917595217-d4ce5eb96784?q=80&w=2070&auto=format&fit=crop"
+          src="/images/fashion-sketches.png"
           alt="Manufacturing operations"
           fill
           priority
@@ -24,8 +24,7 @@ export function WhoWeAreHeroSection() {
           style={{ animation: 'kenBurns 20s ease-out forwards' }}
         />
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-slate-950/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-black/70" />
       </div>
 
       {/* Content */}
@@ -34,40 +33,32 @@ export function WhoWeAreHeroSection() {
           <div className="max-w-4xl">
             {/* Main Heading */}
             <h1
-              className={`transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+              className={`transition-all duration-1000 uppercase ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
             >
-              <span className="block text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-none tracking-tight">
-                BUILT TO MANUFACTURE
+              <span className="block text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold text-white leading-[1.1] tracking-tight">
+                BUILT TO <span className="text-sky-500">MANUFACTURE</span>
               </span>
-              <span className="block text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-emerald-400 leading-none tracking-tight mt-2">
-                STRUCTURED TO DELIVER.
+              <span className="block text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold text-white leading-[1.1] tracking-tight">
+                <span className="text-sky-500">STRUCTURED</span> TO DELIVER
               </span>
             </h1>
 
             {/* Subtitle */}
             <div
-              className={`mt-8 space-y-4 max-w-2xl transition-all duration-1000 delay-300 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+              className={`mt-10 space-y-4 max-w-3xl transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
             >
-              <p className="text-xl md:text-2xl text-slate-300 font-medium leading-relaxed">
+              <p className="text-lg md:text-xl lg:text-2xl text-slate-200 font-medium leading-relaxed">
                 Matrix Apparels Is An Integrated Manufacturing Group That Owns Its Fabric Supply, Controls Its Production & Delivers Globally
               </p>
             </div>
-            
-            {/* Decorative line */}
-            <div 
-               className={`h-1 w-24 bg-emerald-500 mt-12 rounded-full transition-all duration-1000 delay-500 origin-left ${
-                isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-              }`}
-            />
           </div>
         </div>
       </div>
-      
-      <style dangerouslySetInnerHTML={{__html: `
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes kenBurns {
           0% { transform: scale(1); }
           100% { transform: scale(1.1); }

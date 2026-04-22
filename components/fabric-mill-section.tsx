@@ -52,15 +52,15 @@ export function FabricMillSection() {
       </div>
 
       {/* Animated gradient orbs */}
-      <div className="absolute top-10 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-10 left-10 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
       {/* Floating particles animation */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(6)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-emerald-400/30 rounded-full"
+            className="absolute w-2 h-2 bg-sky-400/30 rounded-full"
             style={{
               left: `${15 + i * 15}%`,
               top: `${20 + (i % 3) * 25}%`,
@@ -96,7 +96,7 @@ export function FabricMillSection() {
             {/* Overlay badge */}
             <div className="absolute bottom-5 left-5 right-5">
               <div className="flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
-                <Factory className="w-6 h-6 text-emerald-400" />
+                <Factory className="w-6 h-6 text-sky-400" />
                 <div>
                   <span className="text-white text-base font-semibold block">Zhejiang Monalisa Textile</span>
                   <span className="text-slate-300 text-sm">Shaoxing, China</span>
@@ -114,12 +114,12 @@ export function FabricMillSection() {
         >
           {/* Highlighted "OUR OWN FABRIC MILL" badge */}
           <div
-            className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 border-2 border-emerald-400/50 rounded-full mb-5 transition-all duration-700 ${
+            className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-sky-500/20 to-sky-600/20 border-2 border-sky-400/50 rounded-full mb-5 transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0 animate-pulse" : "opacity-0 translate-y-4"
             }`}
           >
-            <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span className="text-emerald-300 text-sm font-bold tracking-widest uppercase">OUR OWN FABRIC MILL</span>
+            <Sparkles className="w-4 h-4 text-sky-400" />
+            <span className="text-sky-300 text-sm font-bold tracking-widest uppercase">OUR OWN FABRIC MILL</span>
           </div>
           
           <h2
@@ -129,7 +129,7 @@ export function FabricMillSection() {
           >
             Flexibility in
             <br />
-            <span className="text-emerald-400">Every Thread</span>
+            <span className="text-sky-400">Every Thread</span>
           </h2>
 
           <p
@@ -137,8 +137,8 @@ export function FabricMillSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            We own <span className="font-bold text-emerald-400">30%</span> of <span className="font-bold text-white">Zhejiang Monalisa Textile</span> in 
-            Shaoxing, China, producing over <span className="font-bold text-emerald-400">3 million</span> metres 
+            We own <span className="font-bold text-sky-400">30%</span> of <span className="font-bold text-white">Zhejiang Monalisa Textile</span> in 
+            Shaoxing, China, producing over <span className="font-bold text-sky-400">3 million</span> metres 
             of fabric monthly seamlessly integrated with our 
             Bangladesh & Sri-Lanka manufacturing for faster, 
             more reliable production.
@@ -149,15 +149,15 @@ export function FabricMillSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}>
             <div className="text-center lg:text-right">
-              <p className="text-2xl font-bold text-emerald-400">30%</p>
+              <p className="text-2xl font-bold text-sky-400">30%</p>
               <p className="text-xs text-slate-400">Ownership</p>
             </div>
             <div className="text-center lg:text-right">
-              <p className="text-2xl font-bold text-emerald-400">3M+</p>
+              <p className="text-2xl font-bold text-sky-400">3M+</p>
               <p className="text-xs text-slate-400">Metres/Month</p>
             </div>
             <div className="text-center lg:text-right">
-              <p className="text-2xl font-bold text-emerald-400">3</p>
+              <p className="text-2xl font-bold text-sky-400">3</p>
               <p className="text-xs text-slate-400">Countries</p>
             </div>
           </div>
@@ -169,7 +169,7 @@ export function FabricMillSection() {
           >
             <Button
               size="lg"
-              className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 gap-2 rounded-lg shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300"
+              className="bg-sky-600 hover:bg-sky-500 text-white px-6 gap-2 rounded-lg shadow-lg shadow-sky-500/30 hover:shadow-sky-500/50 transition-all duration-300"
             >
               <Download className="w-4 h-4" />
               Download Profile

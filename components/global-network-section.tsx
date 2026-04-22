@@ -75,14 +75,14 @@ const pins = [
 
 export function GlobalNetworkSection() {
   return (
-    <section className="bg-[#212429] text-white relative overflow-hidden min-h-screen flex items-center">
+    <section className="bg-[#212429] text-white relative overflow-hidden min-h-screen flex items-center py-12 md:py-16 lg:py-24">
       <div className="container mx-auto px-6 max-w-[1400px]">
         {/* Header */}
-        <div className="text-center mb-16 relative z-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-[#4cb5e4] uppercase">
+        <div className="text-center mb-10 md:mb-16 relative z-20">
+          <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 tracking-tight text-[#4cb5e4] uppercase">
             One Integrated Group
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
             Our Infrastructure Was Built To Solve The Complexity Of Modern Apparel Sourcing
           </p>
         </div>
@@ -90,7 +90,7 @@ export function GlobalNetworkSection() {
         <div className="relative">
           {/* Map Overlay for Desktop Container */}
           <div className="absolute inset-0 z-0 hidden lg:flex items-center justify-center opacity-70 pointer-events-none">
-            <div className="relative w-full max-w-[1000px] aspect-[2/1]">
+            <div className="relative w-full max-w-[900px] aspect-[2/1]">
               <Image
                 src="/images/world-map.png"
                 alt="World Map"
@@ -122,44 +122,44 @@ export function GlobalNetworkSection() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_800px_1fr] xl:grid-cols-[1fr_900px_1fr] relative z-10 gap-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr_1fr] xl:grid-cols-[1fr_3fr_1fr] relative z-10 gap-6 lg:gap-8 items-center">
 
             {/* Left Column */}
-            <div className="space-y-6 lg:space-y-8 col-start-1">
+            <div className="space-y-4 md:space-y-6 lg:space-y-8 col-start-1">
               {leftNodes.map((node) => (
                 <div
                   key={node.id}
-                  className="relative group lg:w-96 ml-auto"
+                  className="relative group w-full max-w-sm mx-auto lg:ml-auto"
                 >
                   <div
-                    className="border-2 rounded-2xl p-6 bg-[#2a2e33]/90 backdrop-blur-md shadow-xl transition-transform hover:-translate-y-1 hover:shadow-2xl"
+                    className="border-2 rounded-2xl p-4 lg:p-6 bg-[#2a2e33]/90 backdrop-blur-md shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:bg-[#2a2e33]"
                     style={{ borderColor: node.color }}
                   >
-                    <h3 className="text-xl font-bold mb-1" style={{ color: node.color }}>{node.title}</h3>
-                    <h4 className="text-sm font-semibold mb-3 text-white">{node.location}</h4>
-                    <p className="text-sm text-gray-300 leading-relaxed font-light">{node.desc}</p>
+                    <h3 className="text-lg lg:text-xl font-bold mb-1" style={{ color: node.color }}>{node.title}</h3>
+                    <h4 className="text-xs lg:text-sm font-semibold mb-2 lg:mb-3 text-white">{node.location}</h4>
+                    <p className="text-xs lg:text-sm text-gray-300 leading-relaxed font-light">{node.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Spacer for the Map on Desktop */}
-            <div className="hidden lg:block col-start-2" />
+            <div className="hidden lg:block col-start-2 self-stretch" />
 
             {/* Right Column */}
-            <div className="space-y-6 lg:space-y-8 col-start-1 lg:col-start-3">
+            <div className="space-y-4 md:space-y-6 lg:space-y-8 col-start-1 md:col-start-2 lg:col-start-3">
               {rightNodes.map((node) => (
                 <div
                   key={node.id}
-                  className="relative group lg:w-96 mr-auto"
+                  className="relative group w-full max-w-sm mx-auto lg:mr-auto"
                 >
                   <div
-                    className="border-2 rounded-2xl p-6 bg-[#2a2e33]/90 backdrop-blur-md shadow-xl transition-transform hover:-translate-y-1 hover:shadow-2xl"
+                    className="border-2 rounded-2xl p-4 lg:p-6 bg-[#2a2e33]/90 backdrop-blur-md shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:bg-[#2a2e33]"
                     style={{ borderColor: node.color }}
                   >
-                    <h3 className="text-xl font-bold mb-1" style={{ color: node.color }}>{node.title}</h3>
-                    <h4 className="text-sm font-semibold mb-3 text-white">{node.location}</h4>
-                    <p className="text-sm text-gray-300 leading-relaxed font-light">{node.desc}</p>
+                    <h3 className="text-lg lg:text-xl font-bold mb-1" style={{ color: node.color }}>{node.title}</h3>
+                    <h4 className="text-xs lg:text-sm font-semibold mb-2 lg:mb-3 text-white">{node.location}</h4>
+                    <p className="text-xs lg:text-sm text-gray-300 leading-relaxed font-light">{node.desc}</p>
                   </div>
                 </div>
               ))}
@@ -168,7 +168,7 @@ export function GlobalNetworkSection() {
         </div>
 
         {/* Mobile Map (shows below header, above cards on small screens) */}
-        <div className="lg:hidden relative w-full aspect-[2/1] my-12 opacity-80 pointer-events-none">
+        <div className="lg:hidden relative w-full aspect-[2/1] my-8 opacity-80 pointer-events-none">
           <Image
             src="/images/world-map.png"
             alt="World Map"
