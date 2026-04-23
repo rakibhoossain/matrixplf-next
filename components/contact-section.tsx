@@ -38,12 +38,12 @@ const experts = [
   {
     name: "Shohel",
     title: "Managing Director",
-    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300&auto=format&fit=crop"
+    img: "/assets/bosses/shohel.png"
   },
   {
-    name: "Michael Hayles",
-    title: "Sourcing Director",
-    img: "https://images.unsplash.com/photo-1543610892-0b1f7e6d8c1c?q=80&w=300&auto=format&fit=crop"
+    name: "Tina Cocej",
+    title: "Director",
+    img: "/assets/bosses/tina.png"
   },
   {
     name: "Timo Karanko",

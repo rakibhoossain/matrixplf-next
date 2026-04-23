@@ -34,8 +34,8 @@ export default function CategoryCard({ name, image, link, className = "" }: Cate
       <Link href={link} className="flex flex-col w-full h-full">
         {/* Upper Image Section */}
         <div className="relative flex-grow overflow-hidden">
-          <motion.div 
-            style={{ y: springY }} 
+          <motion.div
+            style={{ y: springY }}
             className="absolute inset-x-0 -top-[10%] h-[120%]"
           >
             <Image
