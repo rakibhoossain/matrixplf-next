@@ -8,7 +8,7 @@ const initiatives = [
     id: "fabrics",
     title: "Fabrics",
     align: "left" as const,
-    image: "https://images.unsplash.com/photo-1590682680695-43b964a3ae17?q=80&w=1200&auto=format&fit=crop",
+    image: "/assets/sustainability/1.png",
     paragraphs: [
       {
         text: "We are producing and working with fabrics made with sustainable fibre that are better than conventional ones. Organic, fair trade, eco-friendly, non-toxic and low-impact dyes that use harmless chemicals reduce water waste and are safer for workers and better for the environment.",
@@ -26,7 +26,7 @@ const initiatives = [
     id: "caustic",
     title: "CAUSTIC RECOVERY PLANT",
     align: "right" as const,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
+    image: "/assets/sustainability/2.png",
     paragraphs: [
       {
         text: "Caustic soda (Sodium Hydroxide - NaOH) is one of the most commonly used and hazardous chemicals in the textile and garment industry.",
@@ -44,7 +44,7 @@ const initiatives = [
     id: "machines",
     title: "Machines",
     align: "left" as const,
-    image: "https://images.unsplash.com/photo-1598532213005-027cefaeb593?q=80&w=1200&auto=format&fit=crop",
+    image: "/assets/sustainability/3.png",
     paragraphs: [
       {
         text: "We have added laser machines for dry processes, replacing conventional methods such as PP spraying.",
@@ -62,7 +62,7 @@ const initiatives = [
     id: "water",
     title: "WATER TREATMENT PLANT",
     align: "right" as const,
-    image: "https://images.unsplash.com/photo-1518640059914-7226505ea5bf?q=80&w=1200&auto=format&fit=crop",
+    image: "/assets/sustainability/4.png",
     paragraphs: [
       {
         text: "We treat 100% of the water used in our textile and garment processing, removing all hazardous chemicals and materials. The treated water can be reused for various purposes, except for drinking.",

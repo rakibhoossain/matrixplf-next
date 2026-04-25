@@ -8,45 +8,63 @@ import { ChevronUp, ChevronDown } from "lucide-react"
 const timelineEvents = [
   {
     year: "2018",
-    title: "Foundation",
-    desc: "Matrix Apparels established with a vision to redefine manufacturing, starting with a core focus on quality and innovation.",
-    image: "https://images.unsplash.com/photo-1558444458-5c455962cb63?w=800&q=80"
+    title: "Company Foundation",
+    desc: "Matrix Apparels was established with a vision to build a quality-driven, innovation-led manufacturing platform.",
+    image: "/assets/company/2018.png"
   },
   {
     year: "2019",
-    title: "Expansion into Knitwear",
-    desc: "Launched dedicated knit facilities with advanced European machinery, diversifying our production capabilities.",
-    image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80"
+    title: "Knitwear Expansion",
+    desc: "Expanded into knitwear with advanced machinery, strengthening product capability and category diversification.",
+    image: "/assets/company/2019.jpg"
   },
   {
     year: "2020",
     title: "Vertical Integration",
-    desc: "Acquired own fabric supply network to ensure complete product control and superior material quality.",
-    image: "https://images.unsplash.com/photo-1544441893-675973e31985?w=800&q=80"
+    desc: "Strengthened control over fabric supply, ensuring improved quality, consistency, and faster execution.",
+    image: "/assets/company/2020.jpg"
   },
   {
     year: "2021",
-    title: "Sri Lanka Operations",
-    desc: "Expanded manufacturing footprint into Sri Lanka, focusing on specialized technical garments for global markets.",
-    image: "https://images.unsplash.com/photo-1605652613145-66236b92c422?w=800&q=80"
+    title: "Expansion into Sri Lanka",
+    desc: "Extended operations into Sri Lanka, focusing on technical and specialized apparel for global markets.",
+    image: "/assets/company/2021.jpg"
   },
   {
     year: "2022",
-    title: "Sustainability 2.0",
-    desc: "Implemented comprehensive eco-friendly production systems, reducing our carbon footprint across all facilities.",
-    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80"
+    title: "Sustainability & Process Advancement",
+    desc: "Implemented responsible production practices, enhancing efficiency, reducing environmental impact, and reinforcing compliance standards.",
+    image: "/assets/company/2022.jpg"
   },
   {
     year: "2023",
-    title: "Global Expansion",
-    desc: "Opened strategic hubs in Hong Kong and Slovenia, enhancing our logistics and trade finance capabilities.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
+    title: "Global Infrastructure Development",
+    desc: "Established presence in Hong Kong and Slovenia, strengthening trade finance, logistics, and international operations.",
+    image: "/assets/company/2023.png"
   },
-]
+  {
+    year: "2024",
+    title: "Retail Expansion",
+    desc: "Expanded into direct retail across European markets, building strong market insight and end-to-end product understanding.",
+    image: "/assets/company/2024.jpg"
+  },
+  {
+    year: "2025",
+    title: "Integrated Platform Strengthening",
+    desc: "Further aligned fabric, production, and logistics into a more efficient and scalable global supply chain.",
+    image: "/assets/company/2025.png"
+  },
+  {
+    year: "2026",
+    title: "Platform Evolution",
+    desc: "Evolved into a fully integrated global platform — connecting design, sourcing, manufacturing, and retail into one seamless ecosystem.",
+    image: "/assets/company/2026.jpg"
+  }
+];
 
 export function WhoWeAreTimelineSection() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [direction, setDirection] = useState(0) // 1 for down, -1 for up
+  const [direction, setDirection] = useState(0)
 
   const handleNext = () => {
     if (activeIndex < timelineEvents.length - 2) {
@@ -80,8 +98,8 @@ export function WhoWeAreTimelineSection() {
   }
 
   return (
-    <section className="py-24 lg:py-32 bg-white relative overflow-hidden min-h-[900px]">
-      <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
+    <section className="py-24 lg:py-32 bg-[#0d1420] relative overflow-hidden min-h-[900px]">
+      <div className="container mx-auto px-6 lg:px-12">
 
         {/* Header */}
         <div className="text-center mb-16">
@@ -89,14 +107,14 @@ export function WhoWeAreTimelineSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-300"
           >
             Explore our <span className="text-[#2EA3F2]">Growth</span>
           </motion.h2>
         </div>
 
         {/* Timeline Navigation */}
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative max-w-full mx-auto">
 
           {/* Controls */}
           <div className="absolute left-1/2 -translate-x-1/2 -top-12 z-30 flex flex-col gap-2">
@@ -104,8 +122,8 @@ export function WhoWeAreTimelineSection() {
               onClick={handlePrev}
               disabled={activeIndex === 0}
               className={`p-2 rounded-full border transition-all ${activeIndex === 0
-                ? "border-slate-100 text-slate-200 cursor-not-allowed"
-                : "border-slate-200 text-slate-400 hover:text-[#2EA3F2] hover:border-[#2EA3F2] hover:bg-sky-50 shadow-sm"
+                ? "border-white/5 text-slate-700 cursor-not-allowed"
+                : "border-white/10 text-slate-400 hover:text-[#2EA3F2] hover:border-[#2EA3F2] hover:bg-white/5 shadow-sm"
                 }`}
             >
               <ChevronUp className="w-6 h-6" />
@@ -117,8 +135,8 @@ export function WhoWeAreTimelineSection() {
               onClick={handleNext}
               disabled={activeIndex >= timelineEvents.length - 2}
               className={`p-2 rounded-full border transition-all animate-bounce ${activeIndex >= timelineEvents.length - 2
-                ? "border-slate-100 text-slate-200 cursor-not-allowed animate-none"
-                : "border-slate-200 text-slate-400 hover:text-[#2EA3F2] hover:border-[#2EA3F2] hover:bg-sky-50 shadow-sm"
+                ? "border-white/5 text-slate-700 cursor-not-allowed animate-none"
+                : "border-white/10 text-slate-400 hover:text-[#2EA3F2] hover:border-[#2EA3F2] hover:bg-white/5 shadow-sm"
                 }`}
             >
               <ChevronDown className="w-6 h-6" />
@@ -126,7 +144,7 @@ export function WhoWeAreTimelineSection() {
           </div>
 
           {/* Central Vertical Line */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-slate-100 hidden md:block" />
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-white/5 hidden md:block" />
           <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-[#2EA3F2]/20 hidden md:block" />
 
           {/* Items Container */}
@@ -143,10 +161,9 @@ export function WhoWeAreTimelineSection() {
                   y: { type: "spring", stiffness: 300, damping: 30 },
                   opacity: { duration: 0.4 }
                 }}
-                className="space-y-24 pt-10"
+                className="space-y-12 pt-10"
               >
                 {visibleEvents.map((event, idx) => {
-                  // Determine if item is even/odd based on its actual index in timelineEvents
                   const actualIdx = activeIndex + idx
                   const isEven = actualIdx % 2 === 0
 
@@ -159,32 +176,31 @@ export function WhoWeAreTimelineSection() {
 
                         {/* Text Side */}
                         <div className="w-full md:w-1/2 relative">
-                          <span className="absolute -top-12 left-0 text-8xl lg:text-9xl font-black text-slate-50 select-none -z-10 tracking-tighter">
+                          <span className="absolute -top-12 left-0 text-8xl lg:text-9xl font-black text-white/5 select-none -z-10 tracking-tighter">
                             {event.year}
                           </span>
 
                           <div className="relative z-10 pt-4">
                             <div className="flex items-center gap-4 mb-4">
                               <span className="text-[#2EA3F2] font-bold text-3xl">{event.year}</span>
-                              <div className="h-px flex-1 bg-slate-100 md:hidden" />
+                              <div className="h-px flex-1 bg-white/5 md:hidden" />
                             </div>
-                            <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">{event.title}</h3>
-                            <p className="text-slate-600 text-lg leading-relaxed line-clamp-3">
+                            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">{event.title}</h3>
+                            <p className="text-slate-400 text-lg leading-relaxed line-clamp-3">
                               {event.desc}
                             </p>
                           </div>
                         </div>
 
-                        {/* Image Side */}
                         <div className="w-full md:w-1/2">
-                          <div className="relative h-[220px]  overflow-hidden shadow-2xl shadow-slate-200/50 group">
+                          <div className="relative h-[200px] md:h-[240px] lg:h-[260px] rounded-2xl overflow-hidden shadow-2xl group">
                             <Image
                               src={event.image}
                               alt={event.title}
                               fill
                               className="object-cover transition-transform duration-700 group-hover:scale-110"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0d1420]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                           </div>
                         </div>
 

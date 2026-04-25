@@ -348,5 +348,62 @@
       "/certifications/9.png",
       "/certifications/10.png"
     ]
+  },
+  "aitken-spence-apparel": {
+    "namePart1": "Aitken",
+    "namePart2": "Spence Apparel",
+    "location": "Colombo, Sri Lanka",
+    "bannerImages": [
+      {
+        "image": "/banners/factory.webp",
+        "status": "active"
+      }
+    ],
+    "bannerVideos": [],
+    "stats": {
+      "workers": "2,200+",
+      "capacity": "1.2M",
+      "lines": "25",
+      "area": "180K"
+    },
+    "description": [
+      "Our Sri Lankan facility, Amanté Brand, is our center of excellence for technical lingerie and high-performance polyamide products.",
+      "Located in a BOI-approved zone, this unit combines Sri Lankan manufacturing craftsmanship with advanced technical capabilities for intimate apparel.",
+      "Amanté serves as our research and development hub for new material integrations and ergonomic design in the innerwear segment."
+    ],
+    "strengths": [
+      "Technical lingerie center of excellence",
+      "High-performance polyamide product capability",
+      "BOI-approved manufacturing strength (Sri Lanka)",
+      "Production scale: 25 lines with ~1.2M pcs/month capacity",
+      "Workforce: 2,200+ specialized craftsmanship",
+      "Advanced R&D hub for innerwear ergonomics",
+      "New material integrations and innovative fabric use",
+      "Strict quality control for technical intimates",
+      "Global export track record in performance wear"
+    ],
+    "categories": [
+      "Technical Lingerie",
+      "Polyamide Products",
+      "Intimate Apparel",
+      "Performance Wear"
+    ],
+    "contact": {
+      "hq": "BOI Industrial Zone, Katunayake, Sri Lanka.",
+      "phone": "+94 11 1234567",
+      "email": "support@amantebrand.lk"
+    },
+    "certifications": [
+      "/certifications/1.png",
+      "/certifications/2.png",
+      "/certifications/3.png",
+      "/certifications/4.png",
+      "/certifications/5.png",
+      "/certifications/6.png",
+      "/certifications/7.png",
+      "/certifications/8.png",
+      "/certifications/9.png",
+      "/certifications/10.png"
+    ]
   }
 }

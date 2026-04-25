@@ -12,7 +12,7 @@ export default function WhatWeDoPage() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/corporate-office.png"
+                        src="/hero/what-we-do-hero.png"
                         alt="Corporate Office"
                         fill
                         className="object-cover opacity-60"
@@ -60,7 +60,7 @@ export default function WhatWeDoPage() {
                             id={service.title.toLowerCase().replace(/\s+/g, '-')}
                             className={`w-full bg-[#1a1d21] py-4 lg:py-8 border-b-[18px] border-white ${index === upsc.length - 1 ? 'border-b-0' : ''}`}
                         >
-                            <div className="container mx-auto px-6 lg:px-12">
+                            <div className="container mx-auto">
                                 <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-between gap-12 lg:gap-20`}>
                                     <div className={`w-full md:w-1/2 space-y-6 ${!isEven ? 'flex flex-col items-start md:items-end text-left md:text-right' : ''}`}>
                                         <div className="inline-block bg-[#4cb5e4] text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">

@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react"
 
 const stats = [
   {
-    value: 5,
+    value: 6,
     suffix: "+",
     label: "Manufacturing Units Across",
-    sublabel: "3 Countries",
+    sublabel: "6 Countries",
   },
   {
     value: 37,
@@ -35,25 +35,25 @@ const stats = [
   },
 ]
 
-function AnimatedCounter({ 
-  value, 
-  suffix, 
-  isVisible 
-}: { 
+function AnimatedCounter({
+  value,
+  suffix,
+  isVisible
+}: {
   value: number
   suffix: string
-  isVisible: boolean 
+  isVisible: boolean
 }) {
   const [count, setCount] = useState(0)
-  
+
   useEffect(() => {
     if (!isVisible) return
-    
+
     const duration = 2000
     const steps = 60
     const stepValue = value / steps
     const stepDuration = duration / steps
-    
+
     let current = 0
     const timer = setInterval(() => {
       current += stepValue
@@ -64,10 +64,10 @@ function AnimatedCounter({
         setCount(Math.floor(current))
       }
     }, stepDuration)
-    
+
     return () => clearInterval(timer)
   }, [value, isVisible])
-  
+
   return (
     <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
       {count}{suffix}
@@ -79,16 +79,16 @@ function AnimatedCounter({
 function MovingBackground() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [scrollOffset, setScrollOffset] = useState(0)
-  
+
   // Auto-scroll animation
   useEffect(() => {
     let animationId: number
     let lastTime = performance.now()
-    
+
     const animate = (currentTime: number) => {
       const delta = (currentTime - lastTime) / 1000
       lastTime = currentTime
-      
+
       // Scroll speed: pixels per second (negative = scroll left)
       setScrollOffset(prev => {
         const newOffset = prev - delta * 30 // 30 pixels per second
@@ -96,33 +96,33 @@ function MovingBackground() {
         if (newOffset < -200) return 0
         return newOffset
       })
-      
+
       animationId = requestAnimationFrame(animate)
     }
-    
+
     animate(performance.now())
     return () => cancelAnimationFrame(animationId)
   }, [])
-  
+
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden bg-[#0a1628]">
       {/* Base gradient */}
-      <div 
+      <div
         className="absolute inset-0"
         style={{
           background: 'linear-gradient(135deg, #0a1628 0%, #0f2847 50%, #0a1628 100%)',
         }}
       />
-      
+
       {/* World map - auto scrolling horizontally */}
-      <div 
+      <div
         className="absolute inset-[-100px] flex items-center justify-center"
         style={{
           transform: `translateX(${scrollOffset}px)`,
         }}
       >
-        <img 
-          src="/images/world-map.png" 
+        <img
+          src="/images/world-map.png"
           alt=""
           className="w-[120%] h-full object-cover opacity-30"
           style={{
@@ -130,8 +130,8 @@ function MovingBackground() {
           }}
         />
       </div>
-      
-      
+
+
     </div>
   )
 }
@@ -158,22 +158,21 @@ export function StatsSection() {
   }, [])
 
   return (
-    <section 
-      ref={sectionRef} 
-      id="who-we-are" 
+    <section
+      ref={sectionRef}
+      id="who-we-are"
       className="relative py-12 lg:py-16 overflow-hidden"
     >
       {/* Interactive Moving Background */}
       <MovingBackground />
-      
+
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-16">
           <h2
-            className={`text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
             style={{ fontFamily: "'Arial Black', 'Helvetica Bold', sans-serif" }}
           >
             VERTICALLY INTEGRATED PARTNER
@@ -185,16 +184,15 @@ export function StatsSection() {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`text-center transition-all duration-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-              }`}
+              className={`text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                }`}
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               {/* Number */}
               <div className="mb-2">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} isVisible={isVisible} />
               </div>
-              
+
               {/* Label */}
               <div className="max-w-[140px] mx-auto">
                 <p className="text-sm font-semibold text-sky-200">{stat.label}</p>

@@ -8,7 +8,7 @@ import { Reveal } from "@/components/Reveal"
 const teamMembers = [
   {
     id: 1,
-    name: "Shohel",
+    name: "Al Amin Shohel",
     role: "Managing Director",
     linkedin: "https://www.linkedin.com/in/md-al-amin-2a38b727/",
     image: "/assets/bosses/shohel.jpg",
@@ -23,14 +23,14 @@ const teamMembers = [
   {
     id: 3,
     name: "Michael Hayles",
-    role: "Sourcing Director",
+    role: "Director, Global Sales",
     linkedin: "https://www.linkedin.com/in/michael-hayles-60888722/",
     image: "/assets/bosses/michael.png",
   },
   {
     id: 4,
     name: "Timo Karanko",
-    role: "Buying Director",
+    role: "Director, Commercial",
     linkedin: "https://www.linkedin.com/in/timo-karanko/",
     image: "/assets/bosses/timo.png",
   }
@@ -75,7 +75,7 @@ export function ConnectUs() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 lg:gap-2">
           {teamMembers.map((member, idx) => (
             <Reveal key={member.id} delay={0.1 * (idx + 1)}>
               <div className="group relative flex flex-col h-full rounded overflow-hidden shadow-xl shadow-slate-200">
@@ -97,7 +97,7 @@ export function ConnectUs() {
                     <h3 className="text-white font-bold text-xl mb-1 truncate">
                       {member.name}
                     </h3>
-                    <p className="text-slate-400 text-sm font-medium uppercase tracking-wider">
+                    <p className="text-slate-400 text-xs font-medium capitalize tracking-wider">
                       {member.role}
                     </p>
                   </div>

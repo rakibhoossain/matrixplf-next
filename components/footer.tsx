@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button"
 
 const footerLinks = {
   company: [
-    { label: "About Us", href: "/who-we-are" },
-    { label: "Our Team", href: "#team" },
-    { label: "Careers", href: "#careers" },
-    { label: "News", href: "#news" },
+    { label: "Who We Are", href: "/who-we-are" },
+    { label: "What We Do", href: "/what-we-do" },
+    { label: "Brand", href: "/brands" },
+    { label: "Products", href: "/product" },
+
   ],
   services: [
     { label: "Manufacturing", href: "what-we-do" },
@@ -41,9 +42,9 @@ export function Footer() {
     <footer className="bg-zinc-950 text-white border-t border-white/5">
       {/* Main Footer */}
       <div className="container mx-auto px-6 lg:px-12 py-10 lg:py-14">
-        <div className="grid lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
+          <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="group">
               <img src="/Matrix-Platform-Logo.png" alt="Logo" loading="lazy" className="h-20 w-auto object-contain" />
             </Link>

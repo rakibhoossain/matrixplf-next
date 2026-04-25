@@ -15,16 +15,12 @@ export function SustainabilityHeroSection() {
       {/* Top Banner */}
       <section className="relative h-[65vh] min-h-[500px] w-full overflow-hidden bg-[#0A1622]">
         {/* Background Image with Ken Burns Effect */}
-        <div className="absolute inset-0 transition-opacity duration-1000 opacity-100">
+        <div className="absolute inset-0 ">
           <img
-            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop"
-            alt="Hands holding green earth"
-            className="object-cover w-full h-full scale-105 animate-slow-zoom"
-            style={{ animation: 'kenBurns 20s ease-out forwards' }}
+            src="/hero/sustainability.jpg"
+            alt="Sustainability at Matrix"
+            className="object-cover w-full h-full "
           />
-          {/* Gradients */}
-          <div className="absolute inset-0 bg-[#0B2129]/60 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1622]/80 via-[#0A1622]/30 to-[#0A1622]/90" />
         </div>
 
         {/* Content */}

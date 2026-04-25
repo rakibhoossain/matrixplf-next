@@ -30,13 +30,12 @@ export function FabricMillSection() {
     <section ref={sectionRef} className="relative min-h-[60vh] lg:min-h-[70vh] overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Background texture */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItSDJ2LTJoMzR6bTAtNHYySDJ2LTJoMzR6bTAtNHYySDJ2LTJoMzR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-50" />
-      
+
       {/* World Map Background with Animation - Moving left to right */}
       <div className="absolute inset-0 overflow-hidden">
-        <div 
-          className={`absolute inset-0 transition-all duration-[20s] ease-linear ${
-            isVisible ? "translate-x-0" : "-translate-x-20"
-          }`}
+        <div
+          className={`absolute inset-0 transition-all duration-[20s] ease-linear ${isVisible ? "translate-x-0" : "-translate-x-20"
+            }`}
           style={{
             animation: isVisible ? "slideMap 30s linear infinite" : "none"
           }}
@@ -73,12 +72,11 @@ export function FabricMillSection() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12 py-12 lg:py-16 flex flex-col lg:flex-row items-center justify-between gap-10 min-h-[50vh] lg:min-h-[60vh]">
-        
+
         {/* Left Side - Fabric Mill Image with animation - LARGER */}
         <div
-          className={`w-full lg:w-1/2 xl:w-[55%] transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
-          }`}
+          className={`w-full lg:w-1/2 xl:w-[55%] transition-all duration-1000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+            }`}
         >
           <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10 group">
             <div className="relative h-80 md:h-96 lg:h-[450px] xl:h-[500px]">
@@ -92,7 +90,7 @@ export function FabricMillSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
             </div>
-            
+
             {/* Overlay badge */}
             <div className="absolute bottom-5 left-5 right-5">
               <div className="flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
@@ -107,25 +105,22 @@ export function FabricMillSection() {
         </div>
 
         {/* Right Side Text Content */}
-        <div 
-          className={`w-full lg:w-1/2 xl:w-[45%] lg:text-right transition-all duration-1000 delay-200 ${
-            isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
-          }`}
+        <div
+          className={`w-full lg:w-1/2 xl:w-[45%] lg:text-right transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+            }`}
         >
           {/* Highlighted "OUR OWN FABRIC MILL" badge */}
           <div
-            className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-sky-500/20 to-sky-600/20 border-2 border-sky-400/50 rounded-full mb-5 transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0 animate-pulse" : "opacity-0 translate-y-4"
-            }`}
+            className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-sky-500/20 to-sky-600/20 border-2 border-sky-400/50 rounded-full mb-5 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0 animate-pulse" : "opacity-0 translate-y-4"
+              }`}
           >
             <Sparkles className="w-4 h-4 text-sky-400" />
             <span className="text-sky-300 text-sm font-bold tracking-widest uppercase">OUR OWN FABRIC MILL</span>
           </div>
-          
+
           <h2
-            className={`text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight transition-all duration-700 delay-100 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
+            className={`text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
           >
             Flexibility in
             <br />
@@ -133,39 +128,35 @@ export function FabricMillSection() {
           </h2>
 
           <p
-            className={`text-base lg:text-lg text-slate-300 leading-relaxed mb-6 transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
+            className={`text-base lg:text-lg text-slate-300 leading-relaxed mb-6 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
           >
-            We own <span className="font-bold text-sky-400">30%</span> of <span className="font-bold text-white">Zhejiang Monalisa Textile</span> in 
-            Shaoxing, China, producing over <span className="font-bold text-sky-400">3 million</span> metres 
-            of fabric monthly seamlessly integrated with our 
-            Bangladesh & Sri-Lanka manufacturing for faster, 
-            more reliable production.
+            A Fully Integrated Fabric Powerhouse
+            With a strategic stake in Zhejiang Monalisa Textile, producing over<span className="font-bold text-sky-400">3 million</span> meters of fabric monthly, we operate a vertically integrated textile platform covering fabric R&D, weaving, knitting, dyeing, printing, and finishing, delivering consistent quality and scalable production for global apparel supply chains.
           </p>
 
           {/* Stats row */}
-          <div className={`flex justify-end gap-6 mb-6 transition-all duration-700 delay-300 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}>
-            <div className="text-center lg:text-right">
-              <p className="text-2xl font-bold text-sky-400">30%</p>
-              <p className="text-xs text-slate-400">Ownership</p>
+          <div className={`flex items-start justify-start md:justify-end gap-4 md:gap-8 mb-10 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}>
+            <div className="text-left md:text-right">
+              <p className="text-2xl md:text-3xl font-bold text-sky-400">800+</p>
+              <p className="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider">Skilled Workforce</p>
             </div>
-            <div className="text-center lg:text-right">
-              <p className="text-2xl font-bold text-sky-400">3M+</p>
-              <p className="text-xs text-slate-400">Metres/Month</p>
+            <div className="w-px h-8 bg-white/10" />
+            <div className="text-left md:text-right">
+              <p className="text-2xl md:text-3xl font-bold text-sky-400">6+</p>
+              <p className="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider">Units</p>
             </div>
-            <div className="text-center lg:text-right">
-              <p className="text-2xl font-bold text-sky-400">3</p>
-              <p className="text-xs text-slate-400">Countries</p>
+            <div className="w-px h-8 bg-white/10" />
+            <div className="text-center md:text-right">
+              <p className="text-2xl md:text-3xl font-bold text-sky-400">6</p>
+              <p className="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider">Countries</p>
             </div>
           </div>
 
           <div
-            className={`flex lg:justify-end transition-all duration-700 delay-400 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
+            className={`flex lg:justify-end transition-all duration-700 delay-400 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
           >
             <Button
               size="lg"

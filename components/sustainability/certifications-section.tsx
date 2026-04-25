@@ -64,7 +64,7 @@ export function SustainabilityCertificationsSection() {
 
         {/* 4x4 Grid of Logos */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-3 md:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
+          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
             {certifications.map((cert, idx) => (
               <div
                 key={idx}

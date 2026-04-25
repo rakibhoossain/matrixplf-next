@@ -15,16 +15,14 @@ export function WhoWeAreHeroSection() {
       {/* Background Image with Ken Burns Effect */}
       <div className="absolute inset-0 transition-opacity duration-1000 opacity-100">
         <Image
-          src="/images/fashion-sketches.png"
+          src="/hero/who-we-are.jpg"
           alt="Manufacturing operations"
           fill
           priority
           loading="eager"
-          className="object-cover scale-105 animate-slow-zoom"
-          style={{ animation: 'kenBurns 20s ease-out forwards' }}
+          className="object-cover"
         />
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/70" />
+
       </div>
 
       {/* Content */}

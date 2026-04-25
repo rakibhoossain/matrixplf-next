@@ -12,7 +12,7 @@ const ownBrands = [
     desc: "A European menswear brand registered and distributed across 16 EU countries. The range covers casual knitwear, outerwear, and accessories at accessible price points.",
     linkText: "EXPLORE BRAND",
     link: "https://pantoneclo.si",
-    image: "https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=1200&auto=format&fit=crop", // two men walking
+    image: "/assets/brand/Pantoneclo.jpg", // two men walking
     align: "right"
   },
   {
@@ -22,17 +22,17 @@ const ownBrands = [
     desc: "A European womenswear brand developed and distributed across EU markets, built on a strong understanding of consumer demand, product positioning, and market trends. From concept and design to production and retail distribution, the brand reflects our capability to develop and scale products across diverse categories with commercial relevance.",
     linkText: "EXPLORE BRAND",
     link: "https://pantoneclo.si",
-    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1200&auto=format&fit=crop", // two women active
+    image: "/assets/brand/Leafletic.jpg", // two women active
     align: "left"
   },
   {
     name: "amanté",
     logo: "/New_logo_with_anagram_black.webp",
     category: "Lingerie",
-    desc: "Established lingerie brand with technical bra construction. High size inclusivity & mid-market positioning.",
+    desc: "A specialized lingerie brand focused on technical construction, fit accuracy, and market relevance. It represents our capability to deliver complex, high-value product categories from development to retail scale.",
     linkText: "EXPLORE BRAND",
     link: "https://www.amantelingerie.in/",
-    image: "https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1200&auto=format&fit=crop", // mannequins/lingerie aesthetic
+    image: "/assets/brand/amantais.jpg", // mannequins/lingerie aesthetic
     align: "right"
   }
 ]

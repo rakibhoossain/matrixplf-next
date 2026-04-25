@@ -13,7 +13,8 @@ const bangladeshCompanies = [
 ]
 
 const sriLankaCompanies = [
-  { name: "Amanté Brand", url: "/factory/amante-brand" },
+  // { name: "Amanté Brand", url: "/factory/amante-brand" },
+  { name: "Aitken Spence Apparel", url: "/factory/aitken-spence-apparel" }
 ]
 
 export function ManufacturingSection() {
@@ -110,7 +111,7 @@ export function ManufacturingSection() {
               <MapPin className="w-5 h-5 text-sky-400" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-white">2</p>
+              <p className="text-2xl font-bold text-white">6</p>
               <p className="text-white/60 text-sm">Countries</p>
             </div>
           </div>
@@ -176,12 +177,12 @@ export function ManufacturingSection() {
                   <a
                     key={company.name}
                     href={company.url}
-                    className={`group/link inline-flex items-center gap-2 px-4 py-2 bg-slate-900/40 hover:bg-slate-900/60 text-white hover:text-sky-300 text-sm font-medium rounded-lg transition-all duration-300 cursor-pointer border border-white/10 hover:border-sky-500/50 hover:shadow-[0_0_15px_rgba(14,165,233,0.3)] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                    className={`group/link inline-flex items-center gap-2 px-6 py-3 bg-slate-900/40 hover:bg-slate-900/60 text-white hover:text-sky-300 text-sm font-medium rounded-lg transition-all duration-150 cursor-pointer border border-white/10 hover:border-sky-500/50 hover:shadow-[0_0_15px_rgba(14,165,233,0.3)] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                       }`}
                     style={{ transitionDelay: `${500 + index * 50}ms` }}
                   >
                     {company.name}
-                    <ArrowUpRight className="w-4 h-4 text-sky-400 opacity-0 group-hover/link:opacity-100 transition-all duration-300" />
+                    <ArrowUpRight className="w-4 h-4 text-sky-400 opacity-0 group-hover/link:opacity-100 transition-all duration-150" />
                   </a>
                 ))}
               </div>
@@ -220,12 +221,12 @@ export function ManufacturingSection() {
                   <a
                     key={company.name}
                     href={company.url}
-                    className={`group/link inline-flex items-center gap-2 px-4 py-2 bg-slate-900/40 hover:bg-slate-900/60 text-white hover:text-sky-300 text-sm font-medium rounded-lg transition-all duration-300 cursor-pointer border border-white/10 hover:border-sky-500/50 hover:shadow-[0_0_15px_rgba(14,165,233,0.3)] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                    className={`group/link inline-flex items-center gap-2 px-6 py-3 bg-slate-900/40 hover:bg-slate-900/60 text-white hover:text-sky-300 text-sm font-medium rounded-lg transition-all duration-150 cursor-pointer border border-white/10 hover:border-sky-500/50 hover:shadow-[0_0_15px_rgba(14,165,233,0.3)] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                       }`}
                     style={{ transitionDelay: `${600 + index * 50}ms` }}
                   >
                     {company.name}
-                    <ArrowUpRight className="w-4 h-4 text-sky-400 opacity-0 group-hover/link:opacity-100 transition-all duration-300" />
+                    <ArrowUpRight className="w-4 h-4 text-sky-400 opacity-0 group-hover/link:opacity-100 transition-all duration-150" />
                   </a>
                 ))}
               </div>

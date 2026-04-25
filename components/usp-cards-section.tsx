@@ -165,15 +165,15 @@ export function USPCardsSection() {
                     <div className={`mt-8 h-1 w-12 rounded-full bg-gradient-to-r ${card.gradient} opacity-50 group-hover:w-full group-hover:opacity-100 transition-all duration-700`} />
                   </div>
                 </Link>
-              </div>
+                l              </div>
             ))}
           </div>
         </div>
       </div>
 
       {/* Manual Navigation and Progress */}
-      <div className="container mx-auto px-6 lg:px-12 mt-16 relative z-10">
-        <div className="flex items-center justify-center gap-8">
+      <div className="container mx-auto px-6 lg:px-12 mt-4 relative z-10">
+        <div className="flex items-center justify-center gap-4">
           <button
             onClick={() => handleManualScroll('prev')}
             className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-sky-500 hover:border-sky-500 transition-all group"
