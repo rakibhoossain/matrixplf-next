@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import { Leaf, Droplet, Recycle, FlaskConical, Bot, Droplets } from "lucide-react"
 
 const initiatives = [
@@ -74,28 +73,8 @@ const initiatives = [
 ]
 
 export function SustainabilityInitiativesSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <section ref={sectionRef} className="w-full bg-white flex flex-col font-sans">
+    <section className="w-full bg-white flex flex-col font-sans">
 
       <style dangerouslySetInnerHTML={{
         __html: `
@@ -105,7 +84,7 @@ export function SustainabilityInitiativesSection() {
         }
       `}} />
 
-      {initiatives.map((item, idx) => {
+      {initiatives.map((item) => {
         const isLeftAlign = item.align === 'left'
 
         return (

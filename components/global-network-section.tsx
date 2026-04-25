@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useEffect, useRef, useState } from "react"
 
 const leftNodes = [
   {
@@ -84,25 +83,8 @@ const rightNodes = [
 const allNodes = [...leftNodes, ...rightNodes];
 
 export function GlobalNetworkSection() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       className="bg-[#0b121f] py-20 lg:py-32 relative overflow-hidden"
       id="network"
     >

@@ -1,7 +1,6 @@
 "use client"
 
 import CategorySection from "@/components/CategorySection"
-import { motion } from "framer-motion"
 
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"

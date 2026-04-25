@@ -1,8 +1,6 @@
 "use client"
 
-import React from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
 import { Reveal } from "@/components/Reveal"
 import { ArrowRight } from "lucide-react"
 

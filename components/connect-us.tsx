@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import { Linkedin } from "lucide-react"
 import Image from "next/image"
 import { Reveal } from "@/components/Reveal"
@@ -37,28 +36,8 @@ const teamMembers = [
 ]
 
 export function ConnectUs() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <section ref={sectionRef} className="py-8 bg-[#ece9e9]">
+    <section className="py-8 bg-[#ece9e9]">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="mb-16">

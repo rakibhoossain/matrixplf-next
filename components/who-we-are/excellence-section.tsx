@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { ShieldCheck, Factory, TrendingUp } from "lucide-react"
 
 export function WhoWeAreExcellenceSection() {
   const [isVisible, setIsVisible] = useState(false)

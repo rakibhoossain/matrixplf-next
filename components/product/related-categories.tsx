@@ -1,11 +1,10 @@
 "use client"
 
-import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Reveal } from "@/components/Reveal"
 import { ArrowRight } from "lucide-react"
-import { categories, Category } from "@/lib/data"
+import { categories } from "@/lib/data"
 
 interface RelatedCategoriesProps {
   currentCategorySlug: string

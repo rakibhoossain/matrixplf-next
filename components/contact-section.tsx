@@ -1,8 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { MapPin, Phone, Mail, Clock, Send, ArrowRight } from "lucide-react"
-import { ConnectUs } from "./connect-us"
+import { MapPin, Phone, Mail, Send } from "lucide-react"
 const offices = [
   {
     city: "Hong Kong",
@@ -34,24 +33,6 @@ const offices = [
   },
 ]
 
-const experts = [
-  {
-    name: "Shohel",
-    title: "Managing Director",
-    img: "/assets/bosses/shohel.png"
-  },
-  {
-    name: "Tina Cocej",
-    title: "Director",
-    img: "/assets/bosses/tina.png"
-  },
-  {
-    name: "Timo Karanko",
-    title: "Buying Director",
-    img: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=300&auto=format&fit=crop"
-  }
-]
-
 export function ContactSection() {
   const [isVisible, setIsVisible] = useState(false)
   const [formData, setFormData] = useState({
@@ -81,7 +62,6 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log(formData)
   }
 
   return (

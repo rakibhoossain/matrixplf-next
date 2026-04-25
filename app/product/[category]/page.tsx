@@ -1,10 +1,7 @@
-"use client"
-
-import { useParams, notFound } from "next/navigation"
+import { notFound } from "next/navigation"
 import { categories } from "@/lib/data"
 import Image from "next/image"
-import { motion } from "framer-motion"
-import { ArrowLeft, ShoppingBag } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { Reveal } from "@/components/Reveal"
 import { Header } from "@/components/header"
@@ -13,9 +10,20 @@ import { ProductGallery } from "@/components/product/product-gallery"
 import { ProductCTA } from "@/components/product/product-cta"
 import { RelatedCategories } from "@/components/product/related-categories"
 
-export default function CategoryPage() {
-  const params = useParams()
-  const slug = params.category as string
+interface CategoryPageProps {
+  params: Promise<{
+    category: string
+  }>
+}
+
+export function generateStaticParams() {
+  return categories.map((category) => ({
+    category: category.slug,
+  }))
+}
+
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { category: slug } = await params
   const category = categories.find((c) => c.slug === slug)
 
   if (!category) {

@@ -19,7 +19,6 @@ const sriLankaCompanies = [
 
 export function ManufacturingSection() {
   const [isVisible, setIsVisible] = useState(false)
-  const [activeCountry, setActiveCountry] = useState<"bangladesh" | "srilanka">("bangladesh")
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -150,7 +149,6 @@ export function ManufacturingSection() {
           <div
             className={`group relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-white/20 hover:border-sky-400/40 transition-all duration-500 delay-400 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
-            onMouseEnter={() => setActiveCountry("bangladesh")}
           >
             {/* Glow effect on hover */}
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -193,7 +191,6 @@ export function ManufacturingSection() {
           <div
             className={`group relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-white/20 hover:border-sky-400/40 transition-all duration-500 delay-500 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
-            onMouseEnter={() => setActiveCountry("srilanka")}
           >
             {/* Glow effect on hover */}
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
