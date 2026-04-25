@@ -67,9 +67,9 @@ export const categories: Category[] = [
     description: "Technical fabrics and ergonomic designs that move with you. Engineered for peak athletic performance.",
     images: [
       "/assets/categories/activewear/Sports-1.jpg",
-      "/assets/categories/activewear/Sports-2.jpg",
+      "/assets/categories/activewear/Sports-2.png",
       "/assets/categories/activewear/Sports-3.jpg",
-      "/assets/categories/activewear/Sports-4.jpg",
+      "/assets/categories/activewear/Sports-4.png",
     ],
   },
   {
@@ -82,7 +82,7 @@ export const categories: Category[] = [
     description: "Luxurious knits crafted from the finest yarns. Timeless pieces that provide both warmth and sophisticated texture.",
     images: [
       "/assets/categories/sweat/sweat-1.jpg",
-      "/assets/categories/sweat/sweat 2.jpg",
+      "/assets/categories/sweat/sweat-2.jpg",
       "/assets/categories/sweat/sweat-3.jpg",
       "/assets/categories/sweat/sweat-4.jpg",
     ],

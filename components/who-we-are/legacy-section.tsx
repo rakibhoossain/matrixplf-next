@@ -24,7 +24,7 @@ export function WhoWeAreLegacySection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="flex flex-col lg:block bg-white relative overflow-hidden">
+    <section ref={sectionRef} className="flex flex-col lg:block bg-slate-950 relative overflow-hidden">
       {/* Image Container: Relative on mobile (stacks top), Absolute on desktop (background) */}
       <div className="relative lg:absolute lg:inset-0 h-[280px] sm:h-[400px] lg:h-full z-0">
         <img
@@ -35,7 +35,7 @@ export function WhoWeAreLegacySection() {
 
         {/* Deskstop Selective Blur Overlay */}
         <div
-          className="absolute inset-y-0 left-0 w-full lg:w-[65%] bg-white/60 backdrop-blur-md z-10 hidden lg:block"
+          className="absolute inset-y-0 left-0 w-full lg:w-[65%] bg-slate-950/60 backdrop-blur-md z-10 hidden lg:block"
           style={{
             maskImage: 'linear-gradient(to right, black 70%, transparent 100%)',
             WebkitMaskImage: 'linear-gradient(to right, black 70%, transparent 100%)'
@@ -43,10 +43,10 @@ export function WhoWeAreLegacySection() {
         />
 
         {/* Desktop Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent z-0 hidden lg:block" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/40 to-transparent z-0 hidden lg:block" />
 
         {/* Mobile Gradient Overlay (Fade bottom) */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent lg:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent lg:hidden" />
       </div>
 
       {/* Legacy Content */}
@@ -61,18 +61,18 @@ export function WhoWeAreLegacySection() {
 
           <div className={`space-y-6 md:space-y-8 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}>
-            <p className="text-lg md:text-xl text-slate-800 leading-relaxed opacity-80">
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed opacity-90">
               Matrix Platform is a vertically integrated manufacturing ecosystem connecting fabric, production, and global retail.
             </p>
 
-            <p className="text-lg md:text-xl text-slate-800 leading-relaxed opacity-80">
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed opacity-90">
               We maintain a strategic stake in Zhejiang Monalisa Textile, producing over 3 million meters of fabric monthly, and deliver more than 3 million garments across knit, woven, and specialized categories.
             </p>
-            <p className="text-lg md:text-xl text-slate-800 leading-relaxed opacity-80">
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed opacity-90">
               Operating across Bangladesh, China, and Sri Lanka — supported by Hong Kong trade finance and EU logistics — we provide full DDP delivery, ensuring goods arrive retail-ready.
             </p>
 
-            <p className="text-lg md:text-xl text-slate-800 leading-relaxed opacity-80">
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed opacity-90">
               We also own and operate our retail brand across 16 European countries, giving us real market insight and a clear understanding of what sells — from concept and design through production to final distribution.
             </p>
           </div>

@@ -137,6 +137,11 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  h1,
+  h2 {
+    @apply text-4xl sm:text-4xl md:text-4xl lg:text-5xl;
+  }
 }
 
 /* Custom Animations */

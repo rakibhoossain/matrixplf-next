@@ -12,7 +12,7 @@ const ownBrands = [
     desc: "A European menswear brand registered and distributed across 16 EU countries. The range covers casual knitwear, outerwear, and accessories at accessible price points.",
     linkText: "EXPLORE BRAND",
     link: "https://pantoneclo.si",
-    image: "/assets/brand/Pantoneclo.jpg", // two men walking
+    image: "/assets/brand/Pantoneclo.png", // two men walking
     align: "right"
   },
   {
@@ -22,7 +22,7 @@ const ownBrands = [
     desc: "A European womenswear brand developed and distributed across EU markets, built on a strong understanding of consumer demand, product positioning, and market trends. From concept and design to production and retail distribution, the brand reflects our capability to develop and scale products across diverse categories with commercial relevance.",
     linkText: "EXPLORE BRAND",
     link: "https://pantoneclo.si",
-    image: "/assets/brand/Leafletic.jpg", // two women active
+    image: "/assets/brand/Leafletic.png", // two women active
     align: "left"
   },
   {
@@ -32,7 +32,7 @@ const ownBrands = [
     desc: "A specialized lingerie brand focused on technical construction, fit accuracy, and market relevance. It represents our capability to deliver complex, high-value product categories from development to retail scale.",
     linkText: "EXPLORE BRAND",
     link: "https://www.amantelingerie.in/",
-    image: "/assets/brand/amantais.jpg", // mannequins/lingerie aesthetic
+    image: "/assets/brand/Amanties.png", // mannequins/lingerie aesthetic
     align: "right"
   }
 ]
@@ -87,74 +87,73 @@ export function BrandsSection() {
       </div>
 
       {/* Brand Blocks */}
-      <div className="w-full flex flex-col">
+      <div className="w-full flex flex-col bg-slate-50/30">
         {ownBrands.map((brand, idx) => {
           const isLeftImage = brand.align === 'left'
 
           return (
-            <div key={idx} className="w-full grid lg:grid-cols-2 min-h-[500px]">
-
-              {/* Image Block */}
+            <div key={idx} className="relative w-full border-b border-slate-100 last:border-none overflow-hidden group">
+              {/* Image Block (Desktop Background) */}
               <div
-                className={`relative h-[400px] lg:h-auto overflow-hidden ${isLeftImage ? "lg:order-1" : "lg:order-2"
+                className={`hidden lg:block absolute inset-y-0 w-[45%] z-0 transition-transform duration-1000 group-hover:scale-105 ${isLeftImage ? "left-0" : "right-0"
                   }`}
               >
-                <div className="absolute inset-0 bg-slate-900/5 mix-blend-overlay z-10" />
-                {/* Create a glowing edge mask to blend images seamlessly on large screens like in the mockup */}
-                <div className={`hidden lg:block absolute inset-y-0 ${isLeftImage ? 'right-0' : 'left-0'} w-32 bg-gradient-to-${isLeftImage ? 'l' : 'r'} from-white to-transparent z-20`} />
-
                 <img
                   src={brand.image}
                   alt={brand.name}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  style={{
-                    objectPosition: isLeftImage ? 'center right' : 'center left'
-                  }}
+                  className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500" />
               </div>
 
-              {/* Text Block */}
-              <div
-                className={`flex flex-col justify-center p-6 sm:p-8 md:p-12 lg:p-24 bg-white z-30 ${isLeftImage ? "lg:order-2 text-left lg:text-right items-start lg:items-end" : "lg:order-1 text-left lg:text-left items-start"
-                  }`}
-              >
-                <div className={`relative h-16 w-48 ${isLeftImage ? "lg:ml-auto" : "right-3"}`}>
-                  <Image
-                    src={brand.logo}
-                    alt={`${brand.name} Logo`}
-                    fill
-                    className="object-contain"
-                    style={{
-                      objectPosition: isLeftImage ? 'right' : 'left'
-                    }}
-                  />
-                </div>
+              {/* Content Container */}
+              <div className="container mx-auto px-6 lg:px-12 relative z-10 py-16 lg:py-32">
+                <div className={`grid lg:grid-cols-2 gap-12 lg:gap-24 items-center`}>
+                  
+                  {/* Mobile Image Area */}
+                  <div className={`lg:hidden relative h-[350px] rounded-3xl overflow-hidden mb-8 shadow-2xl ${isLeftImage ? "" : "order-1"}`}>
+                    <img
+                      src={brand.image}
+                      alt={brand.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-                <h4 className={`text-xl font-bold text-slate-800 mb-6 tracking-tight ${isLeftImage ? "lg:text-right" : ""
-                  }`}>
-                  {brand.category}
-                </h4>
+                  {/* Text Content Area */}
+                  <div className={`flex flex-col ${isLeftImage ? "lg:col-start-2 items-start" : "lg:col-start-1 items-start"}`}>
+                    <div className="relative h-12 w-40 mb-8">
+                      <Image
+                        src={brand.logo}
+                        alt={`${brand.name} Logo`}
+                        fill
+                        className="object-contain object-left"
+                      />
+                    </div>
 
-                <p className={`text-sm lg:text-base text-slate-600 font-medium leading-relaxed max-w-md ${isLeftImage ? "lg:ml-auto text-left lg:text-right" : ""
-                  } mb-8`}>
-                  {brand.desc}
-                </p>
+                    <h4 className="text-xl font-bold text-sky-500 mb-4 tracking-tight uppercase">
+                      {brand.category}
+                    </h4>
 
-                <div className={`flex items-center ${isLeftImage ? 'lg:justify-end' : ''}`}>
-                  {isLeftImage ? (
-                    <a href={brand.link} className="inline-flex items-center gap-2 text-[#38bdf8] font-bold text-xs tracking-wider uppercase group">
-                      <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                      <span className="border-b-2 border-transparent group-hover:border-[#38bdf8] pb-0.5 transition-colors">{brand.linkText}</span>
-                    </a>
-                  ) : (
-                    <a href={brand.link} className="inline-flex items-center gap-2 text-[#38bdf8] font-bold text-xs tracking-wider uppercase group">
-                      <span className="border-b-2 border-transparent group-hover:border-[#38bdf8] pb-0.5 transition-colors">{brand.linkText}</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </a>
-                  )}
+                    <p className="text-base lg:text-lg text-slate-600 font-medium leading-relaxed max-w-xl mb-10">
+                      {brand.desc}
+                    </p>
+
+                    <div className="flex items-center">
+                      <a 
+                        href={brand.link} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 text-slate-900 font-bold text-sm tracking-widest uppercase group/link"
+                      >
+                        <span className="border-b-2 border-slate-900/10 group-hover/link:border-sky-500 pb-1 transition-all">
+                          {brand.linkText}
+                        </span>
+                        <ArrowRight className="w-5 h-5 text-sky-500 transition-transform group-hover/link:translate-x-2" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-
             </div>
           )
         })}

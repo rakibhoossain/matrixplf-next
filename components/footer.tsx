@@ -1,8 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { Download, Linkedin, Twitter, Instagram, Youtube, ArrowUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ProfileDownloadModal } from "./ProfileDownloadModal"
 
 const footerLinks = {
   company: [
@@ -21,8 +23,8 @@ const footerLinks = {
   resources: [
     { label: "Sustainability", href: "/sustainability" },
     { label: "Certifications", href: "#certifications" },
+    { label: "Code Of Conduct", href: "/code-of-conduct" },
     { label: "Case Studies", href: "#case-studies" },
-    { label: "Download Profile", href: "#download" },
   ],
 }
 
@@ -34,6 +36,7 @@ const socialLinks = [
 ]
 
 export function Footer() {
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
@@ -46,7 +49,12 @@ export function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="group">
-              <img src="/Matrix-Platform-Logo.png" alt="Logo" loading="lazy" className="h-20 w-auto object-contain" />
+              <img
+                src="/Matrix-Platform-Logo-1.png"
+                alt="Logo"
+                loading="lazy"
+                className="w-[210px] sm:w-[260px] lg:w-[300px] h-auto object-contain"
+              />
             </Link>
 
             <p className="text-slate-400 leading-relaxed mb-8 max-w-sm mt-4">
@@ -55,8 +63,8 @@ export function Footer() {
             </p>
 
             <Button
-              variant="outline"
-              className="w-full sm:w-auto border-white/20 text-white bg-white/5 hover:bg-white/10 gap-2 min-h-[48px] px-6"
+              onClick={() => setIsProfileModalOpen(true)}
+              className="w-full sm:w-auto bg-sky-500 hover:bg-sky-600 text-white border-none gap-2 min-h-[48px] px-8 rounded-full font-semibold transition-all duration-300 shadow-lg shadow-sky-500/25"
             >
               <Download className="w-4 h-4" />
               Download Company Profile
@@ -150,6 +158,11 @@ export function Footer() {
           </div>
         </div>
       </div>
+
+      <ProfileDownloadModal
+        isOpen={isProfileModalOpen}
+        onClose={() => setIsProfileModalOpen(false)}
+      />
     </footer>
   )
 }

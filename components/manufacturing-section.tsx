@@ -43,7 +43,7 @@ export function ManufacturingSection() {
       {/* Background Image with Ken Burns effect */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1558171813-4c088753af8f?q=80&w=2070&auto=format&fit=crop"
+          src="/assets/pages/Production-strength.png"
           alt="Garment factory workers"
           fill
           className={`object-cover transition-transform duration-[15s] ease-out ${isVisible ? "scale-110" : "scale-100"

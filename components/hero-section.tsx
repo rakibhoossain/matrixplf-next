@@ -4,11 +4,12 @@ import { useEffect, useState, useCallback } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ProfileDownloadModal } from "./ProfileDownloadModal"
 
 const slides = [
   {
     id: 1,
-    image: "/hero/Cover-1.jpg",
+    image: "/hero/Cover1.jpg",
     title: "FROM FABRIC TO",
     titleHighlight: "FINISHED PRODUCT.",
     subtitle: "Three Countries. One Integrated Supply Chain.",
@@ -44,6 +45,7 @@ export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
@@ -100,7 +102,7 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 h-full flex items-center py-24">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl pt-20">
             {/* Main Heading */}
             <h1
               className={`transition-all duration-1000 uppercase ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -141,6 +143,7 @@ export function HeroSection() {
             >
               <Button
                 size="lg"
+                onClick={() => setIsProfileModalOpen(true)}
                 className="w-full sm:w-auto bg-sky-500 hover:bg-sky-600 text-white px-8 py-6 text-base font-medium rounded-full gap-2 group transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/25 min-h-[48px]"
               >
                 <Download className="w-5 h-5" />
@@ -196,6 +199,11 @@ export function HeroSection() {
           <ChevronRight className="w-6 h-6" />
         </button>
       </div>
+
+      <ProfileDownloadModal
+        isOpen={isProfileModalOpen}
+        onClose={() => setIsProfileModalOpen(false)}
+      />
     </section>
   )
 }

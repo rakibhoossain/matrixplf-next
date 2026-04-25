@@ -9,6 +9,7 @@ const teamMembers = [
     id: 1,
     name: "Al Amin Shohel",
     role: "Managing Director",
+    email: "shohel@matrixapparels.com",
     linkedin: "https://www.linkedin.com/in/md-al-amin-2a38b727/",
     image: "/assets/bosses/shohel.jpg",
   },
@@ -16,6 +17,7 @@ const teamMembers = [
     id: 2,
     name: "Tina Cocej",
     role: "Director",
+    email: "tina@matrixapparels.com",
     linkedin: "https://www.linkedin.com/in/tina-cocej-b78094214/",
     image: "/assets/bosses/tina.png",
   },
@@ -23,6 +25,7 @@ const teamMembers = [
     id: 3,
     name: "Michael Hayles",
     role: "Director, Global Sales",
+    email: "michaelhayles@matrixapparels.com",
     linkedin: "https://www.linkedin.com/in/michael-hayles-60888722/",
     image: "/assets/bosses/michael.png",
   },
@@ -30,6 +33,7 @@ const teamMembers = [
     id: 4,
     name: "Timo Karanko",
     role: "Director, Commercial",
+    email: "timokaranko@matrixapparels.com",
     linkedin: "https://www.linkedin.com/in/timo-karanko/",
     image: "/assets/bosses/timo.png",
   }
@@ -47,7 +51,7 @@ export function ConnectUs() {
             </span>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+            <h2 className="text-4xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
               Connect with our <span className="text-sky-500">key experts.</span>
             </h2>
           </Reveal>
@@ -79,6 +83,11 @@ export function ConnectUs() {
                     <p className="text-slate-400 text-xs font-medium capitalize tracking-wider">
                       {member.role}
                     </p>
+                    {member.email && (
+                      <p className="text-sky-400 text-[11px] font-semibold mt-2 lowercase transition-colors group-hover:text-sky-300">
+                        {member.email}
+                      </p>
+                    )}
                   </div>
 
                   <a
@@ -89,6 +98,7 @@ export function ConnectUs() {
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
+
                 </div>
               </div>
             </Reveal>

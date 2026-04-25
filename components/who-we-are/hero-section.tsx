@@ -15,14 +15,15 @@ export function WhoWeAreHeroSection() {
       {/* Background Image with Ken Burns Effect */}
       <div className="absolute inset-0 transition-opacity duration-1000 opacity-100">
         <Image
-          src="/hero/who-we-are.jpg"
+          src="/hero/who-we-are.png"
           alt="Manufacturing operations"
           fill
           priority
           loading="eager"
           className="object-cover"
         />
-
+        {/* Darkish Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
       </div>
 
       {/* Content */}
