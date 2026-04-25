@@ -27,15 +27,15 @@ export function ProductCTA({ categoryName }: ProductCTAProps) {
             </Reveal>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4 w-full lg:w-auto">
             <Reveal delay={0.3}>
-              <button className="bg-[#4cb5e4] hover:bg-sky-400 text-[#0d1420] px-8 py-4 rounded-full font-bold flex items-center gap-2 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-sky-900/20">
+              <button className="w-full sm:w-auto bg-[#4cb5e4] hover:bg-sky-400 text-[#0d1420] px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-sky-900/20">
                 Start a conversation <ArrowRight className="w-5 h-5" />
               </button>
             </Reveal>
 
             <Reveal delay={0.4}>
-              <button className="bg-transparent border border-slate-700 hover:border-slate-500 text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 transition-all">
+              <button className="w-full sm:w-auto bg-transparent border border-slate-700 hover:border-slate-500 text-white px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all">
                 <Download className="w-5 h-5" /> Company Profile
               </button>
             </Reveal>

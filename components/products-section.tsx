@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -11,6 +11,7 @@ export function ProductsSection() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
   const [imageIndices, setImageIndices] = useState<Record<number, number>>({})
   const [sliderPosition, setSliderPosition] = useState(0)
+  const [viewportWidth, setViewportWidth] = useState(1440)
   const sectionRef = useRef<HTMLDivElement>(null)
   const sliderRef = useRef<HTMLDivElement>(null)
   const intervalRefs = useRef<Record<number, NodeJS.Timeout>>({})
@@ -30,6 +31,13 @@ export function ProductsSection() {
     }
 
     return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const updateViewportWidth = () => setViewportWidth(window.innerWidth)
+    updateViewportWidth()
+    window.addEventListener("resize", updateViewportWidth)
+    return () => window.removeEventListener("resize", updateViewportWidth)
   }, [])
 
   // Auto-slide images on hover
@@ -64,10 +72,10 @@ export function ProductsSection() {
     }
   }
 
-  const cardWidth = 320
+  const cardWidth = useMemo(() => Math.min(320, Math.max(272, viewportWidth - 48)), [viewportWidth])
   const gap = 8
-  const visibleCards = 4
-  const maxScroll = (categories.length - visibleCards) * (cardWidth + gap)
+  const visibleCards = viewportWidth >= 1280 ? 4 : viewportWidth >= 1024 ? 3 : viewportWidth >= 640 ? 2 : 1
+  const maxScroll = Math.max(0, (categories.length - visibleCards) * (cardWidth + gap))
 
   const handlePrev = () => {
     setSliderPosition(prev => Math.max(0, prev - (cardWidth + gap)))
@@ -159,7 +167,7 @@ export function ProductsSection() {
                     }`}
                   style={{
                     transitionDelay: `${200 + index * 100}ms`,
-                    width: "320px",
+                    width: `${cardWidth}px`,
                     height: "550px",
                     minHeight: "550px"
                   }}
@@ -167,7 +175,7 @@ export function ProductsSection() {
                   onMouseLeave={() => handleMouseLeave(category.id)}
                 >
                   {/* Background color */}
-                  <div className={`absolute inset-0 ${category.bgColor} transition-all duration-500`} style={{ width: "320px", height: "550px" }} />
+                  <div className={`absolute inset-0 ${category.bgColor} transition-all duration-500`} style={{ width: `${cardWidth}px`, height: "550px" }} />
 
                   {/* Images with slide effect */}
                   {category.images.map((image, imgIndex) => (
@@ -177,7 +185,7 @@ export function ProductsSection() {
                         ? "opacity-100 scale-100"
                         : "opacity-0 scale-105"
                         }`}
-                      style={{ width: "320px", height: "550px" }}
+                      style={{ width: `${cardWidth}px`, height: "550px" }}
                     >
                       <Image
                         src={image}

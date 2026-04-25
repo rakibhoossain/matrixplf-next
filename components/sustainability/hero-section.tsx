@@ -58,7 +58,7 @@ export function SustainabilityHeroSection() {
 
         {/* Left Content */}
         <div className="container mx-auto px-6 lg:px-12 py-8 lg:py-18 relative z-20 flex-shrink-0">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#38bdf8] mb-8">Our Sustainability</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#38bdf8] mb-8">Our Sustainability</h2>
           <p className="text-slate-800 text-[17px] leading-relaxed mb-6 font-semibold max-w-lg">
             Every manufacturing unit in the Matrix group is independently audited and certified to the standards that European and UK retailers require. We do not treat compliance as a checkbox. It is built into how we operate, how we source, and how we deliver.
           </p>

@@ -42,8 +42,7 @@ export function Header() {
             <img
               src="/Matrix-Platform-Logo-1.png"
               alt="Logo"
-              style={{ width: "300px", height: "auto" }}
-              className={`transition-all duration-300 object-contain ${isScrolled ? "h-14 md:h-14" : "h-14"
+              className={`w-[210px] sm:w-[260px] lg:w-[300px] h-auto transition-all duration-300 object-contain ${isScrolled ? "max-h-14 md:max-h-14" : "max-h-14"
                 }`}
             />
           </Link>
@@ -99,7 +98,7 @@ export function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`block font-medium py-3 px-2 rounded-lg transition-colors ${isScrolled
+                  className={`block font-medium py-3 px-3 rounded-lg transition-colors min-h-[44px] ${isScrolled
                     ? isActive ? "text-sky-400 bg-white/5" : "text-white hover:text-sky-400 hover:bg-white/5"
                     : isActive ? "text-sky-500 bg-slate-50" : "text-slate-700 hover:text-sky-500 hover:bg-slate-50"
                     }`}

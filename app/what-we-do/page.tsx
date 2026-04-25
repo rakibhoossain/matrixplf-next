@@ -35,8 +35,8 @@ export default function WhatWeDoPage() {
             </section>
 
             {/* Services We Provide Section */}
-            <section className="w-full bg-[#f4f4f4] text-[#1a1a1a] py-24 px-6 lg:px-12">
-                <div className="container mx-auto px-6 lg:px-12 space-y-32">
+            <section className="w-full bg-[#f4f4f4] text-[#1a1a1a] py-16 lg:py-24 px-6 lg:px-12">
+                <div className="container mx-auto space-y-10 lg:space-y-32">
                     <h2 className="text-4xl md:text-5xl font-bold mb-8">
                         <span className="text-[#4cb5e4]">Services</span> We Provide
                     </h2>
@@ -60,13 +60,13 @@ export default function WhatWeDoPage() {
                             id={service.title.toLowerCase().replace(/\s+/g, '-')}
                             className={`w-full bg-[#1a1d21] py-4 lg:py-8 border-b-[18px] border-white ${index === upsc.length - 1 ? 'border-b-0' : ''}`}
                         >
-                            <div className="container mx-auto">
+                            <div className="container mx-auto px-6 lg:px-12">
                                 <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-between gap-12 lg:gap-20`}>
                                     <div className={`w-full md:w-1/2 space-y-6 ${!isEven ? 'flex flex-col items-start md:items-end text-left md:text-right' : ''}`}>
                                         <div className="inline-block bg-[#4cb5e4] text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">
                                             {isEven ? `● ${service.subtitle}` : `${service.subtitle} ●`}
                                         </div>
-                                        <h3 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
+                                        <h3 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
                                             {isEven ? (
                                                 <>
                                                     {firstPart}<br />

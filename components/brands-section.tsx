@@ -115,7 +115,7 @@ export function BrandsSection() {
 
               {/* Text Block */}
               <div
-                className={`flex flex-col justify-center p-12 lg:p-24 bg-white z-30 ${isLeftImage ? "lg:order-2 text-left lg:text-right items-start lg:items-end" : "lg:order-1 text-left lg:text-left items-start"
+                className={`flex flex-col justify-center p-6 sm:p-8 md:p-12 lg:p-24 bg-white z-30 ${isLeftImage ? "lg:order-2 text-left lg:text-right items-start lg:items-end" : "lg:order-1 text-left lg:text-left items-start"
                   }`}
               >
                 <div className={`relative h-16 w-48 ${isLeftImage ? "lg:ml-auto" : "right-3"}`}>

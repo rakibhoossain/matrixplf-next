@@ -101,7 +101,7 @@ export function ContactSection() {
             className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
               }`}
           >
-            <div className="bg-[#1a2333] rounded-2xl p-8 border border-slate-800 h-full">
+            <div className="bg-[#1a2333] rounded-2xl p-6 sm:p-8 border border-slate-800 h-full">
               <h3 className="text-xl font-bold text-white mb-1">Send us a message</h3>
               <p className="text-slate-400 text-sm mb-6">We&apos;ll get back to you within 24 hours.</p>
 
@@ -174,7 +174,7 @@ export function ContactSection() {
                 {offices.map((office, index) => (
                   <div
                     key={office.city}
-                    className="bg-transparent rounded-xl p-5 border border-slate-700 hover:border-slate-500 transition-all duration-300 flex items-center gap-4"
+                    className="bg-transparent rounded-xl p-5 border border-slate-700 hover:border-slate-500 transition-all duration-300 flex items-start sm:items-center gap-4"
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <div className="w-10 h-10 border border-slate-600 rounded-md flex items-center justify-center flex-shrink-0">

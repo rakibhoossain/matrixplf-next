@@ -30,7 +30,7 @@ export default async function FactoryPage({ params }: FactoryPageProps) {
 
             <Header />
             {/* Hero Section */}
-            <section className="relative w-full h-[600px] flex flex-col justify-end">
+            <section className="relative w-full h-[600px] min-h-[560px] flex flex-col justify-end">
                 {/* Background Media */}
                 <div className="absolute inset-0 z-0">
                     {activeVideo ? (
@@ -58,7 +58,7 @@ export default async function FactoryPage({ params }: FactoryPageProps) {
 
                 {/* Hero Content */}
                 <div className="container mx-auto px-6 lg:px-12 relative z-10 pb-16">
-                    <div className="flex items-center gap-6">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
                         {/* Custom SVG Logo */}
                         <div className="w-16 h-20 md:w-20 md:h-24 flex-shrink-0">
                             <svg width="100%" height="100%" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#f27435]">
@@ -113,8 +113,8 @@ export default async function FactoryPage({ params }: FactoryPageProps) {
                 <div className="flex flex-col lg:flex-row gap-8">
 
                     {/* Left Column - Product Strength */}
-                    <div className="lg:w-7/12 bg-[#1e2632] border border-[#2b394b] rounded-xl p-8 shadow-lg">
-                        <div className="flex items-center gap-3 mb-6">
+                    <div className="lg:w-7/12 bg-[#1e2632] border border-[#2b394b] rounded-xl p-6 sm:p-8 shadow-lg">
+                        <div className="flex items-start sm:items-center gap-3 mb-6">
                             <Factory className="w-8 h-8 text-[#4cb5e4]" />
                             <h2 className="text-2xl md:text-3xl font-bold text-[#4cb5e4]">Product Strength & Capacity</h2>
                         </div>
@@ -154,7 +154,7 @@ export default async function FactoryPage({ params }: FactoryPageProps) {
                     <div className="lg:w-5/12 flex flex-col gap-8">
 
                         {/* Certifications Block */}
-                        <div className="bg-[#1e2632] border border-[#2b394b] rounded-xl p-8 shadow-lg flex-1">
+                        <div className="bg-[#1e2632] border border-[#2b394b] rounded-xl p-6 sm:p-8 shadow-lg flex-1">
                             <h2 className="text-2xl font-bold text-[#4cb5e4] uppercase mb-6 tracking-wide">Our Certifications</h2>
 
                             <div className="grid grid-cols-3 sm:grid-cols-4 gap-4 items-center">
@@ -181,7 +181,7 @@ export default async function FactoryPage({ params }: FactoryPageProps) {
                         </div>
 
                         {/* Contact Block */}
-                        <div className="bg-[#1e2632] border border-[#2b394b] rounded-xl p-8 shadow-lg">
+                        <div className="bg-[#1e2632] border border-[#2b394b] rounded-xl p-6 sm:p-8 shadow-lg">
                             <h2 className="text-2xl font-bold text-[#4cb5e4] uppercase mb-6 tracking-wide">Contact Us</h2>
 
                             <div className="space-y-6">

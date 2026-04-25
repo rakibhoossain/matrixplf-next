@@ -216,7 +216,7 @@ export function GlobalNetworkSection() {
               const isRight = index % 2 !== 0;
               return (
                 <div key={node.id} className={`flex flex-col md:flex-row items-start md:items-center w-full ${isRight ? "md:flex-row-reverse" : ""}`}>
-                  <div className={`w-full md:w-[46%] ${isRight ? "md:pl-10" : "md:pr-10"}`}>
+                  <div className={`w-full pl-9 md:pl-0 md:w-[46%] ${isRight ? "md:pl-10" : "md:pr-10"}`}>
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}

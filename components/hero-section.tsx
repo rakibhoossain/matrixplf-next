@@ -75,7 +75,7 @@ export function HeroSection() {
   const slide = slides[currentSlide]
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen min-h-[640px] w-full overflow-hidden">
       {/* Background Images with Ken Burns Effect */}
       {slides.map((s, index) => (
         <div
@@ -98,7 +98,7 @@ export function HeroSection() {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center">
+      <div className="relative z-10 h-full flex items-center py-24">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-3xl">
             {/* Main Heading */}
@@ -108,13 +108,13 @@ export function HeroSection() {
             >
               <span
                 key={`title-${currentSlide}`}
-                className="block text-4xl sm:text-4xl md:text-4xl lg:text-7xl font-bold text-white leading-tight tracking-tight animate-fade-in-up"
+                className="block text-3xl min-[360px]:text-4xl sm:text-4xl md:text-4xl lg:text-7xl font-bold text-white leading-tight tracking-tight animate-fade-in-up"
               >
                 {slide.title}
               </span>
               <span
                 key={`highlight-${currentSlide}`}
-                className="block text-4xl sm:text-4xl md:text-4xl lg:text-7xl font-bold text-white leading-tight tracking-tight mt-2 animate-fade-in-up animation-delay-100"
+                className="block text-3xl min-[360px]:text-4xl sm:text-4xl md:text-4xl lg:text-7xl font-bold text-white leading-tight tracking-tight mt-2 animate-fade-in-up animation-delay-100"
               >
                 {slide.titleHighlight}
               </span>
@@ -126,10 +126,10 @@ export function HeroSection() {
               className={`mt-8 space-y-3 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
             >
-              <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-medium animate-fade-in-up animation-delay-200">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 font-medium animate-fade-in-up animation-delay-200">
                 {slide.subtitle}
               </p>
-              <p className="text-lg md:text-xl text-white/80 animate-fade-in-up animation-delay-300">
+              <p className="text-base sm:text-lg md:text-xl text-white/80 animate-fade-in-up animation-delay-300">
                 {slide.description}
               </p>
             </div>

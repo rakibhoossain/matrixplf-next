@@ -35,7 +35,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
       <Header />
       {/* Hero Section */}
-      <section className="relative h-[60vh] overflow-hidden mb-16">
+      <section className="relative h-[60vh] min-h-[560px] overflow-hidden mb-16">
         <div className={`absolute inset-0 ${category.bgColor} opacity-20`} />
         <div className="absolute inset-0">
           <Image
@@ -58,7 +58,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           </Link>
 
           <Reveal>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 uppercase tracking-tighter">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 uppercase tracking-tighter break-words">
               {category.name}
             </h1>
           </Reveal>

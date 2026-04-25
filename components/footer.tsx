@@ -56,7 +56,7 @@ export function Footer() {
 
             <Button
               variant="outline"
-              className="border-white/20 text-white bg-white/5 hover:bg-white/10 gap-2 min-h-[48px] px-6"
+              className="w-full sm:w-auto border-white/20 text-white bg-white/5 hover:bg-white/10 gap-2 min-h-[48px] px-6"
             >
               <Download className="w-4 h-4" />
               Download Company Profile

@@ -111,7 +111,7 @@ export function SustainabilityInitiativesSection() {
               <div className={`lg:w-[45%] text-white flex flex-col ${isLeftAlign ? 'lg:pr-16 text-left items-start' : 'lg:pl-16 text-right items-end'
                 }`}>
 
-                <h2 className={`text-4xl lg:text-5xl font-bold text-[#1ea1d7] mb-8 ${isLeftAlign ? '' : 'uppercase text-right'}`}>
+                <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1ea1d7] mb-8 break-words ${isLeftAlign ? '' : 'uppercase text-right'}`}>
                   {isLeftAlign ? item.title : item.title.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
                 </h2>
 

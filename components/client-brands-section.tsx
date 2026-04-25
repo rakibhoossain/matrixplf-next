@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState, useMemo } from "react"
+import { useEffect, useState, useMemo } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Reveal } from "./Reveal"
 

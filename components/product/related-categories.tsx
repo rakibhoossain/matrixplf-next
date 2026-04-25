@@ -20,7 +20,7 @@ export function RelatedCategories({ currentCategorySlug }: RelatedCategoriesProp
     <section className="py-24 bg-[#ece9e9]">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="flex items-end justify-between mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
             <Reveal>
               <span className="text-sky-500 text-xs font-bold uppercase tracking-[0.2em] block mb-3">

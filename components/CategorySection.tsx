@@ -57,10 +57,10 @@ export default function CategorySection() {
           {/* Horizontal Carousel Track */}
           <motion.div
             style={{ x: smoothX }}
-            className="flex gap-4 md:gap-6 items-stretch h-[60vh] md:h-[65vh]"
+            className="flex gap-4 md:gap-6 items-stretch h-[58vh] sm:h-[60vh] md:h-[65vh]"
           >
             {columns.map((col, slotIndex) => (
-              <div key={slotIndex} className="flex-shrink-0 flex flex-col gap-4 md:gap-6 w-[320px] md:w-[400px] lg:w-[480px]">
+              <div key={slotIndex} className="flex-shrink-0 flex flex-col gap-4 md:gap-6 w-[82vw] sm:w-[320px] md:w-[400px] lg:w-[480px]">
                 {col.type === 'single' ? (
                   <CategoryCard
                     name={col.items[0].name}

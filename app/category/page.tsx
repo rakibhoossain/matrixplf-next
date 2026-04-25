@@ -7,10 +7,10 @@ import { Footer } from "@/components/footer"
 
 // Helper config for the layout math
 // Uses percentages relative to the visible container width to exactly fit 3 columns (accounting for 2 gaps of 24px = 48px)
-const COL_WIDTH = "w-[85%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] shrink-0"
-const HEIGHT_TOTAL = "h-[750px]"
-const HEIGHT_HALF = "h-[323px]"
-const HEIGHT_FULL = "h-[710px]"
+const COL_WIDTH = "w-[82vw] sm:w-[85%] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] shrink-0"
+const HEIGHT_TOTAL = "h-[560px] sm:h-[650px] lg:h-[750px]"
+const HEIGHT_HALF = "h-[228px] sm:h-[273px] lg:h-[323px]"
+const HEIGHT_FULL = "h-[520px] sm:h-[610px] lg:h-[710px]"
 
 const IMAGES = {
     leggings: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop",
@@ -67,7 +67,7 @@ export default function CategoryPage() {
             <Header />
 
             {/* New Added Hero Section */}
-            <section className="relative w-full h-[65vh] min-h-[500px] flex items-center">
+            <section className="relative w-full h-[65vh] min-h-[480px] flex items-center">
                 <div className="absolute inset-0 z-0">
                     <img
                         src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2000&auto=format&fit=crop"
@@ -92,8 +92,7 @@ export default function CategoryPage() {
             </section>
 
             {/* Main Category Carousel Board */}
-            <section className="relative w-full py-20 pb-32 pl-6 lg:pl-12 flex-1 flex flex-col items-start bg-[#0d1420]">
-
+            <section className="relative w-full py-16 sm:py-20 pb-24 sm:pb-32 pl-6 lg:pl-12 flex-1 flex flex-col items-start bg-[#0d1420]">
                 {/* Custom Left/Right Controls manually override */}
                 <div className="absolute right-6 lg:right-12 top-8 flex items-center gap-3 z-30">
                     <button onClick={() => scroll('left')} className="w-12 h-12 flex items-center justify-center rounded-full bg-[#162133] hover:bg-[#1ea1d7] text-white transition-colors shadow-lg shadow-black/40">
