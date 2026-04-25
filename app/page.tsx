@@ -5,6 +5,8 @@ import { FabricMillSection } from "@/components/fabric-mill-section"
 import { ManufacturingSection } from "@/components/manufacturing-section"
 import { USPCardsSection } from "@/components/usp-cards-section"
 import { ProductsSection } from "@/components/products-section"
+import { ClientBrandsSection } from "@/components/client-brands-section"
+import { TeamSection } from "@/components/team-section"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -17,6 +19,7 @@ export default function Home() {
       <ManufacturingSection />
       <USPCardsSection />
       <ProductsSection />
+      <ClientBrandsSection />
       <Footer />
     </main>
   )

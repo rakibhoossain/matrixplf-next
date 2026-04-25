@@ -135,19 +135,18 @@ export function TeamSection() {
     <section ref={sectionRef} className="py-10 lg:py-14 bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItSDJ2LTJoMzR6bTAtNHYySDJ2LTJoMzR6bTAtNHYySDJ2LTJoMzR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-50" />
-      
+
       {/* Decorative elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl" />
-      
+
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Compact Horizontal Layout */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           {/* Left: Title and Link */}
           <div
-            className={`flex-shrink-0 transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-            }`}
+            className={`flex-shrink-0 transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+              }`}
           >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
               Meet The <span className="text-sky-400">Team</span>
@@ -163,18 +162,16 @@ export function TeamSection() {
 
           {/* Right: Team Photos Grid */}
           <div
-            className={`flex-1 transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
-            }`}
+            className={`flex-1 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+              }`}
           >
             <div className="grid grid-cols-5 gap-3 md:gap-4 max-w-2xl ml-auto">
               {teamMembers.slice(0, 10).map((member, index) => (
                 <button
                   key={member.id}
                   onClick={() => setSelectedMember(member)}
-                  className={`relative group transition-all duration-500 ${
-                    isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
-                  }`}
+                  className={`relative group transition-all duration-500 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+                    }`}
                   style={{ transitionDelay: `${300 + index * 50}ms` }}
                   title={`${member.name} - ${member.role}`}
                 >

@@ -17,10 +17,10 @@ const slides = [
   {
     id: 2,
     image: "/hero/Cover-2.jpg",
-    title: "QUALITY",
-    titleHighlight: "REDEFINED.",
-    subtitle: "Premium Manufacturing Excellence.",
-    description: "Setting new standards in garment manufacturing across Asia.",
+    title: "Quality Built",
+    titleHighlight: "Through Controlled Manufacturing.",
+    subtitle: "Integrated production systems ensuringconsistency at every stage.",
+    description: "From fabric development to nal nishing, each process is monitored, standardized, and continuously optimized.",
   },
   {
     id: 3,
@@ -100,21 +100,21 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-5xl">
+          <div className="max-w-3xl">
             {/* Main Heading */}
             <h1
-              className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              className={`transition-all duration-1000 uppercase ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
             >
               <span
                 key={`title-${currentSlide}`}
-                className="block text-4xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight tracking-tight animate-fade-in-up"
+                className="block text-4xl sm:text-4xl md:text-4xl lg:text-7xl font-bold text-white leading-tight tracking-tight animate-fade-in-up"
               >
                 {slide.title}
               </span>
               <span
                 key={`highlight-${currentSlide}`}
-                className="block text-4xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight tracking-tight mt-2 animate-fade-in-up animation-delay-100"
+                className="block text-4xl sm:text-4xl md:text-4xl lg:text-7xl font-bold text-white leading-tight tracking-tight mt-2 animate-fade-in-up animation-delay-100"
               >
                 {slide.titleHighlight}
               </span>

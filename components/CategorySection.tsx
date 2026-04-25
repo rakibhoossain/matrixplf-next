@@ -33,7 +33,7 @@ export default function CategorySection() {
   return (
     <div ref={containerRef} className="relative h-[400vh] bg-zinc-950">
       <section className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden">
-        
+
         {/* Header - Styled to match the provided image */}
         <div className="container mx-auto px-6 md:px-20 mb-12">
           <motion.div
@@ -47,7 +47,7 @@ export default function CategorySection() {
               Categories.
             </h2>
             <p className="text-sm md:text-base lg:text-lg text-zinc-400 font-medium max-w-2xl leading-relaxed">
-              Explore our core product direction across fashion wear, outerwear,<br className="hidden md:block" /> 
+              Explore our core product direction across fashion wear, outerwear,<br className="hidden md:block" />
               bottomwear and category-driven apparel development.
             </p>
           </motion.div>

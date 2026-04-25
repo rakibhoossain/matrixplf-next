@@ -53,12 +53,19 @@
       "/certifications/2.png",
       "/certifications/3.png",
       "/certifications/4.png",
-      "/certifications/5.png",
+      "/certifications/10.png",
+      "/certifications/12.png",
+      "/certifications/19.png",
+      "/certifications/16.png",
+      "/certifications/13.png",
+      "/certifications/17.png",
+      "/certifications/18.png",
+      "/certifications/14.png",
       "/certifications/6.png",
       "/certifications/7.png",
       "/certifications/8.png",
-      "/certifications/9.png",
-      "/certifications/10.png"
+      "/certifications/5.png",
+      "/certifications/11.png"
     ]
   },
   "ifs-texwear": {
@@ -106,16 +113,15 @@
       "email": "shohel@matrixapparels.com"
     },
     "certifications": [
-      "/certifications/11.png",
-      "/certifications/12.png",
-      "/certifications/13.png",
-      "/certifications/14.png",
       "/certifications/15.png",
-      "/certifications/16.png",
-      "/certifications/17.png",
-      "/certifications/18.png",
-      "/certifications/19.png",
-      "/certifications/20.png"
+      "/certifications/13.png",
+      "/certifications/9.png",
+      "/certifications/20.png",
+      "/certifications/14.png",
+      "/certifications/22.png",
+      "/certifications/11.png",
+      "/certifications/21.png",
+      "/certifications/6.png"
     ]
   },
   "mb-knit": {
@@ -163,16 +169,14 @@
       "email": "production@mbknit.com"
     },
     "certifications": [
-      "/certifications/16.png",
-      "/certifications/17.png",
-      "/certifications/18.png",
-      "/certifications/19.png",
-      "/certifications/20.png",
-      "/certifications/21.png",
-      "/certifications/7.png",
-      "/certifications/8.png",
-      "/certifications/9.png",
-      "/certifications/10.png"
+      "/certifications/1.png",
+      "/certifications/11.png",
+      "/certifications/6.png",
+      "/certifications/14.png",
+      "/certifications/2.png",
+      "/certifications/4.png",
+      "/certifications/10.png",
+      "/certifications/12.png"
     ]
   },
   "lithe-group": {
@@ -223,16 +227,14 @@
       "email": "admin@lithead-group.com"
     },
     "certifications": [
-      "/certifications/11.png",
-      "/certifications/12.png",
-      "/certifications/13.png",
-      "/certifications/14.png",
-      "/certifications/15.png",
-      "/certifications/16.png",
-      "/certifications/7.png",
-      "/certifications/8.png",
+      "/certifications/20.png",
       "/certifications/9.png",
-      "/certifications/10.png"
+      "/certifications/18.png",
+      "/certifications/7.png",
+      "/certifications/17.png",
+      "/certifications/14.png",
+      "/certifications/10.png",
+      "/certifications/12.png"
     ]
   },
   "westknit": {
@@ -280,16 +282,13 @@
       "email": "contact@westknit.com"
     },
     "certifications": [
-      "/certifications/1.png",
-      "/certifications/2.png",
-      "/certifications/3.png",
-      "/certifications/4.png",
-      "/certifications/5.png",
       "/certifications/6.png",
-      "/certifications/7.png",
-      "/certifications/8.png",
-      "/certifications/9.png",
-      "/certifications/10.png"
+      "/certifications/11.png",
+      "/certifications/4.png",
+      "/certifications/10.png",
+      "/certifications/17.png",
+      "/certifications/14.png",
+      "/certifications/5.png"
     ]
   },
   "amante-brand": {
@@ -394,16 +393,13 @@
       "email": "support@amantebrand.lk"
     },
     "certifications": [
-      "/certifications/1.png",
+      "/certifications/18.png",
       "/certifications/2.png",
-      "/certifications/3.png",
-      "/certifications/4.png",
-      "/certifications/5.png",
       "/certifications/6.png",
+      "/certifications/16.png",
+      "/certifications/4.png",
       "/certifications/7.png",
-      "/certifications/8.png",
-      "/certifications/9.png",
-      "/certifications/10.png"
+      "/certifications/12.png"
     ]
   }
 }
