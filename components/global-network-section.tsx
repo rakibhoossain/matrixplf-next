@@ -177,13 +177,18 @@ export function GlobalNetworkSection() {
             ))}
           </svg>
 
-          {/* Cards positioned absolutely to match SVG coords */}
+          {/* Cards positioned relatively to the 1200px width base */}
           <div className="absolute inset-0 z-20 pointer-events-none">
             {leftNodes.map((node) => (
               <div
                 key={node.id}
-                className="absolute right-[calc(100%-340px)] w-[340px] -translate-y-1/2 bg-black/40 backdrop-blur-md p-5 rounded-xl border-2 pointer-events-auto transition-all hover:-translate-y-[calc(50%+4px)] hover:shadow-2xl"
-                style={{ top: `${(node.y / 1050) * 100}%`, borderColor: node.color }}
+                className="absolute -translate-y-1/2 bg-black/40 backdrop-blur-md p-5 rounded-xl border-2 pointer-events-auto transition-all hover:-translate-y-[calc(50%+4px)] hover:shadow-2xl"
+                style={{ 
+                  top: `${(node.y / 1050) * 100}%`, 
+                  left: '0%', 
+                  width: '28.33%', // (340 / 1200) * 100
+                  borderColor: node.color 
+                }}
               >
                 <h3 className="text-lg font-bold mb-0.5" style={{ color: node.color }}>{node.title}</h3>
                 <p className="text-sm font-bold text-white mb-2">{node.location}</p>
@@ -195,8 +200,13 @@ export function GlobalNetworkSection() {
             {rightNodes.map((node) => (
               <div
                 key={node.id}
-                className="absolute right-0 w-[340px] -translate-y-1/2 bg-black/40 backdrop-blur-md p-5 rounded-xl border-2 pointer-events-auto transition-all hover:-translate-y-[calc(50%+4px)] hover:shadow-2xl"
-                style={{ top: `${(node.y / 1050) * 100}%`, borderColor: node.color }}
+                className="absolute -translate-y-1/2 bg-black/40 backdrop-blur-md p-5 rounded-xl border-2 pointer-events-auto transition-all hover:-translate-y-[calc(50%+4px)] hover:shadow-2xl"
+                style={{ 
+                  top: `${(node.y / 1050) * 100}%`, 
+                  right: '0%', 
+                  width: '28.33%', // (340 / 1200) * 100
+                  borderColor: node.color 
+                }}
               >
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1.5 w-3 h-3 rounded-full" style={{ backgroundColor: node.color }}></div>
                 <h3 className="text-lg font-bold mb-0.5" style={{ color: node.color }}>{node.title}</h3>
@@ -216,7 +226,7 @@ export function GlobalNetworkSection() {
               const isRight = index % 2 !== 0;
               return (
                 <div key={node.id} className={`flex flex-col md:flex-row items-start md:items-center w-full ${isRight ? "md:flex-row-reverse" : ""}`}>
-                  <div className={`w-full pl-9 md:pl-0 md:w-[46%] ${isRight ? "md:pl-10" : "md:pr-10"}`}>
+                  <div className={`w-full pl-9 md:pl-0 md:w-[46%]`}>
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -224,15 +234,26 @@ export function GlobalNetworkSection() {
                       className="bg-white/5 backdrop-blur-xl p-6 rounded-2xl border-l-4 relative group"
                       style={{ borderLeftColor: node.color }}
                     >
-                      {/* Connection Lines */}
-                      <div className={`absolute top-1/2 -translate-y-1/2 w-6 h-px md:hidden left-0 -translate-x-full`} style={{ backgroundColor: node.color }} />
-                      <div className={`absolute top-1/2 -translate-y-1/2 w-10 h-px hidden md:block ${isRight ? "left-0 -translate-x-full" : "right-0 translate-x-full"}`} style={{ backgroundColor: node.color }} />
+                      {/* Connection Line - Percentage based to stay connected on large screens */}
+                      <div 
+                        className={`absolute top-1/2 -translate-y-1/2 hidden md:block ${isRight ? "left-0 -translate-x-full" : "right-0 translate-x-full"}`} 
+                        style={{ width: '8.69%', height: '1px', backgroundColor: node.color }} 
+                      />
+                      
+                      {/* Connection Line Mobile */}
+                      <div className={`absolute top-1/2 -translate-y-1/2 w-5 h-px md:hidden left-0 -translate-x-full`} style={{ backgroundColor: node.color }} />
 
-                      {/* Spine Dot */}
+                      {/* Spine Dot - Positioned using percentage to stay on center line */}
                       <div
-                        className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full ${isRight ? "-left-[calc(2.5rem+6px+0.5px)]" : "-right-[calc(2.5rem+6px+0.5px)]"
-                          } hidden md:block`}
-                        style={{ backgroundColor: node.color, boxShadow: `0 0 10px ${node.color}` }}
+                        className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full hidden md:block ${
+                          isRight ? "-left-[8.69%] -translate-x-1/2" : "-right-[8.69%] translate-x-1/2"
+                        }`}
+                        style={{ 
+                          backgroundColor: node.color, 
+                          boxShadow: `0 0 10px ${node.color}`,
+                          left: isRight ? '-8.69%' : 'auto',
+                          right: !isRight ? '-8.69%' : 'auto'
+                        }}
                       />
 
                       <h3 className="text-xl font-bold mb-1" style={{ color: node.color }}>{node.title}</h3>
