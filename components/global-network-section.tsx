@@ -115,9 +115,12 @@ export function GlobalNetworkSection() {
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 lg:mb-20 px-6 lg:px-12">
           <div className="max-w-3xl">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-6">
-              <Search className="w-3.5 h-3.5 text-sky-400" />
-              <span className="text-white/80 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">Global Network Dashboard</span>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-3 px-6 py-2.5 bg-white/5 backdrop-blur-md rounded-full border border-white/10 shadow-lg mb-6">
+              <div className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+              </div>
+              <span className="text-white text-[11px] font-bold uppercase tracking-[0.2em]">Global Network Dashboard</span>
             </motion.div>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
               Integrated <span className="text-sky-500">Global Hubs</span>

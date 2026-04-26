@@ -4,33 +4,45 @@ import { useEffect, useRef, useState } from "react"
 import { MapPin, Phone, Mail, Send } from "lucide-react"
 const offices = [
   {
-    city: "Hong Kong",
+    Name: "Matrix Platform Ltd",
+    city1: "Hong Kong",
+    city2: "Dhaka",
     type: "Headquarters",
-    address: "Suite 1205, Tower 2, Lippo Centre, 89 Queensway, Admiralty",
-    phone: "+852 2123 4567",
-    email: "hq@monalisa.com",
+    address1: "Unit 1606, 16/F Comweb Plaza12 Cheung Yue StreetLai Chi Kok, Kowloon Hong Kong",
+    address2: "House 163, Lane 1, Baridhara DOHS, Dhaka, Bangladesh",
+    phone1: "+386 30 796 092",
+    email1: "shohel@matrixapparels.com"
   },
   {
-    city: "Dhaka",
-    type: "Operations Center",
-    address: "House 45, Road 12, Block C, Banani, Dhaka 1213",
-    phone: "+880 2 8817 5678",
-    email: "dhaka@monalisa.com",
+    Name: "Matrix Design D.o.o.",
+    city1: "Ljubljana,Slovenia",
+    city2: "",
+    type: "Headquarters",
+    address1: "3000 Celje, Slovenia",
+    address2: "",
+    phone1: "+386 30 796 092",
+    email1: "shohel@matrixapparels.com"
   },
   {
-    city: "Sri-Lanka",
-    type: "Sourcing Hub",
-    address: "No. 168, Textile Industry Zone, Keqiao District, Shaoxing",
-    phone: "+86 575 8123 4567",
-    email: "shaoxing@monalisa.com",
+    Name: "Trinity Global enterprises (Pvt) Ltd",
+    city1: "Sri Lanka",
+    city2: "",
+    type: "Headquarters",
+    address1: "170/01, Bolgoda Gardens,Galkanuwa Road,Gorakana, Keselwaththa. Sri Lanka.",
+    address2: "",
+    phone1: "+94 382286287",
+    email1: "shohel@matrixapparels.com"
   },
   {
-    city: "Shaoxing",
-    type: "Fabric Mill",
-    address: "No. 168, Textile Industry Zone, Keqiao District, Shaoxing",
-    phone: "+86 575 8123 4567",
-    email: "shaoxing@monalisa.com",
-  },
+    Name: "ZHEJIANG MONALISA TEXTILE CO., LTD.",
+    city1: "China",
+    city2: "",
+    type: "Headquarters",
+    address1: "Building 3, No 1423, Eastern Renmin Road,Shaoxing, Zhejiang, China",
+    address2: "",
+    phone1: "+386 30 796 092",
+    email1: "shohel@matrixapparels.com"
+  }
 ]
 
 export function ContactSection() {
@@ -98,10 +110,10 @@ export function ContactSection() {
 
           {/* Contact Form */}
           <div
-            className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+            className={`transition-all duration-1000 delay-300 self-start ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
               }`}
           >
-            <div className="bg-[#1a2333] rounded-2xl p-6 sm:p-8 border border-slate-800 h-full">
+            <div className="bg-[#1a2333] rounded-2xl p-6 sm:p-8 border border-slate-800">
               <h3 className="text-xl font-bold text-white mb-1">Send us a message</h3>
               <p className="text-slate-400 text-sm mb-6">We&apos;ll get back to you within 24 hours.</p>
 
@@ -173,26 +185,37 @@ export function ContactSection() {
               <div className="space-y-4">
                 {offices.map((office, index) => (
                   <div
-                    key={office.city}
-                    className="bg-transparent rounded-xl p-5 border border-slate-700 hover:border-slate-500 transition-all duration-300 flex items-start sm:items-center gap-4"
+                    key={office.Name}
+                    className="bg-transparent rounded-xl p-5 border border-slate-700 hover:border-slate-500 transition-all duration-300 space-y-4"
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
-                    <div className="w-10 h-10 border border-slate-600 rounded-md flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-4 h-4 text-[#38bdf8]" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h4 className="font-bold text-white text-sm">{office.city}</h4>
-                        <span className="text-slate-400 text-xs font-semibold">{office.type}</span>
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 border border-slate-600 rounded-md flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-4 h-4 text-[#38bdf8]" />
                       </div>
-                      <p className="text-slate-400 text-xs mb-1.5 truncate">{office.address}</p>
-                      <div className="flex flex-wrap gap-4 text-[11px] font-semibold">
-                        <a href={`tel:${office.phone}`} className="flex items-center gap-1.5 text-slate-500 hover:text-white transition-colors">
-                          <Phone className="w-3 h-3" /> {office.phone}
-                        </a>
-                        <a href={`mailto:${office.email}`} className="flex items-center gap-1.5 text-slate-500 hover:text-white transition-colors">
-                          <Mail className="w-3 h-3" /> {office.email}
-                        </a>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h4 className="font-bold text-white text-sm">{office.Name}</h4>
+                          <span className="text-slate-400 text-[10px] font-bold uppercase tracking-wider bg-white/5 px-2 py-0.5 rounded border border-white/10">{office.type}</span>
+                        </div>
+
+                        {/* Location 1 */}
+                        <div className="mb-4">
+                          <p className="text-sky-500 text-[10px] font-bold uppercase tracking-widest mb-1">{office.city1}</p>
+                          <p className="text-slate-400 text-xs leading-relaxed">{office.address1}</p>
+                        </div>
+
+                        {/* Location 2 */}
+                        <div className="mb-4">
+                          <p className="text-sky-500 text-[10px] font-bold uppercase tracking-widest mb-1">{office.city2}</p>
+                          <p className="text-slate-400 text-xs leading-relaxed">{office.address2}</p>
+                        </div>
+
+                        <div className="flex flex-wrap gap-4 text-[11px] font-bold pt-2 border-t border-white/5">
+                          <a href={`mailto:${office.email1}`} className="flex items-center gap-1.5 text-slate-500 hover:text-white transition-colors">
+                            <Mail className="w-3 h-3 text-sky-500" /> {office.email1}
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>

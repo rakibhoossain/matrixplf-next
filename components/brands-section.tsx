@@ -9,7 +9,7 @@ const ownBrands = [
     name: "PANTONECLO",
     logo: "/Pantoneclo_logo-New.png",
     category: "Men's Fashion",
-    desc: "A European menswear brand registered and distributed across 16 EU countries. The range covers casual knitwear, outerwear, and accessories at accessible price points.",
+    desc: "A European menswear brand developed and distributed across 16 EU countries, built on a strong understanding of market demand, product positioning, and consumer behavior. From concept and design to production and retail distribution, the brand reflects our ability to translate ideas into commercially successful products at scale.",
     linkText: "EXPLORE BRAND",
     link: "https://pantoneclo.si",
     image: "/assets/brand/Pantoneclo.png", // two men walking
@@ -109,7 +109,7 @@ export function BrandsSection() {
               {/* Content Container */}
               <div className="container mx-auto px-6 lg:px-12 relative z-10 py-16 lg:py-32">
                 <div className={`grid lg:grid-cols-2 gap-12 lg:gap-24 items-center`}>
-                  
+
                   {/* Mobile Image Area */}
                   <div className={`lg:hidden relative h-[350px] rounded-3xl overflow-hidden mb-8 shadow-2xl ${isLeftImage ? "" : "order-1"}`}>
                     <img
@@ -139,8 +139,8 @@ export function BrandsSection() {
                     </p>
 
                     <div className="flex items-center">
-                      <a 
-                        href={brand.link} 
+                      <a
+                        href={brand.link}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 text-slate-900 font-bold text-sm tracking-widest uppercase group/link"

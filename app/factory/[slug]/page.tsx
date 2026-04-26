@@ -5,6 +5,7 @@ import { notFound } from "next/navigation"
 
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { FactoryProfileDownload } from "@/components/FactoryProfileDownload"
 import factoriesData from "@/lib/factories.json"
 
 interface FactoryPageProps {
@@ -75,19 +76,14 @@ export default async function FactoryPage({ params }: FactoryPageProps) {
                             <p className="text-xl md:text-2xl text-white font-semibold mb-6">
                                 {factory.location}
                             </p>
-                            <Link
-                                href="#"
-                                className="inline-flex items-center gap-2 bg-[#4cb5e4] hover:bg-[#3ba4d3] text-white text-sm font-semibold px-4 py-2 rounded transition-colors"
-                            >
-                                <Download className="w-4 h-4" /> Download Profile
-                            </Link>
+                            <FactoryProfileDownload factory={factory} />
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Stats Row */}
-            <section className="container mx-auto px-6 lg:px-12 -mt-6 relative z-20">
+            <section className="container mx-auto px-6 lg:px-12 -mt-6 relative">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div className="bg-[#1e2632] border border-[#2b394b] rounded-xl p-8 text-center shadow-lg transition-transform hover:-translate-y-1">
                         <div className="text-4xl lg:text-5xl font-bold text-[#4cb5e4] mb-2 tracking-tight">{factory.stats.workers}</div>

@@ -56,7 +56,7 @@ export function WhoWeAreLegacySection() {
             className={`text-3xl md:text-4xl lg:text-5xl font-bold text-sky-500 mb-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
           >
-            The Matrix Advantage
+            The Matrix <span className="text-white">Advantage</span>
           </h2>
 
           <div className={`space-y-6 md:space-y-8 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"

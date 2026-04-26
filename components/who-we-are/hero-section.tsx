@@ -35,10 +35,10 @@ export function WhoWeAreHeroSection() {
               className={`transition-all duration-1000 uppercase ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
             >
-              <span className="block text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-5xl font-bold text-white leading-[1.1] tracking-tight">
+              <span className="block text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
                 BUILT TO <span className="text-sky-500">MANUFACTURE</span>
               </span>
-              <span className="block text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold text-white leading-[1.1] tracking-tight">
+              <span className="block text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
                 <span className="text-sky-500">STRUCTURED</span> TO DELIVER
               </span>
             </h1>

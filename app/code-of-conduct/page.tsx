@@ -1,5 +1,6 @@
 "use client"
 
+import NextImage from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Mail, Shield, AlertTriangle, CheckCircle2 } from "lucide-react"
@@ -38,12 +39,25 @@ export default function CodeOfConductPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 overflow-hidden">
+      <section className="relative pt-48 pb-24 overflow-hidden min-h-[50vh] flex items-center">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <NextImage
+            src="/assets/pages/code-of-condact.png"
+            alt="Code of Conduct"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1420] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+
         {/* Background Decorative Glows */}
         <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-sky-500/10 blur-[120px] rounded-full -z-10" />
         <div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-sky-500/5 blur-[100px] rounded-full -z-10" />
 
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <Reveal className="flex flex-col items-start gap-4 mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 backdrop-blur-md rounded-full border border-white/10">
               <Shield className="w-3.5 h-3.5 text-sky-400" />
@@ -56,7 +70,7 @@ export default function CodeOfConductPage() {
           </Reveal>
 
           <Reveal delay={0.2} className="max-w-3xl mb-16">
-            <p className="text-lg md:text-xl text-slate-400 leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-200 leading-relaxed">
               The principles, standards and zero-tolerance policies that govern how every employee, vendor,
               factory and business partner of MATRIX Platform Ltd operates — every day, across every market.
             </p>

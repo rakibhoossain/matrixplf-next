@@ -5,13 +5,14 @@ import Image from "next/image"
 import { ChevronLeft, ChevronRight, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ProfileDownloadModal } from "./ProfileDownloadModal"
+import Link from "next/link"
 
 const slides = [
   {
     id: 1,
     image: "/hero/Cover1.jpg",
-    title: "FROM FABRIC TO",
-    titleHighlight: "FINISHED PRODUCT.",
+    title: "FROM FABRIC",
+    titleHighlight: "TO <br/>FINISHED PRODUCT.",
     subtitle: "Three Countries. One Integrated Supply Chain.",
     description: "We bridge China's textile power with South Asia's manufacturing excellence.",
   },
@@ -110,15 +111,17 @@ export function HeroSection() {
             >
               <span
                 key={`title-${currentSlide}`}
-                className="block text-3xl min-[360px]:text-4xl sm:text-4xl md:text-4xl lg:text-7xl font-bold text-white leading-tight tracking-tight animate-fade-in-up"
+                className="block text-3xl min-[360px]:text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight tracking-tight animate-fade-in-up"
               >
                 {slide.title}
               </span>
               <span
                 key={`highlight-${currentSlide}`}
                 className="block text-3xl min-[360px]:text-4xl sm:text-4xl md:text-4xl lg:text-7xl font-bold text-white leading-tight tracking-tight mt-2 animate-fade-in-up animation-delay-100"
+
+                dangerouslySetInnerHTML={{ __html: slide.titleHighlight }}
               >
-                {slide.titleHighlight}
+                {/* {slide.titleHighlight} */}
               </span>
             </h1>
 
@@ -149,13 +152,15 @@ export function HeroSection() {
                 <Download className="w-5 h-5" />
                 Download Profile
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto border-white/60 text-slate-800 bg-white/90 hover:bg-white px-8 py-6 text-base font-medium rounded-full transition-all duration-300 min-h-[48px]"
-              >
-                Contact Our Team
-              </Button>
+              <Link href="/contact" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto border-white/60 text-slate-800 bg-white/90 hover:bg-white px-8 py-6 text-base font-medium rounded-full transition-all duration-300 min-h-[48px]"
+                >
+                  Contact Our Team
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

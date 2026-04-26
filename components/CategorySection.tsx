@@ -117,7 +117,7 @@ export default function CategorySection() {
                       Our design and merchandising teams turn concepts into shippable styles across all nine categories.
                     </p>
                   </div>
-                  
+
                   <button className="inline-flex items-center gap-3 px-10 py-5 bg-sky-500 hover:bg-sky-400 text-[#0d1420] rounded-full font-bold text-lg transition-all group/btn shadow-xl shadow-sky-500/20 active:scale-95">
                     Start a conversation
                     <ArrowRight className="w-6 h-6 transition-transform group-hover/btn:translate-x-2" />

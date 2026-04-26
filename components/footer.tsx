@@ -24,7 +24,7 @@ const footerLinks = {
     { label: "Sustainability", href: "/sustainability" },
     { label: "Certifications", href: "#certifications" },
     { label: "Code Of Conduct", href: "/code-of-conduct" },
-    { label: "Case Studies", href: "#case-studies" },
+    { label: "Careers", href: "/careers" },
   ],
 }
 
@@ -45,7 +45,7 @@ export function Footer() {
     <footer className="bg-zinc-950 text-white border-t border-white/5">
       {/* Main Footer */}
       <div className="container mx-auto px-6 lg:px-12 py-10 lg:py-14">
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="group">
@@ -67,12 +67,12 @@ export function Footer() {
               className="w-full sm:w-auto bg-sky-500 hover:bg-sky-600 text-white border-none gap-2 min-h-[48px] px-8 rounded-full font-semibold transition-all duration-300 shadow-lg shadow-sky-500/25"
             >
               <Download className="w-4 h-4" />
-              Download Company Profile
+              Download Profile
             </Button>
           </div>
 
           {/* Links Columns */}
-          <div className="mt-8 lg:mt-0">
+          <div className="mt-8 lg:mt-0 lg:text-right">
             <h4 className="font-semibold text-white mb-6">Company</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
@@ -88,7 +88,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="mt-4 lg:mt-0">
+          {/* <div className="mt-4 lg:mt-0">
             <h4 className="font-semibold text-white mb-6">Services</h4>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
@@ -102,9 +102,9 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
-          <div className="mt-4 lg:mt-0">
+          <div className="mt-4 lg:mt-0 lg:text-right">
             <h4 className="font-semibold text-white mb-6">Resources</h4>
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (

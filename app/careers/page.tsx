@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import NextImage from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Briefcase, MapPin, ArrowRight, Mail, Sparkles, X, Clock, GraduationCap, Building2, Upload } from "lucide-react"
@@ -161,17 +162,31 @@ export default function CareersPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 overflow-hidden">
+      <section className="relative pt-48 pb-24 overflow-hidden min-h-[50vh] flex items-center">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <NextImage
+            src="/assets/pages/carrier.png"
+            alt="Careers at Matrix"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1420] via-transparent to-[#0d1420]" />
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+
         <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-sky-500/10 blur-[120px] rounded-full -z-10" />
         <div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-sky-500/5 blur-[100px] rounded-full -z-10" />
 
-        <div className="container mx-auto px-6 lg:px-12 text-left">
+        <div className="container mx-auto px-6 lg:px-12 text-left relative z-10">
           <Reveal className="flex flex-col items-start gap-4 mb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 backdrop-blur-md rounded-full border border-white/10">
-              <div className="p-1 rounded-lg bg-sky-500/10 border border-sky-500/20">
-                <Briefcase className="w-3.5 h-3.5 text-sky-400" />
+            <div className="inline-flex items-center gap-3 px-6 py-2.5 bg-white/5 backdrop-blur-md rounded-full border border-white/10 shadow-lg">
+              <div className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
               </div>
-              <span className="text-white/80 text-[10px] font-bold uppercase tracking-wider">Careers</span>
+              <span className="text-white text-[11px] font-bold uppercase tracking-[0.2em]">Why Matrix Platform</span>
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
               Careers at <span className="text-sky-500">Matrix Platform</span>

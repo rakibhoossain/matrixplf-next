@@ -161,7 +161,8 @@ export function ProductsSection() {
               const isHovered = hoveredId === category.id
 
               return (
-                <div
+                <Link
+                  href="/product"
                   key={category.id}
                   className={`flex-shrink-0 relative overflow-hidden cursor-pointer group transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                     }`}
@@ -189,9 +190,9 @@ export function ProductsSection() {
                     >
                       <Image
                         src={image}
-                        alt={`${category.name} ${imgIndex + 1}`}
+                        alt={category.name}
                         fill
-                        sizes="320px"
+                        sizes={`${cardWidth}px`}
                         className={`object-cover object-top transition-all duration-700 ${isHovered ? "grayscale-0" : "grayscale-[30%]"
                           }`}
                       />
@@ -226,7 +227,7 @@ export function ProductsSection() {
                   {/* Hover border effect */}
                   <div className={`absolute inset-0 border-2 transition-all duration-300 ${isHovered ? "border-white/30" : "border-transparent"
                     }`} />
-                </div>
+                </Link>
               )
             })}
           </div>
