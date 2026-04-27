@@ -9,6 +9,7 @@ export interface Category {
   subtitle: string;
   description: string;
   link: string;
+  bannerImage: string;
 }
 
 export const categories: Category[] = [
@@ -21,11 +22,18 @@ export const categories: Category[] = [
     subtitle: "COMFORT REDEFINED",
     description: "Ultra-soft fabrics and relaxed silhouettes designed for ultimate comfort at home. Perfect for work-from-home days and lazy weekends.",
     images: [
-      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-1.jpg",
-      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-2.jpg",
-      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-3.jpg",
-      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-4.jpg",
+      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-2.jpeg",
+      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-1.jpeg",
+      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-3.jpeg",
+      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-4.jpeg",
+      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-5.jpeg",
+      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-6.jpeg",
+      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-7.jpeg",
+      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-8.jpeg",
+      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-9.jpeg",
+      "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-10.jpeg"
     ],
+    bannerImage: "/assets/categories/banner/lounge.jpg",
   },
   {
     id: 2,
@@ -36,11 +44,16 @@ export const categories: Category[] = [
     subtitle: "PERFECT FIT & COMFORT",
     description: "From tailored trousers to casual chinos, our bottomwear collection offers the perfect foundation for any outfit.",
     images: [
-      "/assets/categories/nightwear/Lounge-&-Nightwear-1.jpg",
+      "/assets/categories/nightwear/Lounge-&-Nightwear-1.jpeg",
       "/assets/categories/nightwear/Lounge-&-Nightwear-2.jpg",
-      "/assets/categories/nightwear/Lounge-&-Nightwear-3.jpg",
+      "/assets/categories/nightwear/Lounge-&-Nightwear-3.jpeg",
       "/assets/categories/nightwear/Lounge-&-Nightwear-4.jpg",
+      "/assets/categories/nightwear/Lounge-&-Nightwear-5.jpg",
+      "/assets/categories/nightwear/Lounge-&-Nightwear-6.jpg",
+      "/assets/categories/nightwear/Lounge-&-Nightwear-7.jpg",
+      "/assets/categories/nightwear/Lounge-&-Nightwear-8.jpeg"
     ],
+    bannerImage: "/assets/categories/banner/nightwear.jpg",
   },
   {
     id: 3,
@@ -55,7 +68,16 @@ export const categories: Category[] = [
       "/assets/categories/inner-essentials/Innerwear-&-Essentials-2.jpg",
       "/assets/categories/inner-essentials/Innerwear-&-Essentials-3.jpg",
       "/assets/categories/inner-essentials/Innerwear-&-Essentials-4.jpg",
+      "/assets/categories/inner-essentials/Innerwear-&-Essentials-5.jpg",
+      "/assets/categories/inner-essentials/Innerwear-&-Essentials-6.jpeg",
+      "/assets/categories/inner-essentials/Innerwear-&-Essentials-7.jpeg",
+      "/assets/categories/inner-essentials/Innerwear-&-Essentials-8.jpeg",
+      "/assets/categories/inner-essentials/Innerwear-&-Essentials-9.jpeg",
+      "/assets/categories/inner-essentials/Innerwear-&-Essentials-10.jpeg",
+
+
     ],
+    bannerImage: "/assets/categories/banner/innerwear.jpg",
   },
   {
     id: 4,
@@ -66,11 +88,15 @@ export const categories: Category[] = [
     subtitle: "PERFORMANCE DRIVEN",
     description: "Technical fabrics and ergonomic designs that move with you. Engineered for peak athletic performance.",
     images: [
-      "/assets/categories/activewear/Sports-1.jpg",
-      "/assets/categories/activewear/Sports-2.png",
+      "/assets/categories/activewear/Sports-2.jpg",
       "/assets/categories/activewear/Sports-3.jpg",
-      "/assets/categories/activewear/Sports-4.png",
+      "/assets/categories/activewear/Sports-4.jpg",
+      "/assets/categories/activewear/Sports-5.jpg",
+      "/assets/categories/activewear/Sports-6.jpg",
+      "/assets/categories/activewear/Sports-7.jpg",
+
     ],
+    bannerImage: "/assets/categories/banner/activewear.png",
   },
   {
     id: 5,
@@ -81,11 +107,16 @@ export const categories: Category[] = [
     subtitle: "WARMTH & TEXTURE",
     description: "Luxurious knits crafted from the finest yarns. Timeless pieces that provide both warmth and sophisticated texture.",
     images: [
-      "/assets/categories/sweat/sweat-1.jpg",
-      "/assets/categories/sweat/sweat-2.jpg",
-      "/assets/categories/sweat/sweat-3.jpg",
-      "/assets/categories/sweat/sweat-4.jpg",
+      "/assets/categories/sweat/sweat-1.jpeg",
+      "/assets/categories/sweat/sweat-2.jpeg",
+      "/assets/categories/sweat/sweat-3.jpeg",
+      "/assets/categories/sweat/sweat-4.jpeg",
+      "/assets/categories/sweat/sweat-5.jpeg",
+      "/assets/categories/sweat/sweat-6.jpeg",
+      "/assets/categories/sweat/sweat-7.jpeg",
+      "/assets/categories/sweat/sweat-8.jpeg",
     ],
+    bannerImage: "/assets/categories/banner/sweatwear.jpg",
   },
   {
     id: 6,
@@ -100,7 +131,10 @@ export const categories: Category[] = [
       "/assets/categories/denim/Denim-2.jpg",
       "/assets/categories/denim/Denim-3.jpg",
       "/assets/categories/denim/Denim-4.jpg",
+      "/assets/categories/denim/Denim-5.jpg",
+
     ],
+    bannerImage: "/assets/categories/banner/denim.jpg",
   },
   {
     id: 7,
@@ -115,7 +149,10 @@ export const categories: Category[] = [
       "/assets/categories/swimwear/swimwear-2.jpg",
       "/assets/categories/swimwear/swimwear-3.jpg",
       "/assets/categories/swimwear/swimwear-4.jpg",
+      "/assets/categories/swimwear/swimwear-5.jpeg",
+      "/assets/categories/swimwear/swimwear-6.jpeg"
     ],
+    bannerImage: "/assets/categories/banner/swimmer.jpg",
   }
 ];
 

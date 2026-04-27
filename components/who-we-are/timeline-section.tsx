@@ -28,7 +28,7 @@ const timelineEvents = [
     year: "2021",
     title: "Expansion into Sri Lanka",
     desc: "Extended operations into Sri Lanka, focusing on technical and specialized apparel for global markets.",
-    image: "/assets/company/2021.jpg"
+    image: "/assets/company/2021.png"
   },
   {
     year: "2022",
@@ -46,7 +46,7 @@ const timelineEvents = [
     year: "2024",
     title: "Retail Expansion",
     desc: "Expanded into direct retail across European markets, building strong market insight and end-to-end product understanding.",
-    image: "/assets/company/2024.jpg"
+    image: "/assets/company/2024.png"
   },
   {
     year: "2025",

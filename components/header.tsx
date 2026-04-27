@@ -46,7 +46,7 @@ export function Header() {
             {/* Logo - MATRIX PLATFROM with underline */}
             <Link href="/" className="group flex items-center gap-3">
               <img
-                src="/Matrix-Platform-Logo-1.png"
+                src="/Matrix-Platform-Logo-2.png"
                 alt="Logo"
                 className={`w-[210px] sm:w-[260px] lg:w-[300px] h-auto transition-all duration-300 object-contain ${isScrolled ? "max-h-12 md:max-h-14" : "max-h-12 md:max-h-14"
                   }`}
