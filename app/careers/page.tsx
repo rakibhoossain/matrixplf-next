@@ -292,9 +292,9 @@ export default function CareersPage() {
 
               <Button
                 onClick={() => setApplyingJob({ title: "General Application", location: "Global / Remote" })}
-                className="w-full md:w-auto bg-sky-500 hover:bg-sky-600 text-white rounded-full px-4 py-4 h-auto text-lg font-bold transition-all hover:scale-105 shadow-xl shadow-sky-500/20"
+                className="w-full md:w-auto bg-sky-500 hover:bg-sky-600 text-white rounded-full px-6 py-3 text-sm font-bold gap-2 h-auto transition-all hover:scale-105 shadow-xl shadow-sky-500/20"
               >
-                Submit General CV <ArrowRight className="w-5 h-5 ml-2" />
+                Submit General CV <ArrowRight className="w-4 h-4" />
               </Button>
             </div>
           </Reveal>
