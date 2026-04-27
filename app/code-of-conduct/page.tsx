@@ -95,9 +95,9 @@ export default function CodeOfConductPage() {
                 asChild
                 className="bg-sky-500 hover:bg-sky-600 text-white rounded-full px-4 py-4 h-auto text-md font-bold transition-all hover:scale-105 shadow-lg shadow-sky-500/20"
               >
-                <a href="mailto:ethics@matrixapparels.com">
+                <a href="mailto:shohel@matrixapparels.com">
                   <Mail className="w-5 h-5 mr-2" />
-                  ethics@matrixapparels.com
+                  shohel@matrixapparels.com
                 </a>
               </Button>
             </div>
@@ -219,9 +219,9 @@ export default function CodeOfConductPage() {
                 asChild
                 className="bg-sky-500 hover:bg-sky-600 text-white rounded-full px-4 py-4 h-auto text-md font-bold transition-all hover:scale-105 shadow-xl shadow-sky-500/20"
               >
-                <a href="mailto:ethics@matrixapparels.com">
+                <a href="mailto:shohel@matrixapparels.com">
                   <Mail className="w-6 h-6 mr-2" />
-                  ethics@matrixapparels.com
+                  shohel@matrixapparels.com
                 </a>
               </Button>
             </div>

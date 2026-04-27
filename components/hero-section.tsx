@@ -20,23 +20,23 @@ const slides = [
     id: 2,
     image: "/hero/Cover-2.jpg",
     title: "Quality Built",
-    titleHighlight: "Through Controlled Manufacturing.",
+    titleHighlight: "ON <br/> FULL CONTROL",
     subtitle: "Integrated production systems ensuringconsistency at every stage.",
     description: "From fabric development to nal nishing, each process is monitored, standardized, and continuously optimized.",
   },
   {
     id: 3,
     image: "/hero/Cover-3.png",
-    title: "Technical Expertise,",
-    titleHighlight: "Behind Every Product.",
+    title: "TECHNICAL EDGE",
+    titleHighlight: "IN <br> EVERY PRODUCT",
     subtitle: "Design-led R&D and technical teams shaping precise, production-ready garments.",
     description: "Fit engineering, cost efficiency, and quality control — built to scale responsibly.",
   },
   {
     id: 4,
     image: "/hero/Cover-4.jpg",
-    title: "Trusted by Global Brands",
-    titleHighlight: "Manufacturing Excellence.",
+    title: "Trusted ",
+    titleHighlight: "by <br/> Global Brands.",
     subtitle: "End-to-end manufacturing systems enabling global brands with consistency, reliability, and scale.",
     description: "From development to delivery, built for consistency and reliability. Ensuring performance at scale.",
   },
@@ -101,7 +101,7 @@ export function HeroSection() {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center py-24">
+      <div className="relative z-20 h-full flex items-center py-24">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-3xl pt-20">
             {/* Main Heading */}
@@ -167,7 +167,7 @@ export function HeroSection() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="absolute bottom-8 w-full z-20 flex items-center justify-center gap-4">
+      <div className="absolute bottom-8 w-full z-5 flex items-center justify-center gap-4">
         {/* Arrow Navigation */}
         <button
           onClick={prevSlide}

@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { useRef } from "react"
+import { ArrowRight } from "lucide-react"
 
 interface CategoryCardProps {
   name: string
@@ -40,10 +41,11 @@ export default function CategoryCard({ name, image, link, className = "", priori
         </div>
 
         {/* Footer Bar - Matches the design in the image */}
-        <div className="bg-[#0b121f] py-4 px-4 flex items-center justify-center border-t border-white/5 relative z-10 transition-colors duration-300 group-hover:bg-[#1a2333]">
-          <h3 className="text-sm md:text-base font-bold text-white text-center uppercase tracking-[0.05em]">
+        <div className="bg-[#0b121f] py-4 px-4 mt-3 flex items-center justify-between border rounded-lg border-white/20  relative z-10 transition-colors duration-300 group-hover:border-sky-400">
+          <h3 className="truncate text-sm font-semibold capitalize tracking-tight text-white md:text-[15px]">
             {name}
           </h3>
+          <ArrowRight className="text-white transition-colors duration-300 group-hover:text-sky-400" />
         </div>
       </Link>
     </motion.div>

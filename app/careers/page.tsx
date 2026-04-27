@@ -287,12 +287,12 @@ export default function CareersPage() {
                   <p className="text-slate-400 max-w-xl leading-relaxed text-sm md:text-base">
                     Don&apos;t see a suitable role? Submit your CV and we&apos;ll keep it for future opportunities across our manufacturing group.
                   </p>
-                </div>
+                </div >
               </div>
 
               <Button
                 onClick={() => setApplyingJob({ title: "General Application", location: "Global / Remote" })}
-                className="w-full md:w-auto bg-sky-500 hover:bg-sky-600 text-white rounded-full px-10 py-7 h-auto text-lg font-bold transition-all hover:scale-105 shadow-xl shadow-sky-500/20"
+                className="w-full md:w-auto bg-sky-500 hover:bg-sky-600 text-white rounded-full px-4 py-4 h-auto text-lg font-bold transition-all hover:scale-105 shadow-xl shadow-sky-500/20"
               >
                 Submit General CV <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -305,111 +305,92 @@ export default function CareersPage() {
       <Dialog open={!!selectedJob} onOpenChange={() => setSelectedJob(null)}>
         <DialogContent
           showCloseButton={false}
-          className="max-w-7xl bg-[#0d1420] border-white/10 text-white p-0 overflow-hidden rounded-[2.5rem] outline-none shadow-2xl"
+          className="w-[94vw] max-w-4xl bg-[#111827] border-white/10 text-white p-0 overflow-hidden rounded-[2rem] shadow-2xl outline-none"
         >
-          <div className="relative h-full flex flex-col">
+          <div className="relative flex flex-col max-h-[90vh]">
+            {/* Close Button */}
             <button
               onClick={() => setSelectedJob(null)}
-              className="absolute top-8 right-8 p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all z-50 group"
+              className="absolute top-6 right-6 p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors z-50"
             >
-              <X className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
+              <X className="w-5 h-5 text-slate-400" />
             </button>
 
-            <div className="p-10 md:p-16 lg:p-20 overflow-y-auto max-h-[85vh] scrollbar-hide">
-              <DialogHeader className="mb-12">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-sky-500 text-[10px] font-bold uppercase tracking-[0.3em]">Job Details</span>
-                  <div className="h-px w-12 bg-sky-500/30" />
-                </div>
-                <DialogTitle className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight text-left leading-tight max-w-4xl">
+            {/* Scrollable Content */}
+            <div className="p-8 md:p-12 overflow-y-auto scrollbar-hide">
+              {/* Header */}
+              <div className="mb-10">
+                <span className="text-sky-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-3 block">Job Details</span>
+                <DialogTitle className="text-3xl md:text-4xl font-bold text-white tracking-tight">
                   {selectedJob?.title}
                 </DialogTitle>
-              </DialogHeader>
+              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+              {/* Info Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
                 {[
                   { label: "Location", value: selectedJob?.location, icon: MapPin },
                   { label: "Department", value: selectedJob?.department, icon: Building2 },
                   { label: "Type", value: selectedJob?.type, icon: Clock },
                   { label: "Experience", value: selectedJob?.experience, icon: GraduationCap },
                 ].map((info, i) => (
-                  <div key={i} className="p-8 rounded-[2rem] bg-white/5 border border-white/10 flex flex-col gap-5 hover:bg-white/[0.08] transition-all hover:translate-y-[-4px]">
-                    <div className="flex items-center gap-3 text-sky-400">
-                      <div className="p-2.5 rounded-xl bg-sky-500/10 border border-sky-500/20">
-                        <info.icon className="w-5 h-5" />
-                      </div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider">{info.label}</span>
+                  <div key={i} className="p-4 rounded-xl bg-white/5 border border-white/5 flex flex-col gap-2">
+                    <div className="flex items-center gap-2">
+                      <info.icon className="w-3.5 h-3.5 text-sky-400" />
+                      <span className="text-[9px] font-bold uppercase tracking-wider text-slate-400">{info.label}</span>
                     </div>
-                    <p className="text-lg font-bold text-slate-100">{info.value}</p>
+                    <p className="text-xs font-semibold text-white leading-tight">{info.value}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
-                <div className="lg:col-span-7 space-y-16">
-                  <div className="relative">
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center">
-                        <Briefcase className="w-5 h-5 text-sky-400" />
-                      </div>
-                      <h4 className="text-base font-bold text-sky-400 uppercase tracking-widest">Job Summary</h4>
-                    </div>
-                    <p className="text-slate-300 text-xl md:text-2xl leading-relaxed font-medium">
-                      {selectedJob?.summary}
-                    </p>
+              {/* Body Content */}
+              <div className="space-y-10">
+                {/* Summary */}
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <Briefcase className="w-4 h-4 text-sky-400" />
+                    <h4 className="text-[10px] font-bold text-sky-400 uppercase tracking-[0.2em]">Job Summary</h4>
                   </div>
-
-                  <div>
-                    <h4 className="text-base font-bold text-sky-400 uppercase tracking-widest mb-10 flex items-center gap-4">
-                      <div className="w-2 h-2 rounded-full bg-sky-500" />
-                      Key Responsibilities
-                    </h4>
-                    <ul className="grid gap-6">
-                      {selectedJob?.responsibilities.map((item: string, i: number) => (
-                        <li key={i} className="flex gap-6 items-start text-slate-300 group">
-                          <div className="w-2 h-2 rounded-full bg-sky-500/40 mt-3 flex-shrink-0 group-hover:bg-sky-500 transition-colors" />
-                          <span className="leading-relaxed text-lg">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+                    {selectedJob?.summary}
+                  </p>
                 </div>
 
-                <div className="lg:col-span-5">
-                  <div className="p-10 rounded-[2.5rem] bg-white/5 border border-white/10 sticky top-0">
-                    <h4 className="text-base font-bold text-sky-400 uppercase tracking-widest mb-10 flex items-center gap-4">
-                      <div className="w-2 h-2 rounded-full bg-sky-500" />
-                      Requirements
-                    </h4>
-                    <ul className="space-y-6">
-                      {selectedJob?.requirements.map((item: string, i: number) => (
-                        <li key={i} className="flex gap-4 items-start text-slate-300 group">
-                          <div className="w-1.5 h-1.5 rounded-full bg-sky-500/40 mt-2.5 flex-shrink-0 group-hover:bg-sky-500 transition-colors" />
-                          <span className="leading-relaxed text-base">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                {/* Responsibilities */}
+                <div>
+                  <h4 className="text-[10px] font-bold text-sky-400 uppercase tracking-[0.2em] mb-6">Key Responsibilities</h4>
+                  <ul className="space-y-4">
+                    {selectedJob?.responsibilities.map((item: string, i: number) => (
+                      <li key={i} className="flex gap-3 items-start text-slate-300 text-sm md:text-base">
+                        <div className="w-1.5 h-1.5 rounded-full bg-sky-500 mt-1.5 flex-shrink-0" />
+                        <span className="leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                    <div className="mt-12 pt-10 border-t border-white/10">
-                      <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-                        Have questions about this role or our hiring process? Reach out to our talent acquisition team.
-                      </p>
-                      <a href="mailto:careers@matrixapparels.com" className="inline-flex items-center gap-2 text-sky-400 font-bold hover:text-sky-300 transition-colors group">
-                        <Mail className="w-4 h-4" />
-                        careers@matrixapparels.com
-                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0" />
-                      </a>
-                    </div>
-                  </div>
+                {/* Requirements */}
+                <div>
+                  <h4 className="text-[10px] font-bold text-sky-400 uppercase tracking-[0.2em] mb-6">Requirements</h4>
+                  <ul className="space-y-4">
+                    {selectedJob?.requirements.map((item: string, i: number) => (
+                      <li key={i} className="flex gap-3 items-start text-slate-300 text-sm md:text-base">
+                        <div className="w-1.5 h-1.5 rounded-full bg-sky-500 mt-1.5 flex-shrink-0" />
+                        <span className="leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
 
-            <div className="p-8 md:p-12 border-t border-white/10 bg-[#0d1420]/95 backdrop-blur-md flex items-center justify-end gap-6">
+            {/* Footer */}
+            <div className="p-6 border-t border-white/5 bg-black/20 flex items-center justify-end gap-4">
               <Button
                 variant="outline"
                 onClick={() => setSelectedJob(null)}
-                className="rounded-full border-white/10 bg-white/5 hover:bg-white hover:text-black font-bold px-12 h-16 text-lg transition-all"
+                className="rounded-full border-white/10 bg-white/5 hover:bg-white hover:text-black font-bold px-8 h-12 transition-all"
               >
                 Close
               </Button>
@@ -418,9 +399,9 @@ export default function CareersPage() {
                   setApplyingJob(selectedJob);
                   setSelectedJob(null);
                 }}
-                className="bg-sky-500 hover:bg-sky-600 text-white rounded-full px-16 py-8 h-auto text-xl font-bold transition-all hover:scale-105 shadow-2xl shadow-sky-500/30"
+                className="bg-sky-500 hover:bg-sky-600 text-white rounded-full px-8 h-12 font-bold transition-all flex items-center gap-2 group shadow-lg shadow-sky-500/20"
               >
-                Apply Now <ArrowRight className="w-7 h-7 ml-3" />
+                Apply Now <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
           </div>
@@ -431,17 +412,17 @@ export default function CareersPage() {
       <Dialog open={!!applyingJob} onOpenChange={() => setApplyingJob(null)}>
         <DialogContent
           showCloseButton={false}
-          className="max-w-7xl bg-[#0d1420] border-white/10 text-white p-0 overflow-hidden rounded-[2rem] outline-none shadow-2xl"
+          className="bg-[#0d1420] border-white/10 text-white p-0 overflow-hidden rounded-2xl md:rounded-[2rem] outline-none shadow-2xl fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
         >
           <div className="relative h-full flex flex-col">
             <button
               onClick={() => setApplyingJob(null)}
-              className="absolute top-6 right-6 p-2.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors z-50 group"
+              className="absolute top-4 right-4 md:top-6 md:right-6 p-2 md:p-2.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors z-50 group"
             >
-              <X className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
+              <X className="w-4 h-4 md:w-5 md:h-5 text-slate-400 group-hover:text-white transition-colors" />
             </button>
 
-            <div className="p-8 md:p-12 overflow-y-auto max-h-[90vh] scrollbar-hide">
+            <div className="p-6 md:p-12 overflow-y-auto max-h-[85vh] md:max-h-[90vh] scrollbar-hide">
               <DialogHeader className="mb-8">
                 <span className="text-sky-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-3">Apply For</span>
                 <DialogTitle className="text-2xl md:text-3xl font-bold tracking-tight text-left mb-2">

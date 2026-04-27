@@ -55,7 +55,7 @@ export default function CategorySection() {
       </div>
 
       {/* Sticky Gallery Section - Locks scroll to slide horizontally */}
-      <div ref={containerRef} className="relative h-[600vh]">
+      <div ref={containerRef} className="relative h-[450vh]">
         <section className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden">
           <div className="w-full relative z-10 flex items-center">
             {/* Horizontal Carousel Track */}
@@ -66,7 +66,7 @@ export default function CategorySection() {
               {columns.map((col, idx) => (
                 <div
                   key={idx}
-                  className={` flex flex-col gap-6 md:gap-12 ${col.width}`}
+                  className={` flex flex-col gap-2 md:gap-4 ${col.width}`}
                 >
                   {col.type === 'single' ? (
                     <CategoryCard
@@ -98,19 +98,16 @@ export default function CategorySection() {
               ))}
 
               {/* Final CTA Card */}
-              <div className="flex-shrink-0 w-[85vw] sm:w-[500px] md:w-[600px] lg:w-[800px] h-full rounded-[2.5rem] bg-[#111823] border border-white/10 p-10 md:p-20 flex flex-col justify-between relative overflow-hidden group">
+              <div className="flex-shrink-0 w-[85vw] sm:w-[500px] md:w-[600px] lg:w-[800px] h-full rounded-[2.5rem] bg-[#111823] border border-white/10 p-4 md:p-10 flex flex-col justify-between relative overflow-hidden group">
                 <div className="flex justify-between items-start relative z-10">
                   <span className="text-sky-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">
                     End of Categories
                   </span>
-                  <p className="max-w-[240px] text-[10px] md:text-xs text-slate-500 leading-relaxed text-right font-medium">
-                    Nine fashion-led product categories, each developed across our integrated manufacturing footprint.
-                  </p>
                 </div>
 
                 <div className="relative z-10 space-y-8">
                   <div className="space-y-4">
-                    <h3 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
+                    <h3 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-white leading-[1.1] tracking-tight">
                       Ready to develop your <span className="text-sky-500">next program?</span>
                     </h3>
                     <p className="text-slate-400 text-base md:text-lg max-w-xl leading-relaxed">
@@ -118,7 +115,7 @@ export default function CategorySection() {
                     </p>
                   </div>
 
-                  <button className="inline-flex items-center gap-3 px-10 py-5 bg-sky-500 hover:bg-sky-400 text-[#0d1420] rounded-full font-bold text-lg transition-all group/btn shadow-xl shadow-sky-500/20 active:scale-95">
+                  <button className="inline-flex items-center gap-3 px-4 py-2 md:px-8 md:py-4 bg-sky-500 hover:bg-sky-400 text-[#0d1420] rounded-full font-bold text-lg transition-all group/btn shadow-xl shadow-sky-500/20 active:scale-95">
                     Start a conversation
                     <ArrowRight className="w-6 h-6 transition-transform group-hover/btn:translate-x-2" />
                   </button>
@@ -129,8 +126,6 @@ export default function CategorySection() {
                 <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-sky-500/10 blur-[150px] rounded-full -z-0" />
               </div>
 
-              {/* End Cap Spacer to allow full scroll of last item */}
-              <div className="flex-shrink-0 w-[40vw]" />
             </motion.div>
           </div>
 

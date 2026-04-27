@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from "react"
 import { Download, Factory, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ProfileDownloadModal } from "./ProfileDownloadModal"
 import Image from "next/image"
 
 export function FabricMillSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -27,6 +29,7 @@ export function FabricMillSection() {
   }, [])
 
   return (
+    <>
     <section ref={sectionRef} className="relative min-h-[60vh] lg:min-h-[70vh] overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Background texture */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItSDJ2LTJoMzR6bTAtNHYySDJ2LTJoMzR6bTAtNHYySDJ2LTJoMzR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-50" />
@@ -160,6 +163,7 @@ export function FabricMillSection() {
           >
             <Button
               size="lg"
+              onClick={() => setIsProfileModalOpen(true)}
               className="bg-sky-600 hover:bg-sky-500 text-white px-6 gap-2 rounded-lg shadow-lg shadow-sky-500/30 hover:shadow-sky-500/50 transition-all duration-300"
             >
               <Download className="w-4 h-4" />
@@ -182,5 +186,10 @@ export function FabricMillSection() {
         }
       `}</style>
     </section>
+      <ProfileDownloadModal
+        isOpen={isProfileModalOpen}
+        onClose={() => setIsProfileModalOpen(false)}
+      />
+    </>
   )
 }
