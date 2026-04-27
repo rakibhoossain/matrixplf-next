@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Download, User, Building2, Mail } from "lucide-react"
+import { X, Download, User, Building2, Mail, Loader2, AlertCircle } from "lucide-react"
+import { submitLead } from "@/app/actions"
 
 interface ProfileDownloadModalProps {
   isOpen: boolean
@@ -17,11 +18,36 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
     company: "",
     email: ""
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    window.open(customPdf || "/assets/company/Matrixapparels-Ltd-a-unit-of-Matrix-platform.pdf", "_blank")
-    onClose()
+    setIsSubmitting(true)
+    setError(null)
+
+    const pdfUrl = customPdf || "/assets/company/Matrixapparels-Ltd-a-unit-of-Matrix-platform.pdf"
+    const fileName = pdfUrl.split('/').pop() || "profile.pdf"
+    const profileName = customTitle || "Matrix Group Company Profile"
+
+    const result = await submitLead({
+      name: formData.fullName,
+      company_name: formData.company,
+      email: formData.email,
+      profile_name: profileName,
+      note: "Downloaded Profile",
+      file_name: fileName
+    })
+
+    if (result.success) {
+      window.open(pdfUrl, "_blank")
+      setFormData({ fullName: "", company: "", email: "" }) // Reset form
+      onClose()
+    } else {
+      setError(result.error || "Failed to submit. Please try again.")
+    }
+    
+    setIsSubmitting(false)
   }
 
   return (
@@ -72,6 +98,13 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                {error && (
+                  <div className="flex items-center gap-2 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    {error}
+                  </div>
+                )}
+
                 {/* Full Name */}
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">
@@ -83,9 +116,10 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
                       required
                       type="text"
                       placeholder="Jane Doe"
+                      disabled={isSubmitting}
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all"
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
                     />
                   </div>
                 </div>
@@ -101,9 +135,10 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
                       required
                       type="text"
                       placeholder="Your company"
+                      disabled={isSubmitting}
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all"
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
                     />
                   </div>
                 </div>
@@ -119,9 +154,10 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
                       required
                       type="email"
                       placeholder="you@company.com"
+                      disabled={isSubmitting}
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all"
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
                     />
                   </div>
                 </div>
@@ -133,10 +169,20 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
 
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-4 py-4 bg-[#11b1e4] hover:bg-sky-400 text-white rounded-2xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-sky-500/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                    disabled={isSubmitting}
+                    className="w-full sm:w-auto px-4 py-4 bg-[#11b1e4] hover:bg-sky-400 text-white rounded-2xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-sky-500/20 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100"
                   >
-                    <Download className="w-4 h-4" />
-                    Get the Profile
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <Download className="w-4 h-4" />
+                        Get the Profile
+                      </>
+                    )}
                   </button>
                 </div>
               </form>
