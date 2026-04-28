@@ -54,7 +54,7 @@ export function Header() {
             </Link>
 
             {/* Desktop Navigation - Glass Pill */}
-            <div className={`hidden lg:flex items-center gap-1 transition-all duration-300 ${isScrolled ? "" : "rounded-full px-2 py-1.5 bg-white/50 backdrop-blur-md shadow-lg"
+            <div className={`hidden xl:flex items-center gap-1 transition-all duration-300 ${isScrolled ? "" : "rounded-full px-2 py-1.5 bg-white/50 backdrop-blur-md shadow-lg"
               }`}>
               {navItems.map((item) => {
                 const isActive = pathname === item.href
@@ -85,7 +85,7 @@ export function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden p-2 transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center ${isScrolled ? "text-white" : "text-white"
+              className={`xl:hidden p-2 transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center ${isScrolled ? "text-white" : "text-white"
                 }`}
               aria-label="Toggle Menu"
             >
