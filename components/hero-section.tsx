@@ -97,7 +97,7 @@ export function HeroSection() {
             fill
             priority={index === 0}
             loading={index === 0 ? "eager" : "lazy"}
-            className={`hidden md:block object-cover transition-transform duration-[8000ms] ease-out ${index === currentSlide ? "scale-110" : "scale-100"
+            className={`hidden md:block object-cover transition-transform duration-8000 ease-out ${index === currentSlide ? "scale-110" : "scale-100"
               }`}
           />
           {/* Mobile Image */}
@@ -107,7 +107,7 @@ export function HeroSection() {
             fill
             priority={index === 0}
             loading={index === 0 ? "eager" : "lazy"}
-            className={`block md:hidden object-cover transition-transform duration-[8000ms] ease-out ${index === currentSlide ? "scale-110" : "scale-100"
+            className={`block md:hidden object-cover transition-transform duration-8000 ease-out ${index === currentSlide ? "scale-110" : "scale-100"
               }`}
           />
           {/* Dark overlay for better text readability */}
@@ -115,109 +115,109 @@ export function HeroSection() {
         </div>
       ))}
 
-      {/* Content */}
-      <div className="relative z-20 h-full flex items-center py-12 sm:py-24">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl pt-8 sm:pt-20">
-            {/* Main Heading */}
-            <h1
-              className={`transition-all duration-1000 uppercase ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-            >
-              <span
-                key={`title-${currentSlide}`}
-                className="block text-3xl min-[360px]:text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-none tracking-tight animate-fade-in-up"
+      {/* Main Content Wrapper */}
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Content Area */}
+        <div className="flex-1 flex items-center py-12 sm:py-24">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="max-w-4xl pt-8 sm:pt-20">
+              {/* Main Heading */}
+              <h1
+                className={`transition-all duration-1000 uppercase ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
               >
-                {slide.title}
-              </span>
-              <span
-                key={`highlight-${currentSlide}`}
-                className="block text-3xl min-[360px]:text-4xl sm:text-4xl md:text-4xl lg:text-7xl xl:text-8xl font-bold text-white leading-none tracking-tight animate-fade-in-up animation-delay-100"
-
-                dangerouslySetInnerHTML={{ __html: slide.titleHighlight }}
-              >
-                {/* {slide.titleHighlight} */}
-              </span>
-            </h1>
-
-            {/* Subtitle */}
-            <div
-              key={`subtitle-${currentSlide}`}
-              className={`mt-6 sm:mt-8 space-y-2 sm:space-y-3 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-            >
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 font-medium animate-fade-in-up animation-delay-200">
-                {slide.subtitle}
-              </p>
-              <p className="text-base sm:text-lg md:text-xl text-white/80 animate-fade-in-up animation-delay-300">
-                {slide.description}
-              </p>
-            </div>
-
-            {/* CTA Buttons */}
-            <div
-              className={`flex flex-row flex-wrap gap-3 sm:gap-4 mt-8 sm:mt-10 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-            >
-              <Button
-                size="lg"
-                onClick={() => setIsProfileModalOpen(true)}
-                className="flex-1 sm:flex-none bg-sky-500 hover:bg-sky-600 text-white px-4 sm:px-8 py-4 sm:py-6 text-[13px] sm:text-base font-medium rounded-full gap-2 group transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/25 min-h-[40px] sm:min-h-[48px]"
-              >
-                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
-                Download Profile
-              </Button>
-              <Link href="/contact" className="flex-1 sm:flex-none">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full border-white/60 text-slate-800 bg-white/90 hover:bg-white px-4 sm:px-8 py-4 sm:py-6 text-[13px] sm:text-base font-medium rounded-full transition-all duration-300 min-h-[40px] sm:min-h-[48px]"
+                <span
+                  key={`title-${currentSlide}`}
+                  className="block text-3xl min-[360px]:text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-none tracking-tight animate-fade-in-up"
                 >
-                  Contact Our Team
+                  {slide.title}
+                </span>
+                <span
+                  key={`highlight-${currentSlide}`}
+                  className="block text-3xl min-[360px]:text-4xl sm:text-4xl md:text-4xl lg:text-7xl xl:text-8xl font-bold text-white leading-none tracking-tight animate-fade-in-up animation-delay-100"
+                  dangerouslySetInnerHTML={{ __html: slide.titleHighlight }}
+                />
+              </h1>
+
+              {/* Subtitle */}
+              <div
+                key={`subtitle-${currentSlide}`}
+                className={`mt-6 sm:mt-8 space-y-2 sm:space-y-3 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+              >
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 font-medium animate-fade-in-up animation-delay-200">
+                  {slide.subtitle}
+                </p>
+                <p className="text-base sm:text-lg md:text-xl text-white/80 animate-fade-in-up animation-delay-300">
+                  {slide.description}
+                </p>
+              </div>
+
+              {/* CTA Buttons */}
+              <div
+                className={`flex flex-row flex-wrap gap-3 sm:gap-4 mt-8 sm:mt-10 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+              >
+                <Button
+                  onClick={() => setIsProfileModalOpen(true)}
+                  variant="matrix"
+                  className="flex-1 sm:flex-none"
+                  size={"lg"}
+                >
+                  <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+                  Download Profile
                 </Button>
-              </Link>
+                <Link href="/contact" className="flex-1 sm:flex-none">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                  >
+                    Contact Our Team
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Navigation */}
-      <div className="absolute bottom-8 w-full z-5 flex items-center justify-center gap-4">
-        {/* Arrow Navigation */}
-        <button
-          onClick={prevSlide}
-          disabled={isAnimating}
-          className="w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors disabled:opacity-50"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
+        {/* Bottom Navigation */}
+        <div className="pb-12 flex items-center justify-center gap-4">
+          {/* Arrow Navigation */}
+          <button
+            onClick={prevSlide}
+            disabled={isAnimating}
+            className="w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors disabled:opacity-50"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
 
-        {/* Dot Indicators */}
-        <div className="flex items-center gap-3">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              disabled={isAnimating}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
-                ? "bg-white scale-100"
-                : "bg-white/40 hover:bg-white/60 scale-75"
-                }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+          {/* Dot Indicators */}
+          <div className="flex items-center gap-3">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                disabled={isAnimating}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                  ? "bg-white scale-100"
+                  : "bg-white/40 hover:bg-white/60 scale-75"
+                  }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Arrow Navigation */}
+          <button
+            onClick={nextSlide}
+            disabled={isAnimating}
+            className="w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors disabled:opacity-50"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
         </div>
-
-        {/* Arrow Navigation */}
-        <button
-          onClick={nextSlide}
-          disabled={isAnimating}
-          className="w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors disabled:opacity-50"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
       </div>
 
       <ProfileDownloadModal

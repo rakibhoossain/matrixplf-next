@@ -46,7 +46,7 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
     } else {
       setError(result.error || "Failed to submit. Please try again.")
     }
-    
+
     setIsSubmitting(false)
   }
 
@@ -119,7 +119,7 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
                       disabled={isSubmitting}
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
+                      className="w-full bg-white/3 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
                     />
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
                       disabled={isSubmitting}
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
+                      className="w-full bg-white/3 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
                     />
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
                       disabled={isSubmitting}
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
+                      className="w-full bg-white/3 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
                     />
                   </div>
                 </div>

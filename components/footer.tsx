@@ -62,24 +62,21 @@ export function Footer() {
               bridging China&apos;s textile power with South Asia&apos;s manufacturing excellence.
             </p>
 
-            <Button
-              onClick={() => setIsProfileModalOpen(true)}
-              className="w-full sm:w-auto bg-sky-500 hover:bg-sky-600 text-white border-none gap-2 min-h-[48px] px-8 rounded-full font-semibold transition-all duration-300 shadow-lg shadow-sky-500/25"
-            >
+            <Button variant="matrix" size={"lg"} onClick={() => setIsProfileModalOpen(true)}>
               <Download className="w-4 h-4" />
               Download Profile
             </Button>
           </div>
 
           {/* Links Columns */}
-          <div className="mt-8 lg:mt-0 lg:text-right">
+          <div className="mt-8 lg:mt-0">
             <h4 className="font-semibold text-white mb-6">Company</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-sky-400 transition-colors py-2 min-h-[40px] inline-block w-full"
+                    className="text-slate-400 hover:text-sky-400 transition-colors py-2 inline-block w-full"
                   >
                     {link.label}
                   </Link>
@@ -88,30 +85,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* <div className="mt-4 lg:mt-0">
-            <h4 className="font-semibold text-white mb-6">Services</h4>
-            <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-slate-400 hover:text-sky-400 transition-colors py-2 min-h-[40px] inline-block w-full"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-
-          <div className="mt-4 lg:mt-0 lg:text-right">
+          <div className="mt-4 lg:mt-0">
             <h4 className="font-semibold text-white mb-6">Resources</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-sky-400 transition-colors py-2 min-h-[40px] inline-block w-full"
+                    className="text-slate-400 hover:text-sky-400 transition-colors py-2 inline-block w-full"
                   >
                     {link.label}
                   </Link>

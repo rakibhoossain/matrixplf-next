@@ -74,7 +74,8 @@ export function Header() {
               <Button
                 size="sm"
                 onClick={() => setIsProfileModalOpen(true)}
-                className="ml-2 gap-2 bg-sky-500 hover:bg-sky-600 text-white rounded-full px-5 py-2 text-sm font-medium min-h-[40px]"
+                variant={"matrix"}
+                className="rounded-full"
               >
                 <Download className="w-4 h-4" />
                 Download Profile
@@ -120,7 +121,8 @@ export function Header() {
                   setIsProfileModalOpen(true)
                   setIsMobileMenuOpen(false)
                 }}
-                className="w-full gap-2 bg-sky-500 hover:bg-sky-600 text-white mt-4 rounded-full min-h-[48px]"
+                variant={"matrix"}
+                className="w-full"
               >
                 <Download className="w-4 h-4" />
                 Download Profile
