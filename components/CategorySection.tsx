@@ -160,12 +160,8 @@ export default function CategorySection() {
               ))}
 
               {/* Final CTA Card */}
-              <div className="flex-shrink-0 w-[85vw] sm:w-[350px] md:w-[500px] lg:w-[600px] h-full rounded-[2.5rem] bg-[#111823] border border-white/10 p-4 md:p-10 flex flex-col justify-between relative overflow-hidden group">
-                <div className="flex justify-between items-start relative z-10">
-                  <span className="text-sky-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">
-                    End of Categories
-                  </span>
-                </div>
+              <div className="flex-shrink-0 w-[85vw] sm:w-[350px] md:w-[500px] lg:w-[600px] h-full rounded-[2.5rem] bg-[#111823] border border-white/10 p-4 md:p-10 flex flex-col justify-center items-center relative overflow-hidden group">
+
 
                 <div className="relative z-10 space-y-8">
                   <div className="space-y-4">

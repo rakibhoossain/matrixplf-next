@@ -75,30 +75,27 @@ export function ConnectUs() {
                 </div>
 
                 {/* Footer Bar */}
-                <div className="bg-[#1a1d21] p-6 lg:p-8 flex items-center justify-between transition-colors group-hover:bg-[#252a30]">
-                  <div className="min-w-0">
-                    <h3 className="text-white font-bold text-xl mb-1 truncate">
-                      {member.name}
-                    </h3>
-                    <p className="text-slate-400 text-xs font-medium capitalize tracking-wider">
-                      {member.role}
-                    </p>
-                    {member.email && (
-                      <a href={`mailto:${member.email}`} className="text-sky-400 text-[11px] font-semibold mt-2 lowercase transition-colors group-hover:text-sky-300">
-                        {member.email}
-                      </a>
-                    )}
-                  </div>
-
+                <div className="relative bg-[#1a1d21] p-3 sm:p-4 lg:p-6 transition-colors group-hover:bg-[#252a30]">
+                  {/* LinkedIn — absolute top-right, aligned with name */}
                   <a
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:bg-slate-700 transition-all flex-shrink-0"
+                    className="absolute top-3 right-3 sm:top-4 sm:right-4 lg:top-5 lg:right-5 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:bg-slate-600 transition-all"
                   >
-                    <Linkedin className="w-5 h-5" />
+                    <Linkedin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </a>
-
+                  <h3 className="text-white font-bold text-sm sm:text-base lg:text-lg mb-0.5 leading-tight break-words pr-9 sm:pr-10">
+                    {member.name}
+                  </h3>
+                  <p className="text-slate-400 text-[10px] sm:text-xs font-medium capitalize tracking-wider leading-snug">
+                    {member.role}
+                  </p>
+                  {member.email && (
+                    <a href={`mailto:${member.email}`} className="text-sky-400 text-[9px] sm:text-[10px] font-semibold mt-1 block break-all lowercase transition-colors group-hover:text-sky-300 leading-snug">
+                      {member.email}
+                    </a>
+                  )}
                 </div>
               </div>
             </Reveal>

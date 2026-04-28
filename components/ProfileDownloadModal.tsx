@@ -121,7 +121,7 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
                   <div>
                     <p className="text-sky-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Download</p>
                     <h2 className="text-2xl font-bold text-white tracking-tight">
-                      {customTitle || "Matrix Group Company Profile"}
+                      {customTitle || "Matrix Platform Ltd. - Profile"}
                     </h2>
                   </div>
                 </div>
