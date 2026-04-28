@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { MapPin, Phone, Mail, Send } from "lucide-react"
+import { MapPin, Mail, Send } from "lucide-react"
+import { Button } from "@/components/ui/button"
 const offices = [
   {
     Name: "Matrix Platform Ltd",
@@ -163,13 +164,15 @@ export function ContactSection() {
                   />
                 </div>
 
-                <button
+                <Button
                   type="submit"
-                  className="w-full bg-[#1ea1d7] hover:bg-[#1b91c1] text-white h-12 text-sm font-bold rounded-lg flex items-center justify-center gap-2 transition-colors mt-2"
+                  variant="matrix"
+                  size={"lg"}
+                  className="w-full"
                 >
                   Send Message
                   <Send className="w-4 h-4" />
-                </button>
+                </Button>
               </form>
             </div>
           </div>
@@ -209,12 +212,6 @@ export function ContactSection() {
                         <div className="mb-4">
                           <p className="text-sky-500 text-[10px] font-bold uppercase tracking-widest mb-1">{office.city2}</p>
                           <p className="text-slate-400 text-xs leading-relaxed">{office.address2}</p>
-                        </div>
-
-                        <div className="flex flex-wrap gap-4 text-[11px] font-bold pt-2 border-t border-white/5">
-                          <a href={`mailto:${office.email1}`} className="flex items-center gap-1.5 text-slate-500 hover:text-white transition-colors">
-                            <Mail className="w-3 h-3 text-sky-500" /> {office.email1}
-                          </a>
                         </div>
                       </div>
                     </div>

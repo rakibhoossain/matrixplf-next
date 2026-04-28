@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, Download, User, Building2, Mail, Loader2, AlertCircle } from "lucide-react"
 import { submitLead } from "@/app/actions"
+import { Button } from "@/components/ui/button"
 
 interface ProfileDownloadModalProps {
   isOpen: boolean
@@ -167,10 +168,12 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
                     By downloading, you agree to be contacted about Matrix Platform programs.
                   </p>
 
-                  <button
+                  <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto px-4 py-4 bg-[#11b1e4] hover:bg-sky-400 text-white rounded-2xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-sky-500/20 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100"
+                    variant="matrix"
+                    size="lg"
+                    className="w-full sm:w-auto"
                   >
                     {isSubmitting ? (
                       <>
@@ -183,7 +186,7 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
                         Get the Profile
                       </>
                     )}
-                  </button>
+                  </Button>
                 </div>
               </form>
             </div>

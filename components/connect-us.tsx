@@ -58,12 +58,12 @@ export function ConnectUs() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 lg:gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 lg:gap-2">
           {teamMembers.map((member, idx) => (
             <Reveal key={member.id} delay={0.1 * (idx + 1)}>
               <div className="group relative flex flex-col h-full rounded overflow-hidden shadow-xl shadow-slate-200">
                 {/* Image Container */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate-200">
+                <div className="relative aspect-4/5 w-full overflow-hidden bg-slate-200">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -71,7 +71,7 @@ export function ConnectUs() {
                     className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                   />
                   {/* Subtle vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-60" />
                 </div>
 
                 {/* Footer Bar */}

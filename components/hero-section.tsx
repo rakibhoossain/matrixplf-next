@@ -13,7 +13,7 @@ const slides = [
     image: "/hero/Cover1.jpg",
     mobileImage: "/hero/mobile/Cover-1.jpg",
     title: "FROM FABRIC",
-    titleHighlight: "TO <br/>FINISHED PRODUCT.",
+    titleHighlight: "TO <br/><span class=\"whitespace-nowrap\">FINISHED PRODUCT</span>",
     subtitle: "Three Countries. One Integrated Supply Chain.",
     description: "We bridge China's textile power with South Asia's manufacturing excellence.",
   },
@@ -22,8 +22,8 @@ const slides = [
     image: "/hero/Cover-2.jpg",
     mobileImage: "/hero/mobile/Cover-2.jpg",
     title: "Quality Built",
-    titleHighlight: "ON <br/> FULL CONTROL",
-    subtitle: "Integrated production systems ensuringconsistency at every stage.",
+    titleHighlight: "ON <br/><span class=\"whitespace-nowrap\">FULL CONTROL</span>",
+    subtitle: "Integrated production systems ensuring consistency at every stage.",
     description: "From fabric development to nal nishing, each process is monitored, standardized, and continuously optimized.",
   },
   {
@@ -31,7 +31,7 @@ const slides = [
     image: "/hero/Cover-3.png",
     mobileImage: "/hero/mobile/Cover-3.jpg",
     title: "TECHNICAL EDGE",
-    titleHighlight: "IN <br> EVERY PRODUCT",
+    titleHighlight: "IN <br> <span class=\"whitespace-nowrap\">EVERY PRODUCT</span>",
     subtitle: "Design-led R&D and technical teams shaping precise, production-ready garments.",
     description: "Fit engineering, cost efficiency, and quality control — built to scale responsibly.",
   },
@@ -40,7 +40,7 @@ const slides = [
     image: "/hero/Cover-4.jpg",
     mobileImage: "/hero/mobile/Cover-4.jpg",
     title: "Trusted ",
-    titleHighlight: "by <br/> Global Brands.",
+    titleHighlight: "by <br/> <span class=\"whitespace-nowrap\">Global Brands</span>",
     subtitle: "End-to-end manufacturing systems enabling global brands with consistency, reliability, and scale.",
     description: "From development to delivery, built for consistency and reliability. Ensuring performance at scale.",
   },
@@ -118,7 +118,7 @@ export function HeroSection() {
       {/* Main Content Wrapper */}
       <div className="relative z-10 flex flex-col h-full">
         {/* Content Area */}
-        <div className="flex-1 flex items-center pb-2 pt-12 sm:pt-24">
+        <div className="flex-1 flex items-center pb-2 pt-6 sm:pt-12">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="max-w-4xl pt-8 sm:pt-20">
               {/* Main Heading */}
@@ -128,7 +128,7 @@ export function HeroSection() {
               >
                 <span
                   key={`title-${currentSlide}`}
-                  className="block text-3xl min-[360px]:text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-none tracking-tight animate-fade-in-up"
+                  className="block text-3xl min-[360px]:text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight tracking-tight animate-fade-in-up"
                 >
                   {slide.title}
                 </span>
@@ -145,7 +145,7 @@ export function HeroSection() {
                 className={`mt-6 sm:mt-8 space-y-2 sm:space-y-3 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
               >
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 font-medium animate-fade-in-up animation-delay-200">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 font-medium animate-fade-in-up animation-delay-200 whitespace-nowrap">
                   {slide.subtitle}
                 </p>
                 <p className="text-base sm:text-lg md:text-xl text-white/80 animate-fade-in-up animation-delay-300">
@@ -181,7 +181,7 @@ export function HeroSection() {
         </div>
 
         {/* Bottom Navigation */}
-        <div className="pb-12 flex items-center justify-center gap-4">
+        <div className="pb-5 flex items-center justify-center gap-4">
           {/* Arrow Navigation */}
           <button
             onClick={prevSlide}

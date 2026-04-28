@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
-import { useRef, useMemo } from "react"
+import { useRef, useMemo, useState, useEffect } from "react"
 import { ArrowRight } from "lucide-react"
 import CategoryCard from "./CategoryCard"
 import { categories } from "@/lib/data"
@@ -10,6 +10,8 @@ import Link from "next/link"
 
 export default function CategorySection() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const trackRef = useRef<HTMLDivElement>(null)
+  const [scrollRange, setScrollRange] = useState(0)
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -43,26 +45,37 @@ export default function CategorySection() {
       isSingle = !isSingle
     }
     return cols
-  }, [])
+  }, [categories])
+
+  useEffect(() => {
+    const calculateScrollRange = () => {
+      if (trackRef.current) {
+        setScrollRange(trackRef.current.scrollWidth - window.innerWidth)
+      }
+    }
+
+    calculateScrollRange()
+    window.addEventListener("resize", calculateScrollRange)
+    return () => window.removeEventListener("resize", calculateScrollRange)
+  }, [columns])
 
   // Calculate horizontal movement based on viewport scroll progress of the sticky wrapper
-  // Scaling movement percentage based on the number of columns to ensure all content is reachable
-  const xMovement = useTransform(scrollYProgress, [0, 1], ["0%", `-${columns.length * 15}%`])
+  const xMovement = useTransform(scrollYProgress, [0, 1], [0, -scrollRange])
   const smoothX = useSpring(xMovement, { stiffness: 60, damping: 25 })
 
   // Touch handling for mobile finger slide
   const touchStart = useRef<number | null>(null)
-  
+
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStart.current = e.touches[0].clientX
   }
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (touchStart.current === null) return
-    
+
     const touchCurrent = e.touches[0].clientX
     const deltaX = touchStart.current - touchCurrent
-    
+
     // Convert horizontal swipe into vertical scroll
     if (Math.abs(deltaX) > 10) {
       window.scrollBy(0, deltaX * 1.5)
@@ -104,8 +117,9 @@ export default function CategorySection() {
           <div className="w-full relative z-10 flex items-center">
             {/* Horizontal Carousel Track */}
             <motion.div
+              ref={trackRef}
               style={{ x: smoothX }}
-              className="flex gap-2 md:gap-4 items-stretch h-[75vh] md:h-[80vh] lg:h-[85vh] pl-6 lg:pl-12 touch-pan-y"
+              className="flex gap-2 md:gap-4 items-stretch h-[75vh] md:h-[80vh] lg:h-[85vh] pl-6 lg:pl-12 pr-6 lg:pr-12 touch-pan-y"
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
@@ -181,7 +195,7 @@ export default function CategorySection() {
 
           {/* Dynamic Progress Indicator */}
           <div className="container mx-auto px-6 lg:px-12 relative z-20 mt-4">
-            <div className="h-[1px] bg-white/5 hidden md:block w-full">
+            <div className="h-px bg-white/5 hidden md:block w-full">
               <motion.div
                 className="h-full bg-sky-500 shadow-[0_0_15px_rgba(56,189,248,0.6)]"
                 style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
