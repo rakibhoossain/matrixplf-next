@@ -118,7 +118,7 @@ export function HeroSection() {
       {/* Main Content Wrapper */}
       <div className="relative z-10 flex flex-col h-full">
         {/* Content Area */}
-        <div className="flex-1 flex items-center py-12 sm:py-24">
+        <div className="flex-1 flex items-center pb-2 pt-12 sm:pt-24">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="max-w-4xl pt-8 sm:pt-20">
               {/* Main Heading */}
