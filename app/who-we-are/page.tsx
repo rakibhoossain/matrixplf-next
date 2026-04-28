@@ -15,7 +15,7 @@ export default function Page() {
             <WhoWeAreExcellenceSection />
             <WhoWeAreLegacySection />
             <GlobalNetworkSection />
-            <WhoWeAreTimelineSection />
+            {/* <WhoWeAreTimelineSection /> */}
             <ConnectUs />
             <Footer />
         </main>

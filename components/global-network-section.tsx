@@ -111,7 +111,7 @@ export function GlobalNetworkSection() {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   return (
-    <section className="bg-[#0b121f] py-20 lg:py-32 relative overflow-hidden" id="network">
+    <section className="bg-[#0b121f] py-8 lg:py-16 relative overflow-hidden" id="network">
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 lg:mb-20 px-6 lg:px-12">
           <div className="max-w-3xl">
@@ -133,11 +133,11 @@ export function GlobalNetworkSection() {
 
         {/* Desktop Dashboard Area - Static Layout */}
         <div className="hidden lg:block relative w-full aspect-[1400/900] mx-auto bg-[#0d1420] rounded-[3.5rem] border border-white/5 overflow-hidden shadow-2xl">
-          
-          <ComposableMap 
-            projection="geoMercator" 
-            projectionConfig={{ scale: MAP_SCALE, center: [CENTER_LON, CENTER_LAT] }} 
-            width={1400} 
+
+          <ComposableMap
+            projection="geoMercator"
+            projectionConfig={{ scale: MAP_SCALE, center: [CENTER_LON, CENTER_LAT] }}
+            width={1400}
             height={900}
             className="w-full h-full outline-none select-none opacity-40 focus:outline-none"
           >
@@ -214,7 +214,7 @@ export function GlobalNetworkSection() {
                 onMouseEnter={() => setActiveId(node.id)}
                 onMouseLeave={() => setActiveId(null)}
                 className={`absolute -translate-y-1/2 left-10 w-[310px] h-[130px] bg-[#0b121f]/80 backdrop-blur-xl p-6 rounded-2xl border-2 pointer-events-auto transition-all shadow-2xl flex flex-col justify-center ${activeId === node.id ? "scale-105 border-white/40 shadow-sky-500/10" : ""}`}
-                style={{ 
+                style={{
                   top: `${((i + 0.5) / leftNodes.length) * 100}%`,
                   borderColor: activeId === node.id ? node.color : `${node.color}50`,
                 }}
@@ -235,7 +235,7 @@ export function GlobalNetworkSection() {
                 onMouseEnter={() => setActiveId(node.id)}
                 onMouseLeave={() => setActiveId(null)}
                 className={`absolute -translate-y-1/2 right-10 w-[310px] h-[130px] bg-[#0b121f]/80 backdrop-blur-xl p-6 rounded-2xl border-2 pointer-events-auto transition-all shadow-2xl text-right flex flex-col justify-center ${activeId === node.id ? "scale-105 border-white/40 shadow-sky-500/10" : ""}`}
-                style={{ 
+                style={{
                   top: `${((i + 0.5) / rightNodes.length) * 100}%`,
                   borderColor: activeId === node.id ? node.color : `${node.color}50`,
                 }}

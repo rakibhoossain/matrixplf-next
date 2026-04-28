@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Reveal } from "@/components/Reveal"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 export default function CodeOfConductPage() {
   const employeeConduct = [
@@ -93,12 +94,13 @@ export default function CodeOfConductPage() {
               </div>
               <Button
                 asChild
-                className="bg-sky-500 hover:bg-sky-600 text-white rounded-full px-4 py-4 h-auto text-md font-bold transition-all hover:scale-105 shadow-lg shadow-sky-500/20"
+                variant="matrix"
+                size="lg"
               >
-                <a href="mailto:shohel@matrixapparels.com">
+                <Link href="mailto:shohel@matrixapparels.com">
                   <Mail className="w-5 h-5 mr-2" />
                   shohel@matrixapparels.com
-                </a>
+                </Link>
               </Button>
             </div>
           </Reveal>
@@ -129,8 +131,8 @@ export default function CodeOfConductPage() {
               </div>
               <div className="mt-10 p-6 rounded-2xl bg-white/5 border border-white/10">
                 <p className="text-sm text-slate-400 mb-2 font-medium">Chief Ethics Officer Contact:</p>
-                <a href="mailto:ethics@matrixapparels.com" className="text-xl font-bold text-sky-400 hover:text-sky-300 transition-colors">
-                  ethics@matrixapparels.com
+                <a href="mailto:shohel@matrixapparels.com" className="text-xl font-bold text-sky-400 hover:text-sky-300 transition-colors">
+                  shohel@matrixapparels.com
                 </a>
               </div>
             </Reveal>
@@ -217,7 +219,8 @@ export default function CodeOfConductPage() {
 
               <Button
                 asChild
-                className="bg-sky-500 hover:bg-sky-600 text-white rounded-full px-4 py-4 h-auto text-md font-bold transition-all hover:scale-105 shadow-xl shadow-sky-500/20"
+                variant="matrix"
+                size="lg"
               >
                 <a href="mailto:shohel@matrixapparels.com">
                   <Mail className="w-6 h-6 mr-2" />

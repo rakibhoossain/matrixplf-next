@@ -9,18 +9,23 @@ import {
 
 export function ClientBrandsSection() {
   const brands = [
-    { name: "CAT", logo: "/assets/client-brand/CAT.jpg" },
-    { name: "Dollar Store", logo: "/assets/client-brand/Doller-Store.jpg" },
-    { name: "Euro", logo: "/assets/client-brand/Euro.jpg" },
-    { name: "J-Brand", logo: "/assets/client-brand/J-brand.jpg" },
-    { name: "Lelosi", logo: "/assets/client-brand/Lelosi.jpg" },
-    { name: "New", logo: "/assets/client-brand/New.jpg" },
-    { name: "RAGNO", logo: "/assets/client-brand/RAGNO.jpg" },
-    { name: "Amante", logo: "/assets/client-brand/amante.jpg" },
-    { name: "Boux Avenue", logo: "/assets/client-brand/boux.jpg" },
-    { name: "Outpost", logo: "/assets/client-brand/outpost.jpg" },
-    { name: "Primark", logo: "/assets/client-brand/p.jpg" },
-    { name: "Tookmani", logo: "/assets/client-brand/tookmani.jpg" },
+    { name: "Tokmanni", logo: "/assets/client-brand/TOKMANNI.jpg" },
+    { name: "Huel", logo: "/assets/client-brand/Huel.jpg" },
+    { name: "Pantone", logo: "/assets/client-brand/PANTONECLO.jpg" },
+    { name: "LPP", logo: "/assets/client-brand/LPP.jpg" },
+    { name: "Lelosi", logo: "/assets/client-brand/LIDL.jpg" },
+    { name: "Puma", logo: "/assets/client-brand/PUMA.jpg" },
+    { name: "New Yorker", logo: "/assets/client-brand/New-yorker.jpg" },
+    { name: "Champion", logo: "/assets/client-brand/CHAMPION.jpg" },
+    { name: "Everlast", logo: "/assets/client-brand/EVERLAST.jpg" },
+    { name: "Liu Jo", logo: "/assets/client-brand/LIU-JO.jpg" },
+    { name: "Primark", logo: "/assets/client-brand/PRIMARK.jpg" },
+    { name: "Next", logo: "/assets/client-brand/NEXT.jpg" },
+    { name: "Amazon", logo: "/assets/client-brand/AMAZON.jpg" },
+    { name: "About You", logo: "/assets/client-brand/ABOUT-YOU.jpg" },
+    { name: "Asos", logo: "/assets/client-brand/ASOS.jpg" },
+    { name: "Tommy Hilfiger", logo: "/assets/client-brand/TOMMY-HILFIGER.jpg" },
+    { name: "Pepe Jeans", logo: "/assets/client-brand/PEPE-JEANS.jpg" },
   ]
 
   return (

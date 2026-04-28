@@ -31,7 +31,7 @@ const ownBrands = [
     category: "Lingerie",
     desc: "A specialized lingerie brand focused on technical construction, fit accuracy, and market relevance. It represents our capability to deliver complex, high-value product categories from development to retail scale.",
     linkText: "EXPLORE BRAND",
-    link: "https://www.amantelingerie.in/",
+    link: "https://amante.lk/",
     image: "/assets/brand/Amanties.png", // mannequins/lingerie aesthetic
     align: "right"
   }
