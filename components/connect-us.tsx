@@ -88,11 +88,11 @@ export function ConnectUs() {
                   <h3 className="text-white font-bold text-sm sm:text-base lg:text-lg mb-0.5 leading-tight break-words pr-9 sm:pr-10">
                     {member.name}
                   </h3>
-                  <p className="text-slate-400 text-[10px] sm:text-xs font-medium capitalize tracking-wider leading-snug">
+                  <p className="text-slate-400 text-[10px] md:text-[13px] lg:text-[14px] font-medium capitalize tracking-wider leading-snug">
                     {member.role}
                   </p>
                   {member.email && (
-                    <a href={`mailto:${member.email}`} className="text-sky-400 text-[9px] sm:text-[10px] font-semibold mt-1 block break-all lowercase transition-colors group-hover:text-sky-300 leading-snug">
+                    <a href={`mailto:${member.email}`} className="text-sky-400 text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px] font-semibold mt-1 block break-all lowercase transition-colors group-hover:text-sky-300 leading-snug">
                       {member.email}
                     </a>
                   )}
