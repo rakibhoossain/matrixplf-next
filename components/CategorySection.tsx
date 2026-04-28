@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
-import { useRef, useMemo } from "react"
+import { useRef, useMemo, useState, useEffect } from "react"
 import { ArrowRight } from "lucide-react"
 import CategoryCard from "./CategoryCard"
 import { categories } from "@/lib/data"
