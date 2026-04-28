@@ -251,7 +251,42 @@
   animation-delay: 0.5s;
 }
 
+/* Sticky Header Animation */
+@keyframes header-sticky {
+  to {
+    top: 0;
+    background-color: rgb(13 20 32 / 0.95);
+    backdrop-filter: blur(12px);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+    --nav-pill-bg: transparent;
+    --nav-pill-shadow: none;
+    --nav-text: var(--color-sky-500);
+    --nav-hover-text: var(--color-sky-400);
+    --nav-hover-bg: rgb(255 255 255 / 0.1);
+  }
+}
 
+.sticky-header {
+  position: fixed;
+  top: 1.25rem;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: transparent;
+  transition: 1s ease-in-out;
+  --nav-pill-bg: rgb(255 255 255 / 0.5);
+  --nav-pill-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --nav-text: var(--color-slate-700);
+  --nav-hover-text: var(--color-sky-500);
+  --nav-hover-bg: rgb(255 255 255 / 0.5);
+
+  /* Scroll-driven animation - Snaps immediately */
+  animation: header-sticky linear forwards;
+  animation-timeline: scroll();
+  animation-range: 0 10px;
+}
 
 :root {
   --animate-marquee-left: marquee-left var(--marquee-duration) linear var(--marquee-loop-count);
