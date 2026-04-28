@@ -35,7 +35,7 @@ export function WhoWeAreLegacySection() {
 
         {/* Deskstop Selective Blur Overlay */}
         <div
-          className="absolute inset-y-0 left-0 w-full lg:w-[65%] bg-slate-950/60 backdrop-blur-md z-10 hidden lg:block"
+          className="absolute inset-y-0 left-0 w-full lg:w-[65%] bg-slate-950/30 z-10 hidden lg:block"
           style={{
             maskImage: 'linear-gradient(to right, black 70%, transparent 100%)',
             WebkitMaskImage: 'linear-gradient(to right, black 70%, transparent 100%)'

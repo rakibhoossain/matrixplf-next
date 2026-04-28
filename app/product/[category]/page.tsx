@@ -46,7 +46,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             priority
           />
           {/* Refined Overlays */}
-          <div className="absolute inset-0 bg-slate-950/40" />
+          <div className="absolute inset-0 bg-slate-950/30" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0d1420] via-[#0d1420]/20 to-transparent" />
         </div>
 
