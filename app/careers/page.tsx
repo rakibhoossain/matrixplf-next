@@ -313,17 +313,16 @@ export default function CareersPage() {
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-3 mt-auto pt-6 border-t border-white/5">
+                  <div className="flex items-center justify-center gap-3 mt-auto pt-6 border-t border-white/5">
                     <Button
                       variant="outline"
                       onClick={() => setSelectedJob(job)}
-                      className="flex-1 rounded-full border-white/10 bg-white/5 hover:bg-white hover:text-black font-bold h-12 transition-all"
                     >
                       View Details
                     </Button>
                     <Button
                       onClick={() => setApplyingJob(job)}
-                      className="flex-1 bg-sky-500/10 hover:bg-sky-500 hover:text-white border border-sky-500/20 text-sky-400 rounded-full font-bold h-12 transition-all"
+                      variant="matrix"
                     >
                       Apply Now <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
@@ -358,7 +357,8 @@ export default function CareersPage() {
 
               <Button
                 onClick={() => setApplyingJob({ title: "General Application", location: "Global / Remote" })}
-                className="w-full md:w-auto bg-sky-500 hover:bg-sky-600 text-white rounded-full px-6 py-3 text-sm font-bold gap-2 h-auto transition-all hover:scale-105 shadow-xl shadow-sky-500/20"
+                variant="matrix"
+                size="lg"
               >
                 Submit General CV <ArrowRight className="w-4 h-4" />
               </Button>
@@ -454,9 +454,9 @@ export default function CareersPage() {
             {/* Footer */}
             <div className="p-6 border-t border-white/5 bg-black/20 flex items-center justify-end gap-4">
               <Button
-                variant="outline"
+                variant="ghost"
                 onClick={() => setSelectedJob(null)}
-                className="rounded-full border-white/10 bg-white/5 hover:bg-white hover:text-black font-bold px-8 h-12 transition-all"
+                size="lg"
               >
                 Close
               </Button>
@@ -465,7 +465,8 @@ export default function CareersPage() {
                   setApplyingJob(selectedJob);
                   setSelectedJob(null);
                 }}
-                className="bg-sky-500 hover:bg-sky-600 text-white rounded-full px-8 h-12 font-bold transition-all flex items-center gap-2 group shadow-lg shadow-sky-500/20"
+                variant="matrix"
+                size="lg"
               >
                 Apply Now <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -631,7 +632,8 @@ export default function CareersPage() {
                     <Button
                       type="submit"
                       disabled={form.formState.isSubmitting}
-                      className="w-full md:w-auto bg-sky-500 hover:bg-sky-600 text-white rounded-full px-10 py-6 h-auto text-base font-bold transition-all hover:scale-105 shadow-xl shadow-sky-500/20 disabled:opacity-50"
+                      variant="matrix"
+                      size="lg"
                     >
                       {form.formState.isSubmitting ? "Submitting..." : "Submit Application"}
                       <ArrowRight className="w-5 h-5 ml-2" />
