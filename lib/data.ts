@@ -8,6 +8,7 @@ export interface Category {
   images: string[];
   subtitle: string;
   description: string;
+  featured_cards: { title: string; subtitle: string; body: string }[];
   link: string;
   bannerImage: string;
 }
@@ -19,8 +20,31 @@ export const categories: Category[] = [
     name: "LOUNGEWEAR",
     bgColor: "bg-slate-600",
     link: "/product/loungewear",
-    subtitle: "COMFORT REDEFINED",
-    description: "Ultra-soft fabrics and relaxed silhouettes designed for ultimate comfort at home. Perfect for work-from-home days and lazy weekends.",
+    subtitle: "ENGINEERED COMFORT",
+    description: "We engineer high-recovery fiber blends and anatomical silhouettes designed for lasting comfort and structural longevity. We control every stage of development for bulk consistency.",
+    featured_cards: [
+      {
+        title: "Sustainable",
+        subtitle: "Fabrics",
+        body: "We source eco-friendly bamboo, modal, organic cotton, and recycled polyesters to ensure incredibly soft and breathable comfort, naturally protecting the planet.",
+      },
+      {
+        title: "Precision",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 3",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 4",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      }
+    ],
+
     images: [
       "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-2.jpeg",
       "/assets/categories/lounge-nightwear/Lounge-&-Nightwear-1.jpeg",
@@ -41,8 +65,30 @@ export const categories: Category[] = [
     name: "NIGHTWEAR",
     bgColor: "bg-red-600",
     link: "/product/nightwear",
-    subtitle: "PERFECT FIT & COMFORT",
-    description: "From tailored trousers to casual chinos, our bottomwear collection offers the perfect foundation for any outfit.",
+    subtitle: "TACTILE SCIENCE",
+    description: "We source low-micron fibers and engineer breathable knit structures to optimize thermal regulation and restorative comfort. We ensure fabric stability for consistent bulk results.",
+    featured_cards: [
+      {
+        title: "Sustainable",
+        subtitle: "Fabrics",
+        body: "We source eco-friendly bamboo, modal, organic cotton, and recycled polyesters to ensure incredibly soft and breathable comfort, naturally protecting the planet.",
+      },
+      {
+        title: "Precision",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 3",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 4",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      }
+    ],
     images: [
       "/assets/categories/nightwear/Lounge-&-Nightwear-1.jpeg",
       "/assets/categories/nightwear/Lounge-&-Nightwear-2.jpg",
@@ -61,8 +107,30 @@ export const categories: Category[] = [
     name: "INNERWEAR & ESSENTIALS",
     bgColor: "bg-slate-500",
     link: "/product/innerwear",
-    subtitle: "EVERYDAY ESSENTIALS",
-    description: "Effortless style for your daily routine. Premium basics that elevate your casual wardrobe.",
+    subtitle: "PRECISION ENGINEERING",
+    description: "We utilize fine-gauge technology and seamless construction to create lightweight essentials with high elastic recovery. We control every stitch for 100% fit accuracy.",
+    featured_cards: [
+      {
+        title: "Sustainable",
+        subtitle: "Fabrics",
+        body: "We source eco-friendly bamboo, modal, organic cotton, and recycled polyesters to ensure incredibly soft and breathable comfort, naturally protecting the planet.",
+      },
+      {
+        title: "Precision",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 3",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 4",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      }
+    ],
     images: [
       "/assets/categories/inner-essentials/Innerwear-&-Essentials-1.jpg",
       "/assets/categories/inner-essentials/Innerwear-&-Essentials-2.jpg",
@@ -87,6 +155,28 @@ export const categories: Category[] = [
     link: "/product/activewear",
     subtitle: "PERFORMANCE DRIVEN",
     description: "Technical fabrics and ergonomic designs that move with you. Engineered for peak athletic performance.",
+    featured_cards: [
+      {
+        title: "Sustainable",
+        subtitle: "Fabrics",
+        body: "We source eco-friendly bamboo, modal, organic cotton, and recycled polyesters to ensure incredibly soft and breathable comfort, naturally protecting the planet.",
+      },
+      {
+        title: "Precision",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 3",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 4",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      }
+    ],
     images: [
       "/assets/categories/activewear/Sports-2.jpg",
       "/assets/categories/activewear/Sports-3.jpg",
@@ -104,8 +194,30 @@ export const categories: Category[] = [
     name: "SWEATWEAR",
     bgColor: "bg-amber-700",
     link: "/product/sweatwear",
-    subtitle: "WARMTH & TEXTURE",
-    description: "Luxurious knits crafted from the finest yarns. Timeless pieces that provide both warmth and sophisticated texture.",
+    subtitle: "STRUCTURED DURABILITY",
+    description: "We engineer dense loopback textiles and reinforced seams designed for thermal retention and silhouette stability. We manage high-volume production with total shade uniformity.",
+    featured_cards: [
+      {
+        title: "Sustainable",
+        subtitle: "Fabrics",
+        body: "We source eco-friendly bamboo, modal, organic cotton, and recycled polyesters to ensure incredibly soft and breathable comfort, naturally protecting the planet.",
+      },
+      {
+        title: "Precision",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 3",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 4",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      }
+    ],
     images: [
       "/assets/categories/sweat/sweat-1.jpeg",
       "/assets/categories/sweat/sweat-2.jpeg",
@@ -124,8 +236,30 @@ export const categories: Category[] = [
     name: "DENIM",
     bgColor: "bg-blue-800",
     link: "/product/denim",
-    subtitle: "TIMELESS STAPLES",
-    description: "Authentic denim with modern fits. Sustainable washes and durable construction for pieces that last a lifetime.",
+    subtitle: "VERTICAL INTEGRATION",
+    description: "We control the complete denim lifecycle from indigo-dyeing to automated laser finishing. We deliver high-volume programs with zero variance in wash, shade, or fit integrity.",
+    featured_cards: [
+      {
+        title: "Sustainable",
+        subtitle: "Fabrics",
+        body: "We source eco-friendly bamboo, modal, organic cotton, and recycled polyesters to ensure incredibly soft and breathable comfort, naturally protecting the planet.",
+      },
+      {
+        title: "Precision",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 3",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 4",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      }
+    ],
     images: [
       "/assets/categories/denim/Denim-1.jpg",
       "/assets/categories/denim/Denim-2.jpg",
@@ -142,8 +276,30 @@ export const categories: Category[] = [
     name: "SWIMWEAR",
     bgColor: "bg-cyan-600",
     link: "/product/swimwear",
-    subtitle: "SUMMER ESSENTIALS",
-    description: "Contemporary cuts and vibrant patterns. Sustainable materials designed for both durability and style under the sun.",
+    subtitle: "TECHNICAL RESILIENCE",
+    description: "We source polymer-coated yarns and high-modulus fabrics to resist chlorine degradation and maintain hydrodynamic fit. We verify performance standards for global compliance.",
+    featured_cards: [
+      {
+        title: "Sustainable",
+        subtitle: "Fabrics",
+        body: "We source eco-friendly bamboo, modal, organic cotton, and recycled polyesters to ensure incredibly soft and breathable comfort, naturally protecting the planet.",
+      },
+      {
+        title: "Precision",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 3",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      },
+      {
+        title: "Test 4",
+        subtitle: "Craftsmanship",
+        body: "Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.",
+      }
+    ],
     images: [
       "/assets/categories/swimwear/swimwear-1.jpg",
       "/assets/categories/swimwear/swimwear-2.jpg",

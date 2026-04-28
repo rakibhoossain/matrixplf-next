@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Download, Linkedin, Twitter, Instagram, Youtube, ArrowUp } from "lucide-react"
+import { Download, Linkedin, Facebook, Twitter, Instagram, Youtube, ArrowUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ProfileDownloadModal } from "./ProfileDownloadModal"
 
@@ -29,10 +29,8 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/matrix-platform-ltd", label: "LinkedIn" },
+  { icon: Facebook, href: "https://www.facebook.com/matrixplatformlimited", label: "Facebook" },
 ]
 
 export function Footer() {
@@ -119,6 +117,8 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:bg-sky-600 hover:text-white transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />

@@ -17,7 +17,7 @@ export function RelatedCategories({ currentCategorySlug }: RelatedCategoriesProp
     .slice(0, 4)
 
   return (
-    <section className="py-24 bg-[#ece9e9]">
+    <section className="py-20 bg-[#0d1420]">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">

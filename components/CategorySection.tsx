@@ -186,6 +186,7 @@ export default function CategorySection() {
                       variant: "matrix",
                       size: "lg",
                     }), "shadow-xl shadow-sky-500/20 active:scale-95 w-fit")}
+                    }))}
                   >
                     Start a conversation
                     <ArrowRight className="w-6 h-6 transition-transform group-hover/btn:translate-x-2" />

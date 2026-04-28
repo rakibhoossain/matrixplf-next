@@ -164,7 +164,7 @@ export function ProductsSection() {
         </button>
 
         {/* Cards container */}
-        <div 
+        <div
           className="overflow-hidden px-6 lg:px-16"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
@@ -181,7 +181,7 @@ export function ProductsSection() {
 
               return (
                 <Link
-                  href="/product"
+                  href={"/product/" + category.slug}
                   key={category.id}
                   className={`flex-shrink-0 relative overflow-hidden cursor-pointer group transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                     }`}
