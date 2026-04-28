@@ -4,8 +4,9 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X, Download } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { ProfileDownloadModal } from "./ProfileDownloadModal"
+import { cn } from "@/lib/utils"
 
 const navItems = [
   { label: "Who We Are", href: "/who-we-are" },
@@ -62,10 +63,16 @@ export function Header() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={`text-sm font-medium transition-colors duration-300 px-4 py-2 rounded-full min-h-[40px] flex items-center ${isScrolled
-                      ? isActive ? "text-sky-400 bg-white/10" : "text-white/90 hover:text-sky-400 hover:bg-white/10"
-                      : isActive ? "text-sky-500 bg-white/50" : "text-slate-700 hover:text-sky-500 hover:bg-white/50"
-                      }`}
+                    className={cn(buttonVariants({
+                      variant: "ghost",
+                      size: "sm",
+                      className: "rounded-full"
+                    }),
+                      isScrolled
+                        ? "text-background hover:text-sky-500 hover:bg-white/50"
+                        : "text-slate-900 hover:text-sky-400 hover:bg-white/10",
+                      isActive && (isScrolled ? "text-sky-400 bg-white/10" : "text-sky-500 bg-white/50")
+                    )}
                   >
                     {item.label}
                   </Link>
@@ -85,8 +92,7 @@ export function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`xl:hidden p-2 transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center ${isScrolled ? "text-white" : "text-white"
-                }`}
+              className="xl:hidden p-2 text-white transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center"
               aria-label="Toggle Menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
