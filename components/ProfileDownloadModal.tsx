@@ -65,7 +65,24 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
       })
 
       if (result.success) {
-        window.open(pdfUrl, "_blank")
+        // Direct download using fetch and blob to avoid opening a new tab
+        try {
+          const response = await fetch(pdfUrl)
+          const blob = await response.blob()
+          const url = window.URL.createObjectURL(blob)
+          const a = document.createElement("a")
+          a.style.display = "none"
+          a.href = url
+          a.download = fileName
+          document.body.appendChild(a)
+          a.click()
+          window.URL.revokeObjectURL(url)
+          document.body.removeChild(a)
+        } catch (err) {
+          // Fallback if fetch fails (e.g. CORS or network issue)
+          window.open(pdfUrl, "_blank")
+        }
+
         form.reset()
         onClose()
       } else {
