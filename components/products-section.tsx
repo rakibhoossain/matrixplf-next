@@ -72,20 +72,43 @@ export function ProductsSection() {
     }
   }
 
-  const cardWidth = useMemo(() => Math.min(320, Math.max(272, viewportWidth - 48)), [viewportWidth])
   const gap = 8
   const visibleCards = viewportWidth >= 1280 ? 4 : viewportWidth >= 1024 ? 3 : viewportWidth >= 640 ? 2 : 1
+
+  const cardWidth = useMemo(() => {
+    const padding = viewportWidth >= 1024 ? 128 : 48
+    const availableWidth = viewportWidth - padding
+    return Math.max(0, (availableWidth - (visibleCards - 1) * gap) / visibleCards)
+  }, [viewportWidth, visibleCards])
+
   const maxScroll = Math.max(0, (categories.length - visibleCards) * (cardWidth + gap))
 
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
 
+  useEffect(() => {
+    const isMobile = viewportWidth < 1024
+    if (isMobile) {
+      const activeIndex = Math.max(0, Math.min(categories.length - 1, Math.round(sliderPosition / (cardWidth + gap)) || 0))
+      const activeCategory = categories[activeIndex]
+      if (activeCategory) {
+        setHoveredId(activeCategory.id)
+      }
+    }
+  }, [sliderPosition, cardWidth, gap, viewportWidth])
+
   const handlePrev = () => {
-    setSliderPosition(prev => Math.max(0, prev - (cardWidth + gap)))
+    setSliderPosition(prev => {
+      const next = prev - (cardWidth + gap)
+      return next < 0 ? maxScroll : next
+    })
   }
 
   const handleNext = () => {
-    setSliderPosition(prev => Math.min(maxScroll, prev + (cardWidth + gap)))
+    setSliderPosition(prev => {
+      const next = prev + (cardWidth + gap)
+      return next > maxScroll ? 0 : next
+    })
   }
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -147,8 +170,7 @@ export function ProductsSection() {
         {/* Navigation arrows */}
         <button
           onClick={handlePrev}
-          disabled={sliderPosition === 0}
-          className={`absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed ${isVisible ? "opacity-100" : "opacity-0"
+          className={`absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all ${isVisible ? "opacity-100" : "opacity-0"
             }`}
         >
           <ChevronLeft className="w-6 h-6" />
@@ -156,8 +178,7 @@ export function ProductsSection() {
 
         <button
           onClick={handleNext}
-          disabled={sliderPosition >= maxScroll}
-          className={`absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed ${isVisible ? "opacity-100" : "opacity-0"
+          className={`absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all ${isVisible ? "opacity-100" : "opacity-0"
             }`}
         >
           <ChevronRight className="w-6 h-6" />
@@ -219,7 +240,7 @@ export function ProductsSection() {
                   ))}
 
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
 
                   {/* Category name - bottom left */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
@@ -229,12 +250,12 @@ export function ProductsSection() {
                     </h3>
 
                     {/* Image indicators */}
-                    <div className={`flex gap-1.5 mt-4 transition-all duration-300 ${isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+                    <div className={`flex gap-1.5 mt-4 transition-all duration-700 ${isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
                       }`}>
                       {category.images.map((_, imgIndex) => (
                         <div
                           key={imgIndex}
-                          className={`h-1 rounded-full transition-all duration-300 ${imgIndex === currentImageIndex
+                          className={`h-1 rounded-full transition-all duration-500 ${imgIndex === currentImageIndex
                             ? "w-6 bg-white"
                             : "w-2 bg-white/40"
                             }`}
@@ -258,7 +279,7 @@ export function ProductsSection() {
         <div className="flex-grow h-[2px] bg-white/10 rounded-full overflow-hidden">
           <div
             className="h-full bg-sky-400 rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(56,189,248,0.5)]"
-            style={{ width: `${((sliderPosition / maxScroll) * 100) + (100 / categories.length)}%` }}
+            style={{ width: `${maxScroll > 0 ? (sliderPosition / maxScroll) * 100 : 100}%` }}
           />
         </div>
         <Link
