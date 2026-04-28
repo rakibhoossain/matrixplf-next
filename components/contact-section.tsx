@@ -3,6 +3,22 @@
 import { useEffect, useRef, useState } from "react"
 import { MapPin, Mail, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { toast } from "sonner"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import * as z from "zod"
+import { submitLead } from "@/app/actions"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+
 const offices = [
   {
     Name: "Matrix Platform Ltd",
@@ -46,15 +62,28 @@ const offices = [
   }
 ]
 
+const contactFormSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
+  email: z.string().email({ message: "Invalid email address" }),
+  company: z.string().min(2, { message: "Company name is required" }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters" }),
+})
+
+type ContactFormValues = z.infer<typeof contactFormSchema>
+
 export function ContactSection() {
   const [isVisible, setIsVisible] = useState(false)
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: "",
-  })
   const sectionRef = useRef<HTMLDivElement>(null)
+
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      company: "",
+      message: "",
+    },
+  })
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -73,8 +102,26 @@ export function ContactSection() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  async function onSubmit(values: ContactFormValues) {
+    try {
+      const result = await submitLead({
+        name: values.name,
+        company_name: values.company,
+        email: values.email,
+        profile_name: "Contact Form Submission",
+        note: values.message,
+        file_name: "none"
+      })
+
+      if (result.success) {
+        toast.success("Message sent successfully!")
+        form.reset()
+      } else {
+        toast.error(result.error || "Failed to send message.")
+      }
+    } catch (err) {
+      toast.error("An unexpected error occurred.")
+    }
   }
 
   return (
@@ -118,64 +165,98 @@ export function ContactSection() {
               <h3 className="text-xl font-bold text-white mb-1">Send us a message</h3>
               <p className="text-slate-400 text-sm mb-6">We&apos;ll get back to you within 24 hours.</p>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid md:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-200 mb-2">Name</label>
-                    <input
-                      type="text"
-                      placeholder="Your name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 h-11 bg-transparent border border-slate-600 rounded-lg text-white placeholder:text-slate-500 focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] outline-none transition-all"
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                  <div className="grid md:grid-cols-2 gap-5">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="block text-xs font-bold text-slate-200 mb-2">Name</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Your name"
+                              className="w-full px-4 h-11 bg-transparent border border-slate-600 rounded-lg text-white placeholder:text-slate-500 focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] outline-none transition-all"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-[10px] text-red-400" />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="block text-xs font-bold text-slate-200 mb-2">Email</FormLabel>
+                          <FormControl>
+                            <Input
+                              type="email"
+                              placeholder="you@company.com"
+                              className="w-full px-4 h-11 bg-transparent border border-slate-600 rounded-lg text-white placeholder:text-slate-500 focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] outline-none transition-all"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-[10px] text-red-400" />
+                        </FormItem>
+                      )}
                     />
                   </div>
-                  <div>
-                    <label className="block text-xs font-bold text-slate-200 mb-2">Email</label>
-                    <input
-                      type="email"
-                      placeholder="you@company.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 h-11 bg-transparent border border-slate-600 rounded-lg text-white placeholder:text-slate-500 focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] outline-none transition-all"
-                    />
-                  </div>
-                </div>
 
-                <div>
-                  <label className="block text-xs font-bold text-slate-200 mb-2">Company</label>
-                  <input
-                    type="text"
-                    placeholder="Your company name"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full px-4 h-11 bg-transparent border border-slate-600 rounded-lg text-white placeholder:text-slate-500 focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] outline-none transition-all"
+                  <FormField
+                    control={form.control}
+                    name="company"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="block text-xs font-bold text-slate-200 mb-2">Company</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Your company name"
+                            className="w-full px-4 h-11 bg-transparent border border-slate-600 rounded-lg text-white placeholder:text-slate-500 focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] outline-none transition-all"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-[10px] text-red-400" />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div>
-                  <label className="block text-xs font-bold text-slate-200 mb-2">Message</label>
-                  <textarea
-                    rows={4}
-                    placeholder="Tell us about your project..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 bg-transparent border border-slate-600 text-white placeholder:text-slate-500 rounded-lg focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] outline-none resize-none transition-all"
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="block text-xs font-bold text-slate-200 mb-2">Message</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            rows={4}
+                            placeholder="Tell us about your project..."
+                            className="w-full px-4 py-3 bg-transparent border border-slate-600 text-white placeholder:text-slate-500 rounded-lg focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] outline-none resize-none transition-all"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-[10px] text-red-400" />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <Button
-                  type="submit"
-                  variant="matrix"
-                  size={"lg"}
-                  className="w-full"
-                >
-                  Send Message
-                  <Send className="w-4 h-4" />
-                </Button>
-              </form>
+                  <Button
+                    type="submit"
+                    variant="matrix"
+                    size={"lg"}
+                    disabled={form.formState.isSubmitting}
+                    className="w-full"
+                  >
+                    {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+                    <Send className="w-4 h-4 ml-2" />
+                  </Button>
+                </form>
+              </Form>
             </div>
           </div>
+
 
           {/* Office Locations & Info */}
           <div
@@ -193,7 +274,7 @@ export function ContactSection() {
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 border border-slate-600 rounded-md flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 border border-slate-600 rounded-md flex items-center justify-center shrink-0">
                         <MapPin className="w-4 h-4 text-[#38bdf8]" />
                       </div>
                       <div className="flex-1 min-w-0">

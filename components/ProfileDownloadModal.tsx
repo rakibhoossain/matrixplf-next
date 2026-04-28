@@ -5,6 +5,18 @@ import { motion, AnimatePresence } from "framer-motion"
 import { X, Download, User, Building2, Mail, Loader2, AlertCircle } from "lucide-react"
 import { submitLead } from "@/app/actions"
 import { Button } from "@/components/ui/button"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import * as z from "zod"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
 
 interface ProfileDownloadModalProps {
   isOpen: boolean
@@ -13,42 +25,55 @@ interface ProfileDownloadModalProps {
   customTitle?: string
 }
 
+const formSchema = z.object({
+  fullName: z.string().min(2, { message: "Full name is required" }),
+  company: z.string().min(2, { message: "Company name is required" }),
+  email: z.string().email({ message: "Invalid email address" }),
+})
+
+type FormValues = z.infer<typeof formSchema>
+
 export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }: ProfileDownloadModalProps) {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    company: "",
-    email: ""
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      fullName: "",
+      company: "",
+      email: "",
+    },
+  })
+
+  const { isSubmitting } = form.formState
+
+  async function onSubmit(values: FormValues) {
     setError(null)
 
     const pdfUrl = customPdf || "/assets/company/Matrixapparels-Ltd-a-unit-of-Matrix-platform.pdf"
     const fileName = pdfUrl.split('/').pop() || "profile.pdf"
     const profileName = customTitle || "Matrix Group Company Profile"
 
-    const result = await submitLead({
-      name: formData.fullName,
-      company_name: formData.company,
-      email: formData.email,
-      profile_name: profileName,
-      note: "Downloaded Profile",
-      file_name: fileName
-    })
+    try {
+      const result = await submitLead({
+        name: values.fullName,
+        company_name: values.company,
+        email: values.email,
+        profile_name: profileName,
+        note: "Downloaded Profile",
+        file_name: fileName
+      })
 
-    if (result.success) {
-      window.open(pdfUrl, "_blank")
-      setFormData({ fullName: "", company: "", email: "" }) // Reset form
-      onClose()
-    } else {
-      setError(result.error || "Failed to submit. Please try again.")
+      if (result.success) {
+        window.open(pdfUrl, "_blank")
+        form.reset()
+        onClose()
+      } else {
+        setError(result.error || "Failed to submit. Please try again.")
+      }
+    } catch (err) {
+      setError("An unexpected error occurred. Please try again.")
     }
-
-    setIsSubmitting(false)
   }
 
   return (
@@ -98,97 +123,117 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
                 Share a few details and we&apos;ll send the file straight to your browser.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {error && (
-                  <div className="flex items-center gap-2 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
-                    <AlertCircle className="w-4 h-4 shrink-0" />
-                    {error}
-                  </div>
-                )}
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  {error && (
+                    <div className="flex items-center gap-2 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      {error}
+                    </div>
+                  )}
 
-                {/* Full Name */}
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">
-                    Full Name
-                  </label>
-                  <div className="relative group">
-                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 group-focus-within:text-sky-400 transition-colors" />
-                    <input
-                      required
-                      type="text"
-                      placeholder="Jane Doe"
-                      disabled={isSubmitting}
-                      value={formData.fullName}
-                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full bg-white/3 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
-                    />
-                  </div>
-                </div>
-
-                {/* Company */}
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">
-                    Company
-                  </label>
-                  <div className="relative group">
-                    <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 group-focus-within:text-sky-400 transition-colors" />
-                    <input
-                      required
-                      type="text"
-                      placeholder="Your company"
-                      disabled={isSubmitting}
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full bg-white/3 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
-                    />
-                  </div>
-                </div>
-
-                {/* Work Email */}
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">
-                    Work Email
-                  </label>
-                  <div className="relative group">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 group-focus-within:text-sky-400 transition-colors" />
-                    <input
-                      required
-                      type="email"
-                      placeholder="you@company.com"
-                      disabled={isSubmitting}
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-white/3 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-4">
-                  <p className="text-[10px] text-slate-500 leading-relaxed max-w-[240px]">
-                    By downloading, you agree to be contacted about Matrix Platform programs.
-                  </p>
-
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    variant="matrix"
-                    size="lg"
-                    className="w-full sm:w-auto"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                        Submitting...
-                      </>
-                    ) : (
-                      <>
-                        <Download className="w-4 h-4" />
-                        Get the Profile
-                      </>
+                  {/* Full Name */}
+                  <FormField
+                    control={form.control}
+                    name="fullName"
+                    render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">
+                          Full Name
+                        </FormLabel>
+                        <FormControl>
+                          <div className="relative group">
+                            <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 group-focus-within:text-sky-400 transition-colors" />
+                            <Input
+                              placeholder="Jane Doe"
+                              disabled={isSubmitting}
+                              className="w-full bg-white/3 border border-white/10 rounded-xl py-4 pl-12 pr-4 h-12 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
+                              {...field}
+                            />
+                          </div>
+                        </FormControl>
+                        <FormMessage className="text-[10px] text-red-400 ml-1" />
+                      </FormItem>
                     )}
-                  </Button>
-                </div>
-              </form>
+                  />
+
+                  {/* Company */}
+                  <FormField
+                    control={form.control}
+                    name="company"
+                    render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">
+                          Company
+                        </FormLabel>
+                        <FormControl>
+                          <div className="relative group">
+                            <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 group-focus-within:text-sky-400 transition-colors" />
+                            <Input
+                              placeholder="Your company"
+                              disabled={isSubmitting}
+                              className="w-full bg-white/3 border border-white/10 rounded-xl py-4 pl-12 pr-4 h-12 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
+                              {...field}
+                            />
+                          </div>
+                        </FormControl>
+                        <FormMessage className="text-[10px] text-red-400 ml-1" />
+                      </FormItem>
+                    )}
+                  />
+
+                  {/* Work Email */}
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">
+                          Work Email
+                        </FormLabel>
+                        <FormControl>
+                          <div className="relative group">
+                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 group-focus-within:text-sky-400 transition-colors" />
+                            <Input
+                              placeholder="you@company.com"
+                              disabled={isSubmitting}
+                              className="w-full bg-white/3 border border-white/10 rounded-xl py-4 pl-12 pr-4 h-12 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500/50 transition-all disabled:opacity-50"
+                              {...field}
+                            />
+                          </div>
+                        </FormControl>
+                        <FormMessage className="text-[10px] text-red-400 ml-1" />
+                      </FormItem>
+                    )}
+                  />
+
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-4">
+                    <p className="text-[10px] text-slate-500 leading-relaxed max-w-[240px]">
+                      By downloading, you agree to be contacted about Matrix Platform programs.
+                    </p>
+
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      variant="matrix"
+                      size="lg"
+                      className="w-full sm:w-auto"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          Submitting...
+                        </>
+                      ) : (
+                        <>
+                          <Download className="w-4 h-4" />
+                          Get the Profile
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </form>
+              </Form>
             </div>
           </motion.div>
         </div>

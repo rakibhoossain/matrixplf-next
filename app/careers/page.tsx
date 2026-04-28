@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import NextImage from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -17,10 +17,76 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
+import { toast } from "sonner"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import * as z from "zod"
+import { submitLead } from "@/app/actions"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+
+const careerFormSchema = z.object({
+  fullName: z.string().min(2, { message: "Full name is required" }),
+  email: z.string().email({ message: "Invalid email address" }),
+  phone: z.string().min(5, { message: "Phone number is required" }),
+  subject: z.string().min(2, { message: "Subject is required" }),
+  message: z.string().optional(),
+  fileName: z.string().optional(),
+})
+
+type CareerFormValues = z.infer<typeof careerFormSchema>
 
 export default function CareersPage() {
   const [selectedJob, setSelectedJob] = useState<any>(null)
   const [applyingJob, setApplyingJob] = useState<any>(null)
+
+  const form = useForm<CareerFormValues>({
+    resolver: zodResolver(careerFormSchema),
+    defaultValues: {
+      fullName: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+      fileName: "",
+    },
+  })
+
+  // Update subject when applyingJob changes
+  useEffect(() => {
+    if (applyingJob) {
+      form.setValue("subject", `Application — ${applyingJob.title}`)
+    }
+  }, [applyingJob, form])
+
+  async function onApplicationSubmit(values: CareerFormValues) {
+    try {
+      const result = await submitLead({
+        name: values.fullName,
+        company_name: "Job Applicant",
+        email: values.email,
+        profile_name: values.subject,
+        note: `Phone: ${values.phone}\n\nMessage: ${values.message || "No message provided"}`,
+        file_name: values.fileName || "cv_attached"
+      })
+
+      if (result.success) {
+        toast.success("Application submitted successfully!")
+        form.reset()
+        setApplyingJob(null)
+      } else {
+        toast.error(result.error || "Failed to submit application.")
+      }
+    } catch (err) {
+      toast.error("An unexpected error occurred.")
+    }
+  }
 
   const jobs = [
     {
@@ -434,77 +500,146 @@ export default function CareersPage() {
                 </div>
               </DialogHeader>
 
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Full Name *</Label>
-                    <Input
-                      placeholder="Your full name"
-                      className="bg-white/5 border-white/10 rounded-xl h-12 focus:border-sky-500/50 focus:ring-sky-500/20 transition-all"
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onApplicationSubmit)} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="fullName"
+                      render={({ field }) => (
+                        <FormItem className="space-y-2">
+                          <FormLabel className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Full Name *</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Your full name"
+                              className="bg-white/5 border-white/10 rounded-xl h-12 focus:border-sky-500/50 focus:ring-sky-500/20 transition-all text-white"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-[10px] text-red-500" />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem className="space-y-2">
+                          <FormLabel className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Email *</FormLabel>
+                          <FormControl>
+                            <Input
+                              type="email"
+                              placeholder="you@email.com"
+                              className="bg-white/5 border-white/10 rounded-xl h-12 focus:border-sky-500/50 focus:ring-sky-500/20 transition-all text-white"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-[10px] text-red-500" />
+                        </FormItem>
+                      )}
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Email *</Label>
-                    <Input
-                      type="email"
-                      placeholder="you@email.com"
-                      className="bg-white/5 border-white/10 rounded-xl h-12 focus:border-sky-500/50 focus:ring-sky-500/20 transition-all"
-                    />
-                  </div>
-                </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Phone Number *</Label>
-                    <Input
-                      placeholder="+880 1XXX XXXXXX"
-                      className="bg-white/5 border-white/10 rounded-xl h-12 focus:border-sky-500/50 focus:ring-sky-500/20 transition-all"
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem className="space-y-2">
+                          <FormLabel className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Phone Number *</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="+880 1XXX XXXXXX"
+                              className="bg-white/5 border-white/10 rounded-xl h-12 focus:border-sky-500/50 focus:ring-sky-500/20 transition-all text-white"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-[10px] text-red-500" />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="subject"
+                      render={({ field }) => (
+                        <FormItem className="space-y-2">
+                          <FormLabel className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Subject *</FormLabel>
+                          <FormControl>
+                            <Input
+                              className="bg-white/5 border-white/10 rounded-xl h-12 focus:border-sky-500/50 focus:ring-sky-500/20 transition-all text-white"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-[10px] text-red-500" />
+                        </FormItem>
+                      )}
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Subject *</Label>
-                    <Input
-                      defaultValue={`Application — ${applyingJob?.title}`}
-                      className="bg-white/5 border-white/10 rounded-xl h-12 focus:border-sky-500/50 focus:ring-sky-500/20 transition-all"
-                    />
-                  </div>
-                </div>
 
-                <div className="space-y-2">
-                  <Label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Message (optional)</Label>
-                  <Textarea
-                    placeholder="Tell us briefly about your experience..."
-                    className="bg-white/5 border-white/10 rounded-xl min-h-[120px] focus:border-sky-500/50 focus:ring-sky-500/20 transition-all resize-none"
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Message (optional)</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Tell us briefly about your experience..."
+                            className="bg-white/5 border-white/10 rounded-xl min-h-[120px] focus:border-sky-500/50 focus:ring-sky-500/20 transition-all resize-none text-white"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-[10px] text-red-500" />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div className="space-y-4">
-                  <Label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Upload CV *</Label>
-                  <div className="relative group cursor-pointer">
-                    <div className="p-4 rounded-xl border border-dashed border-white/20 bg-white/5 group-hover:border-sky-500/50 group-hover:bg-sky-500/5 transition-all flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-sky-500/10 text-sky-400 group-hover:bg-sky-500/20">
-                          <Upload className="w-5 h-5" />
+                  <div className="space-y-4">
+                    <Label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Upload CV *</Label>
+                    <div className="relative group cursor-pointer">
+                      <div className="p-4 rounded-xl border border-dashed border-white/20 bg-white/5 group-hover:border-sky-500/50 group-hover:bg-sky-500/5 transition-all flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 rounded-lg bg-sky-500/10 text-sky-400 group-hover:bg-sky-500/20">
+                            <Upload className="w-5 h-5" />
+                          </div>
+                          <span className="text-sm text-slate-400 group-hover:text-slate-300">
+                            {form.watch("fileName") || "PDF, DOC or DOCX up to 5MB"}
+                          </span>
                         </div>
-                        <span className="text-sm text-slate-400 group-hover:text-slate-300">PDF, DOC or DOCX up to 5MB</span>
+                        <Button type="button" variant="outline" className="rounded-full h-9 px-4 border-white/10 bg-white/5 hover:bg-white hover:text-black font-bold text-xs transition-all">
+                          Choose file
+                        </Button>
                       </div>
-                      <Button type="button" variant="outline" className="rounded-full h-9 px-4 border-white/10 bg-white/5 hover:bg-white hover:text-black font-bold text-xs transition-all">
-                        Choose file
-                      </Button>
+                      <input
+                        type="file"
+                        className="absolute inset-0 opacity-0 cursor-pointer"
+                        accept=".pdf,.doc,.docx"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0]
+                          if (file) {
+                            form.setValue("fileName", file.name)
+                          }
+                        }}
+                      />
                     </div>
-                    <input type="file" className="absolute inset-0 opacity-0 cursor-pointer" accept=".pdf,.doc,.docx" />
                   </div>
-                </div>
 
-                <div className="pt-4 flex flex-col md:flex-row items-center justify-between gap-6">
-                  <p className="text-[11px] text-slate-500 max-w-[240px]">
-                    By applying you agree to our recruitment privacy policy.
-                  </p>
-                  <Button className="w-full md:w-auto bg-sky-500 hover:bg-sky-600 text-white rounded-full px-10 py-6 h-auto text-base font-bold transition-all hover:scale-105 shadow-xl shadow-sky-500/20">
-                    Submit Application <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </div>
-              </form>
+                  <div className="pt-4 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <p className="text-[11px] text-slate-500 max-w-[240px]">
+                      By applying you agree to our recruitment privacy policy.
+                    </p>
+                    <Button
+                      type="submit"
+                      disabled={form.formState.isSubmitting}
+                      className="w-full md:w-auto bg-sky-500 hover:bg-sky-600 text-white rounded-full px-10 py-6 h-auto text-base font-bold transition-all hover:scale-105 shadow-xl shadow-sky-500/20 disabled:opacity-50"
+                    >
+                      {form.formState.isSubmitting ? "Submitting..." : "Submit Application"}
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                  </div>
+                </form>
+              </Form>
+
             </div>
           </div>
         </DialogContent>
