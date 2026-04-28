@@ -84,9 +84,9 @@ export function ConnectUs() {
                       {member.role}
                     </p>
                     {member.email && (
-                      <p className="text-sky-400 text-[11px] font-semibold mt-2 lowercase transition-colors group-hover:text-sky-300">
+                      <a href={`mailto:${member.email}`} className="text-sky-400 text-[11px] font-semibold mt-2 lowercase transition-colors group-hover:text-sky-300">
                         {member.email}
-                      </p>
+                      </a>
                     )}
                   </div>
 
