@@ -3,9 +3,10 @@
 import { useEffect, useState, useCallback } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, Download } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { ProfileDownloadModal } from "./ProfileDownloadModal"
 import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 const slides = [
   {
@@ -167,13 +168,13 @@ export function HeroSection() {
                   <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                   Download Profile
                 </Button>
-                <Link href="/contact" className="flex-1 sm:flex-none">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                  >
-                    Contact Our Team
-                  </Button>
+
+
+                <Link href="/contact" className={cn(buttonVariants({
+                  variant: "outline",
+                  size: "lg"
+                }), "flex-1 sm:flex-none")}>
+                  Contact Our Team
                 </Link>
               </div>
             </div>

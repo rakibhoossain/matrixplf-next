@@ -7,6 +7,8 @@ import CategoryCard from "./CategoryCard"
 import { categories } from "@/lib/data"
 import { Reveal } from "@/components/Reveal"
 import Link from "next/link"
+import { buttonVariants } from "./ui/button"
+import { cn } from "@/lib/utils"
 
 export default function CategorySection() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -176,9 +178,14 @@ export default function CategorySection() {
                     </p>
                   </div>
 
+
+
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-3 px-4 py-2 md:px-8 md:py-4 bg-sky-500 hover:bg-sky-400 text-[#0d1420] rounded-full font-bold text-lg transition-all group/btn shadow-xl shadow-sky-500/20 active:scale-95 w-fit"
+                    className={cn(buttonVariants({
+                      variant: "matrix",
+                      size: "lg",
+                    }), "shadow-xl shadow-sky-500/20 active:scale-95 w-fit")}
                   >
                     Start a conversation
                     <ArrowRight className="w-6 h-6 transition-transform group-hover/btn:translate-x-2" />
