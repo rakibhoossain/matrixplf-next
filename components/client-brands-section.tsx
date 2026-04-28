@@ -48,7 +48,7 @@ export function ClientBrandsSection() {
                   src={brand.logo}
                   alt={brand.name}
                   fill
-                  className="object-contain grayscale hover:grayscale-0 transition-all duration-500 rounded-sm"
+                  className="object-contain transition-all duration-500 rounded-sm"
                 />
                 <span className="sr-only">{brand.name}</span>
               </div>
