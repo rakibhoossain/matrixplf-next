@@ -112,7 +112,7 @@ export function HeroSection() {
               }`}
           />
           {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-slate-900/30" />
         </div>
       ))}
 
