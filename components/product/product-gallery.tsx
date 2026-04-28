@@ -48,7 +48,7 @@ export function ProductGallery({ category }: ProductGalleryProps) {
           <div className="space-y-8">
             {/* Card 1: Image 0 */}
             <Reveal delay={0.1}>
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl shadow-black/40 group border border-white/5">
+              <div className="relative aspect-3/4 rounded-2xl overflow-hidden shadow-2xl shadow-black/40 group border border-white/5">
                 <Image
                   src={category.images[0] || "https://images.unsplash.com/photo-1544441893-675973e31985"}
                   alt={`${category.name} 1`}
@@ -61,7 +61,7 @@ export function ProductGallery({ category }: ProductGalleryProps) {
             {/* Card 2: Image 3 (New addition to use all 4 images) */}
             {category.images[3] && (
               <Reveal delay={0.2}>
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl shadow-black/40 group border border-white/5">
+                <div className="relative aspect-3/4 rounded-2xl overflow-hidden shadow-2xl shadow-black/40 group border border-white/5">
                   <Image
                     src={category.images[3]}
                     alt={`${category.name} 4`}
@@ -86,9 +86,6 @@ export function ProductGallery({ category }: ProductGalleryProps) {
                     We source eco-friendly bamboo, modal, organic cotton, and recycled polyesters to ensure incredibly soft and breathable comfort, naturally protecting the planet.
                   </p>
                 </div>
-                <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-white transition-colors mt-12 group">
-                  Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
               </div>
             </Reveal>
 
@@ -130,9 +127,6 @@ export function ProductGallery({ category }: ProductGalleryProps) {
                     Every seam, stitch, and cut is engineered by our state-of-the-art facilities across South Asia. We utilize advanced flatlock and ultrasonic welding techniques.
                   </p>
                 </div>
-                <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-white transition-colors mt-12 group">
-                  Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
               </div>
             </Reveal>
           </div>
