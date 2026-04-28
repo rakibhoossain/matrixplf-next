@@ -32,13 +32,10 @@ export function Header() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
-      if (isProfileModalOpen) {
-        setIsProfileModalOpen(false)
-      }
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [isProfileModalOpen])
+  }, [])
 
   return (
     <>
