@@ -10,6 +10,8 @@ import Link from "next/link"
 
 export default function CategorySection() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const trackRef = useRef<HTMLDivElement>(null)
+  const [scrollRange, setScrollRange] = useState(0)
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -43,11 +45,22 @@ export default function CategorySection() {
       isSingle = !isSingle
     }
     return cols
-  }, [])
+  }, [categories])
+
+  useEffect(() => {
+    const calculateScrollRange = () => {
+      if (trackRef.current) {
+        setScrollRange(trackRef.current.scrollWidth - window.innerWidth)
+      }
+    }
+
+    calculateScrollRange()
+    window.addEventListener("resize", calculateScrollRange)
+    return () => window.removeEventListener("resize", calculateScrollRange)
+  }, [columns])
 
   // Calculate horizontal movement based on viewport scroll progress of the sticky wrapper
-  // Scaling movement percentage based on the number of columns to ensure all content is reachable
-  const xMovement = useTransform(scrollYProgress, [0, 1], ["0%", `-${columns.length * 15}%`])
+  const xMovement = useTransform(scrollYProgress, [0, 1], [0, -scrollRange])
   const smoothX = useSpring(xMovement, { stiffness: 60, damping: 25 })
 
   // Touch handling for mobile finger slide
@@ -104,8 +117,9 @@ export default function CategorySection() {
           <div className="w-full relative z-10 flex items-center">
             {/* Horizontal Carousel Track */}
             <motion.div
+              ref={trackRef}
               style={{ x: smoothX }}
-              className="flex gap-2 md:gap-4 items-stretch h-[75vh] md:h-[80vh] lg:h-[85vh] pl-6 lg:pl-12 touch-pan-y"
+              className="flex gap-2 md:gap-4 items-stretch h-[75vh] md:h-[80vh] lg:h-[85vh] pl-6 lg:pl-12 pr-6 lg:pr-12 touch-pan-y"
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
