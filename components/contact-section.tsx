@@ -25,8 +25,8 @@ const offices = [
     city1: "Hong Kong",
     city2: "Dhaka",
     type: "Headquarters",
-    address1: "Unit 1606, 16/F Comweb Plaza12 Cheung Yue StreetLai Chi Kok, Kowloon Hong Kong",
-    address2: "House 163, Lane 1, Baridhara DOHS, Dhaka, Bangladesh",
+    address1: "Unit 1606, 16/F Comweb Plaza12 Cheung Yue StreetLai Chi Kok, Kowloon, Hong Kong",
+    address2: "House 163, Lane 1, Baridhara DOHS, Gulshan, Dhaka, Bangladesh",
     phone1: "+386 30 796 092",
     email1: "shohel@matrixapparels.com"
   },
@@ -270,16 +270,16 @@ export function ContactSection() {
                 {offices.map((office, index) => (
                   <div
                     key={office.Name}
-                    className="bg-transparent rounded-xl p-5 border border-slate-700 hover:border-slate-500 transition-all duration-300 space-y-4"
+                    className="bg-transparent rounded-xl p-2 lg:p-5 border border-slate-700 hover:border-slate-500 transition-all duration-300 space-y-4"
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 border border-slate-600 rounded-md flex items-center justify-center shrink-0">
+                    <div className="flex items-start gap-2">
+                      <div className="w-5 h-5 flex items-center justify-center shrink-0">
                         <MapPin className="w-4 h-4 text-[#38bdf8]" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-2">
-                          <h4 className="font-bold text-white text-sm">{office.Name}</h4>
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <h4 className="font-bold text-white text-sm lg:text-base">{office.Name}</h4>
                           <span className="text-slate-400 text-[10px] font-bold uppercase tracking-wider bg-white/5 px-2 py-0.5 rounded border border-white/10">{office.type}</span>
                         </div>
 

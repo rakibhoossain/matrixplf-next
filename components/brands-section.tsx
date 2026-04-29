@@ -62,7 +62,7 @@ export function BrandsSection() {
     <section ref={sectionRef} id="brands" className="w-full bg-white font-sans overflow-hidden">
 
       {/* Hero Banner Area */}
-      <div className="relative h-[55vh] min-h-[450px] w-full flex items-center bg-[#0a1122]">
+      <div className="relative h-[70vh] min-h-[500px] w-full flex items-center bg-[#0a1122]">
         <img
           src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2000&auto=format&fit=crop"
           alt="Gym context"
@@ -110,15 +110,6 @@ export function BrandsSection() {
               <div className="container mx-auto px-6 lg:px-12 relative z-10 py-16 lg:py-32">
                 <div className={`grid lg:grid-cols-2 gap-12 lg:gap-24 items-center`}>
 
-                  {/* Mobile Image Area */}
-                  <div className={`lg:hidden relative h-[350px] rounded-3xl overflow-hidden mb-8 shadow-2xl ${isLeftImage ? "" : "order-1"}`}>
-                    <img
-                      src={brand.image}
-                      alt={brand.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-
                   {/* Text Content Area */}
                   <div className={`flex flex-col ${isLeftImage ? "lg:col-start-2 items-start" : "lg:col-start-1 items-start"}`}>
                     <div className="relative h-12 w-40 mb-8">
@@ -151,6 +142,15 @@ export function BrandsSection() {
                         <ArrowRight className="w-5 h-5 text-sky-500 transition-transform group-hover/link:translate-x-2" />
                       </a>
                     </div>
+                  </div>
+
+                  {/* Mobile Image Area */}
+                  <div className="lg:hidden relative h-[350px] rounded-3xl overflow-hidden shadow-2xl">
+                    <img
+                      src={brand.image}
+                      alt={brand.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>

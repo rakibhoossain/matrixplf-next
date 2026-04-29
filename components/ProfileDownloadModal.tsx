@@ -50,7 +50,7 @@ export function ProfileDownloadModal({ isOpen, onClose, customPdf, customTitle }
   async function onSubmit(values: FormValues) {
     setError(null)
 
-    const pdfUrl = customPdf || "/assets/company/Matrixapparels-Ltd-a-unit-of-Matrix-platform.pdf"
+    const pdfUrl = customPdf || "/assets/company/Matrix-Platform.pdf"
     const fileName = pdfUrl.split('/').pop() || "profile.pdf"
     const profileName = customTitle || "Matrix Group Company Profile"
 

@@ -48,10 +48,10 @@ export function Footer() {
           <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="group">
               <img
-                src="/Matrix-Platform-Logo-1.png"
+                src="/Matrix-Platform-Logo-2.png"
                 alt="Logo"
                 loading="lazy"
-                className="w-[210px] sm:w-[260px] lg:w-[300px] h-auto object-contain"
+                className="w-[300px] sm:w-[300px] lg:w-[300px] h-auto object-contain"
               />
             </Link>
 

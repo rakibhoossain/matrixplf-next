@@ -55,10 +55,10 @@ export function SustainabilityCertificationsSection() {
         {/* Header */}
         <div className="text-center mb-16 lg:mb-24">
           <h2
-            className={`text-3xl md:text-4xl lg:text-5xl font-black text-[#38bdf8] uppercase tracking-wide transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            className={`text-3xl md:text-4xl lg:text-5xl font-black tracking-wide transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
           >
-            Platform Certifications
+            <span style={{ color: "#38bdf8" }}>Platform</span> <span style={{ color: "#0A1622" }}>Certifications</span>
           </h2>
         </div>
 
