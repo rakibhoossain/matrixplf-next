@@ -110,7 +110,7 @@ export function Header() {
           <div
             className={cn(
               "lg:hidden overflow-hidden transition-all duration-500",
-              isMobileMenuOpen ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0"
+              isMobileMenuOpen ? "max-h-[700px] opacity-100 mt-6" : "max-h-0 opacity-0"
             )}
           >
             <div className="backdrop-blur-md rounded-2xl shadow-xl p-6 space-y-2 border border-white/10 bg-[#0d1420]/95">

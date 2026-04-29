@@ -59,7 +59,7 @@ const rightNodes = [
   {
     id: "bd2",
     title: "IFS Texwear Ltd",
-    location: "Dhaka, Bangladesh",
+    location: "Narayanganj, Bangladesh",
     desc: "Large-scale composite knit manufacturing with full integration.",
     color: "#10b981",
     coordinates: [90.2, 23.7] as [number, number],
@@ -67,7 +67,7 @@ const rightNodes = [
   {
     id: "bd3",
     title: "MB Knit Fashion Ltd",
-    location: "Dhaka, Bangladesh",
+    location: "Narayanganj, Bangladesh",
     desc: "Established high-volume knitwear production with strong reliability.",
     color: "#15803d", // Green
     coordinates: [90.5, 23.85] as [number, number],
@@ -75,7 +75,7 @@ const rightNodes = [
   {
     id: "bd4",
     title: "Westknit",
-    location: "Bangladesh",
+    location: "Narayanganj, Bangladesh",
     desc: "Vertically integrated knitwear production across core categories.",
     color: "#2dd4bf", // Teal
     coordinates: [90.1, 23.9] as [number, number],
@@ -83,7 +83,7 @@ const rightNodes = [
   {
     id: "bd5",
     title: "Lithe Knitwear Ltd",
-    location: "Gazipur, Bangladesh",
+    location: "Narayanganj, Bangladesh",
     desc: "High-volume integrated knit facility with advanced production.",
     color: "#ec55ec", // Pink
     coordinates: [90.45, 24.0] as [number, number],
@@ -254,13 +254,13 @@ export function GlobalNetworkSection() {
 
         {/* Mobile View */}
         <div className="lg:hidden relative px-6 md:px-12">
-          <div className="absolute left-10 md:left-1/2 top-0 bottom-0 w-px bg-white/10 md:-translate-x-1/2" />
+          <div className="absolute hidden left-10 md:left-1/2 top-0 bottom-0 w-px bg-white/10 md:-translate-x-1/2" />
           <div className="space-y-10 relative z-10">
             {allNodes.map((node, index) => {
               const isRight = index % 2 !== 0;
               return (
                 <div key={`${node.id}-${index}`} className={`flex flex-col md:flex-row items-start md:items-center w-full ${isRight ? "md:flex-row-reverse" : ""}`}>
-                  <div className={`w-full pl-12 md:pl-0 md:w-[46%]`}>
+                  <div className={`w-full md:pl-0 md:w-[46%]`}>
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-white/5 backdrop-blur-xl p-6 rounded-2xl border-l-4 relative" style={{ borderLeftColor: node.color }}>
                       <div className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full hidden md:block ${isRight ? "-left-[8.69%] -translate-x-1/2" : "-right-[8.69%] translate-x-1/2"}`} style={{ backgroundColor: node.color, boxShadow: `0 0 15px ${node.color}` }} />
                       <h3 className="text-xl font-bold mb-1" style={{ color: node.color }}>{node.title}</h3>

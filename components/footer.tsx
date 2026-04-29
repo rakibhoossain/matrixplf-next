@@ -67,7 +67,7 @@ export function Footer() {
           </div>
 
           {/* Links Columns */}
-          <div className="mt-8 lg:mt-0">
+          <div className="mt-4 lg:mt-0">
             {/* <h4 className="font-semibold text-white mb-6">Company</h4> */}
             <ul className="space-y-1">
               {footerLinks.company.map((link) => (
